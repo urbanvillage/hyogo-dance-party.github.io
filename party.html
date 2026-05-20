@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第80回 ダンスカーニバル 神戸 | 兵庫ダンスパーティー情報</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── リセット & 変数 ─────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:       #FAF8F3;
+  --bg2:      #F2EFE7;
+  --ink:      #1C1A14;
+  --ink2:     #5C5847;
+  --ink3:     #9C9580;
+  --gold:     #B8933A;
+  --gold-l:   #F0E4C0;
+  --teal:     #1D7A6B;
+  --teal-l:   #DCF0EC;
+  --red:      #C0392B;
+  --border:   #DDD9CE;
+  --card-bg:  #FFFFFF;
+  --radius:   10px;
+  --ff-serif: 'Cormorant Garamond','Noto Serif JP',serif;
+  --ff-sans:  'Noto Sans JP',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:var(--ff-sans);font-size:15px;line-height:1.7;
+}
+
+/* ── ヘッダー ─────────────────────────────────── */
+.site-header{
+  background:var(--ink);color:#fff;
+  padding:0 clamp(16px,5vw,48px);
+  position:sticky;top:0;z-index:100;
+}
+.header-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;gap:16px;height:56px;
+}
+.site-logo{
+  font-family:var(--ff-serif);font-size:clamp(14px,2.5vw,20px);
+  font-weight:600;letter-spacing:.04em;color:#fff;text-decoration:none;white-space:nowrap;
+}
+.site-logo span{color:var(--gold);font-style:italic}
+.header-nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+.header-nav a{
+  color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;
+  padding:6px 12px;border-radius:6px;transition:background .15s,color .15s;white-space:nowrap;
+}
+.header-nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.btn-post{
+  background:var(--gold);color:var(--ink)!important;font-weight:500;
+  font-size:13px!important;padding:7px 16px!important;border-radius:99px!important;
+}
+
+/* ── パンくず ─────────────────────────────────── */
+.breadcrumb-bar{background:var(--bg2);border-bottom:1px solid var(--border)}
+.breadcrumb{
+  max-width:1100px;margin:0 auto;
+  padding:10px clamp(16px,5vw,48px);
+  font-size:12px;color:var(--ink3);
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+}
+.breadcrumb a{color:var(--ink3);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+
+/* ── ヒーローバナー ───────────────────────────── */
+.party-hero{
+  background:var(--ink);
+  padding:clamp(32px,6vw,56px) clamp(16px,5vw,48px) 0;
+  position:relative;overflow:hidden;
+}
+.party-hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 85% 40%, rgba(184,147,58,.2) 0%,transparent 65%),
+    radial-gradient(ellipse 40% 60% at 15% 80%, rgba(29,122,107,.12) 0%,transparent 55%);
+  pointer-events:none;
+}
+/* 装飾ラインパターン */
+.party-hero::after{
+  content:'';position:absolute;
+  right:-40px;top:0;bottom:0;width:280px;
+  background:repeating-linear-gradient(
+    -55deg,
+    rgba(184,147,58,.06) 0px,rgba(184,147,58,.06) 1px,
+    transparent 1px,transparent 18px
+  );
+  pointer-events:none;
+}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+
+.hero-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.htag{
+  font-size:10px;font-weight:500;padding:2px 9px;
+  border-radius:99px;letter-spacing:.04em;
+}
+.htag-region{background:rgba(29,122,107,.25);color:#5DCAA5;border:1px solid rgba(29,122,107,.3)}
+.htag-big{background:rgba(192,57,43,.25);color:#F08080;border:1px solid rgba(192,57,43,.3)}
+.htag-new{background:rgba(255,255,255,.15);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.2)}
+
+.hero-title{
+  font-family:var(--ff-serif);
+  font-size:clamp(22px,4.5vw,42px);
+  font-weight:600;color:#fff;
+  line-height:1.25;margin-bottom:20px;
+  letter-spacing:.01em;
+}
+
+/* 日付・時刻バー */
+.hero-date-bar{
+  display:flex;align-items:stretch;gap:0;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--radius);
+  overflow:hidden;
+  width:fit-content;
+  margin-bottom:24px;
+}
+.date-block{
+  padding:12px 20px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  border-right:1px solid rgba(255,255,255,.1);
+}
+.date-block:last-child{border-right:none}
+.date-label{font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.08em;margin-bottom:2px}
+.date-value{
+  font-family:var(--ff-serif);
+  font-size:clamp(16px,2.5vw,22px);
+  font-weight:600;color:#fff;
+  line-height:1.1;
+}
+.date-value small{font-size:12px;font-weight:400;margin-left:2px;color:rgba(255,255,255,.7)}
+
+/* チラシ画像タブ（ページ下部に張り出す） */
+.hero-bottom{
+  display:flex;align-items:flex-end;gap:24px;
+  padding-top:8px;
+}
+.hero-flyer{
+  width:clamp(80px,12vw,110px);
+  height:clamp(112px,17vw,155px);
+  border-radius:6px 6px 0 0;
+  background:var(--bg2);
+  border:1px solid var(--border);border-bottom:none;
+  overflow:hidden;flex-shrink:0;
+  position:relative;
+  box-shadow:0 -4px 20px rgba(0,0,0,.3);
+}
+.hero-flyer img{width:100%;height:100%;object-fit:cover}
+.hero-flyer .no-flyer{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:6px;color:var(--ink3);
+}
+.hero-flyer .no-flyer svg{width:24px;height:24px;opacity:.4}
+.hero-flyer .no-flyer span{font-size:9px;opacity:.5}
+
+.hero-share{
+  display:flex;gap:8px;align-items:center;
+  padding-bottom:16px;
+}
+.share-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;color:rgba(255,255,255,.65);
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  padding:6px 12px;border-radius:99px;cursor:pointer;
+  transition:all .15s;text-decoration:none;
+  font-family:var(--ff-sans);
+}
+.share-btn:hover{background:rgba(255,255,255,.15);color:#fff}
+.share-btn svg{width:13px;height:13px}
+
+/* ── メインレイアウト ─────────────────────────── */
+.detail-wrap{
+  max-width:1100px;margin:0 auto;
+  padding:clamp(24px,5vw,40px) clamp(16px,5vw,48px);
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:28px;align-items:start;
+}
+@media(max-width:800px){
+  .detail-wrap{grid-template-columns:1fr}
+  .detail-side{order:-1}
+}
+
+/* ── 情報カード ───────────────────────────────── */
+.info-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:var(--radius);margin-bottom:16px;overflow:hidden;
+}
+.info-card-title{
+  font-size:11px;font-weight:500;letter-spacing:.1em;
+  color:var(--ink3);text-transform:uppercase;
+  padding:12px 20px 8px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:7px;
+}
+.info-card-title svg{width:13px;height:13px;opacity:.6}
+.info-body{padding:16px 20px}
+
+/* 詳細テーブル */
+.detail-table{width:100%;border-collapse:collapse}
+.detail-table tr{border-bottom:1px solid var(--bg2)}
+.detail-table tr:last-child{border-bottom:none}
+.detail-table th{
+  width:110px;padding:11px 0 11px 0;
+  font-size:12px;font-weight:500;color:var(--ink3);
+  text-align:left;vertical-align:top;
+  white-space:nowrap;
+}
+.detail-table td{
+  padding:11px 0 11px 12px;
+  font-size:13px;color:var(--ink);
+  vertical-align:top;line-height:1.6;
+}
+.detail-table td strong{font-weight:500}
+.td-fee{
+  font-family:var(--ff-serif);
+  font-size:20px;font-weight:600;
+  line-height:1.2;
+}
+.td-fee small{font-size:12px;font-weight:400;font-family:var(--ff-sans);color:var(--ink2);margin-left:2px}
+
+/* アイコン付き行 */
+.info-row{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:10px 0;border-bottom:1px solid var(--bg2);
+}
+.info-row:last-child{border-bottom:none}
+.info-row-icon{
+  width:32px;height:32px;border-radius:8px;
+  background:var(--bg2);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;margin-top:1px;
+}
+.info-row-icon svg{width:15px;height:15px;color:var(--ink3)}
+.info-row-content{}
+.info-row-label{font-size:11px;color:var(--ink3);margin-bottom:1px}
+.info-row-value{font-size:13px;color:var(--ink);line-height:1.5}
+
+/* タグ */
+.tag{font-size:10px;font-weight:500;padding:2px 8px;border-radius:99px;letter-spacing:.03em}
+.tag-region{background:var(--teal-l);color:var(--teal)}
+.tag-free{background:#FEF9EC;color:#92620A;border:1px solid #EDD99A}
+.tag-big{background:#FEF0F0;color:var(--red);border:1px solid #F5C6C6}
+.tag-ribbon{background:var(--gold-l);color:#7A5F1A}
+
+/* PR文 */
+.pr-text{
+  font-size:13px;color:var(--ink2);line-height:1.85;
+  padding:16px 20px;border-left:3px solid var(--gold-l);
+  background:linear-gradient(to right,rgba(240,228,192,.3),transparent);
+  border-radius:0 var(--radius) var(--radius) 0;
+}
+
+/* 地図 */
+.map-container{
+  position:relative;
+  border-radius:var(--radius);overflow:hidden;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  height:220px;
+}
+.map-container iframe{
+  width:100%;height:100%;border:none;display:block;
+}
+/* 地図プレースホルダー */
+.map-placeholder{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:8px;color:var(--ink3);
+  background:var(--bg2);
+  font-size:12px;
+}
+.map-placeholder svg{width:28px;height:28px;opacity:.35}
+.map-open-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;color:var(--teal);text-decoration:none;
+  margin-top:12px;border-bottom:1px solid var(--teal-l);
+  padding-bottom:1px;transition:color .15s;
+}
+.map-open-btn:hover{color:var(--ink)}
+.address-text{
+  font-size:12px;color:var(--ink2);
+  margin-top:8px;line-height:1.6;
+}
+
+/* ── サイドバー ───────────────────────────────── */
+.detail-side{display:flex;flex-direction:column;gap:16px}
+
+/* 参加費カード（目立つ） */
+.fee-card{
+  background:var(--ink);color:#fff;
+  border-radius:var(--radius);padding:20px;
+  position:relative;overflow:hidden;
+}
+.fee-card::before{
+  content:'';position:absolute;
+  right:-20px;top:-20px;
+  width:120px;height:120px;border-radius:50%;
+  background:rgba(184,147,58,.12);
+}
+.fee-card-label{font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;margin-bottom:6px}
+.fee-card-main{
+  font-family:var(--ff-serif);
+  font-size:36px;font-weight:600;color:var(--gold);
+  line-height:1;margin-bottom:4px;
+}
+.fee-card-unit{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:12px}
+.fee-card-note{font-size:11px;color:rgba(255,255,255,.5);line-height:1.6}
+.fee-divider{height:1px;background:rgba(255,255,255,.1);margin:12px 0}
+.fee-card-sub{
+  display:flex;flex-direction:column;gap:5px;
+}
+.fee-sub-row{
+  display:flex;justify-content:space-between;
+  font-size:11px;color:rgba(255,255,255,.6);
+}
+.fee-sub-row span:last-child{color:rgba(255,255,255,.85)}
+
+/* 予約ボタン */
+.reserve-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:var(--radius);padding:16px;
+}
+.reserve-title{font-size:12px;font-weight:500;margin-bottom:10px}
+.btn-contact{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  background:var(--gold);color:var(--ink);
+  text-decoration:none;font-weight:500;font-size:13px;
+  padding:11px 0;border-radius:99px;
+  transition:opacity .15s;width:100%;text-align:center;
+}
+.btn-contact:hover{opacity:.85}
+.btn-tel{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  background:var(--bg2);color:var(--ink);
+  text-decoration:none;font-weight:500;font-size:14px;
+  padding:10px 0;border-radius:99px;
+  border:1px solid var(--border);
+  transition:all .15s;width:100%;margin-top:8px;
+}
+.btn-tel:hover{border-color:var(--ink)}
+.reserve-note{font-size:11px;color:var(--ink3);margin-top:8px;text-align:center;line-height:1.5}
+
+/* 主催者カード */
+.org-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:var(--radius);padding:16px;
+}
+.org-name{font-size:14px;font-weight:500;margin-bottom:4px}
+.org-meta{font-size:12px;color:var(--ink2);line-height:1.7}
+.org-link{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12px;color:var(--teal);text-decoration:none;
+  margin-top:6px;
+}
+.org-link:hover{text-decoration:underline}
+
+/* 関連パーティー */
+.related-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+}
+.related-title{
+  font-size:11px;font-weight:500;letter-spacing:.08em;
+  color:var(--ink3);padding:10px 14px;
+  border-bottom:1px solid var(--border);
+}
+.related-item{
+  display:flex;gap:10px;padding:10px 14px;
+  border-bottom:1px solid var(--bg2);
+  text-decoration:none;color:inherit;
+  transition:background .15s;align-items:flex-start;
+}
+.related-item:last-child{border-bottom:none}
+.related-item:hover{background:var(--bg2)}
+.related-date{
+  font-family:var(--ff-serif);
+  font-size:20px;font-weight:600;color:var(--ink);
+  line-height:1;margin-top:2px;min-width:28px;text-align:center;
+}
+.related-date small{display:block;font-size:10px;font-family:var(--ff-sans);color:var(--ink3);font-weight:400}
+.related-info{flex:1}
+.related-name{font-size:12px;font-weight:500;line-height:1.4;margin-bottom:2px}
+.related-venue{font-size:11px;color:var(--ink3)}
+
+/* ── フッター ─────────────────────────────────── */
+.site-footer{
+  background:var(--ink);color:rgba(255,255,255,.6);
+  padding:32px clamp(16px,5vw,48px);margin-top:48px;font-size:12px;
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-logo{font-family:var(--ff-serif);font-size:16px;color:#fff;font-weight:600}
+.footer-links{display:flex;gap:16px}
+.footer-links a{color:rgba(255,255,255,.5);text-decoration:none}
+.footer-links a:hover{color:#fff}
+
+/* ── アニメーション ───────────────────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.info-card{animation:fadeUp .3s ease both}
+.info-card:nth-child(1){animation-delay:.05s}
+.info-card:nth-child(2){animation-delay:.1s}
+.info-card:nth-child(3){animation-delay:.15s}
+.detail-side .fee-card{animation:fadeUp .3s ease .05s both}
+.detail-side .reserve-card{animation:fadeUp .3s ease .1s both}
+.detail-side .org-card{animation:fadeUp .3s ease .15s both}
+.detail-side .related-card{animation:fadeUp .3s ease .2s both}
+
+/* ── スマホ調整 ───────────────────────────────── */
+@media(max-width:600px){
+  .hero-date-bar{flex-wrap:wrap}
+  .date-block{flex:1;min-width:80px}
+  .header-nav .nav-hide{display:none}
+  .hero-bottom{gap:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">兵庫<span>Dance</span>Party</a>
+    <nav class="header-nav">
+      <a href="calendar.html" class="nav-hide">カレンダー</a>
+      <a href="index.html" class="nav-hide">パーティー一覧</a>
+      <a href="about.html" class="nav-hide">このサイトについて</a>
+      <a href="submit.html" class="btn-post">＋ 掲載申請</a>
+    </nav>
+  </div>
+</header>
+
+<!-- パンくず -->
+<div class="breadcrumb-bar">
+  <div class="breadcrumb">
+    <a href="index.html">トップ</a>
+    <span>›</span>
+    <a href="index.html?region=kobe">神戸市内</a>
+    <span>›</span>
+    <span>第80回 ダンスカーニバル 神戸</span>
+  </div>
+</div>
+
+<!-- ヒーローバナー -->
+<div class="party-hero">
+  <div class="hero-inner">
+
+    <!-- タグ -->
+    <div class="hero-tags">
+      <span class="htag htag-region">神戸市内</span>
+      <span class="htag htag-big">大型イベント</span>
+      <span class="htag htag-new">掲載中</span>
+    </div>
+
+    <!-- タイトル -->
+    <h1 class="hero-title">第80回 ダンスカーニバル 神戸</h1>
+
+    <!-- 日時バー -->
+    <div class="hero-date-bar">
+      <div class="date-block">
+        <div class="date-label">開催日</div>
+        <div class="date-value">2026年<br>6月14日<small>（土）</small></div>
+      </div>
+      <div class="date-block">
+        <div class="date-label">時間</div>
+        <div class="date-value">11:30<small>〜</small>17:00</div>
+      </div>
+      <div class="date-block">
+        <div class="date-label">会場</div>
+        <div class="date-value" style="font-size:clamp(13px,1.8vw,16px);font-family:var(--ff-sans)">神戸ポートピアホテル<br><small>南館 大輪田の間</small></div>
+      </div>
+      <div class="date-block">
+        <div class="date-label">参加費</div>
+        <div class="date-value" style="color:var(--gold)">3,000<small>円〜</small></div>
+      </div>
+    </div>
+
+    <!-- チラシ＋シェア -->
+    <div class="hero-bottom">
+      <div class="hero-flyer">
+        <!-- チラシ画像があれば <img src="flyer/P-004.jpg" alt="チラシ"> に変更 -->
+        <div class="no-flyer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+          </svg>
+          <span>チラシなし</span>
+        </div>
+      </div>
+      <div class="hero-share">
+        <button class="share-btn" onclick="copyURL()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+          URLをコピー
+        </button>
+        <a class="share-btn" href="https://line.me/R/msg/text/?【パーティー名】%0A【URL】" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.5 13.5c-.28.4-.7.6-1.14.6-.28 0-.55-.08-.8-.25l-2.56-1.8-2.56 1.8c-.25.17-.52.25-.8.25-.44 0-.86-.2-1.14-.6-.4-.57-.28-1.36.28-1.76l2.7-1.9V8.5c0-.69.56-1.25 1.25-1.25s1.25.56 1.25 1.25v3.84l2.7 1.9c.56.4.68 1.19.28 1.76z"/>
+          </svg>
+          LINEで共有
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- メインコンテンツ -->
+<div class="detail-wrap">
+  <main>
+
+    <!-- パーティー詳細 -->
+    <div class="info-card">
+      <div class="info-card-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        パーティー詳細
+      </div>
+      <div class="info-body">
+        <table class="detail-table">
+          <tr>
+            <th>開催日</th>
+            <td><strong>2026年6月14日（土）</strong></td>
+          </tr>
+          <tr>
+            <th>時間</th>
+            <td>11:30〜17:00（開場 11:00）</td>
+          </tr>
+          <tr>
+            <th>会場</th>
+            <td>
+              <strong>神戸ポートピアホテル 南館 大輪田の間</strong><br>
+              <span style="color:var(--ink3);font-size:12px">神戸市中央区港島中町6-10-1</span>
+            </td>
+          </tr>
+          <tr>
+            <th>参加費</th>
+            <td>
+              <div class="td-fee">3,000<small>円〜</small></div>
+              <div style="font-size:12px;color:var(--ink2);margin-top:4px">
+                一般：3,000円 ／ プロリボン：別途要確認
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>リボン</th>
+            <td>
+              <span class="tag tag-ribbon">学生リボン（有料）</span>&ensp;
+              <span class="tag tag-ribbon">プロリボン</span>
+            </td>
+          </tr>
+          <tr>
+            <th>予約</th>
+            <td>
+              <span style="color:var(--teal);font-weight:500">事前予約が必要</span><br>
+              <span style="font-size:12px;color:var(--ink2)">定員になり次第締め切り。お早めにご連絡ください。</span>
+            </td>
+          </tr>
+          <tr>
+            <th>主催</th>
+            <td>兵庫県社交ダンス教師協会</td>
+          </tr>
+          <tr>
+            <th>特別招待</th>
+            <td>
+              <span style="font-size:13px">山本喜洋・英美 組</span>
+              <span style="font-size:11px;color:var(--ink3);margin-left:6px">デモンストレーター</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- PRコメント -->
+    <div class="info-card">
+      <div class="info-card-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        主催者からのメッセージ
+      </div>
+      <div class="info-body" style="padding:0">
+        <div class="pr-text">
+          今年で第80回を迎える節目のダンスカーニバル。デモンストレーターに山本喜洋・英美組をお迎えし、華やかな一日をお届けします。<br><br>
+          神戸ポートピアホテルの豪華な会場で、社交ダンスの魅力を思う存分楽しんでください。ご参加をお待ちしております。
+        </div>
+      </div>
+    </div>
+
+    <!-- 会場・アクセス -->
+    <div class="info-card">
+      <div class="info-card-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        会場・アクセス
+      </div>
+      <div class="info-body">
+
+        <!-- 地図 -->
+        <div class="map-container" style="margin-bottom:14px">
+          <!--
+            Google Maps埋め込み：
+            maps.google.com → 場所を検索 → 「共有」→「地図を埋め込む」→ iframeをここに貼付
+
+            例：
+            <iframe
+              src="https://www.google.com/maps/embed?pb=【埋め込みURL】"
+              width="100%" height="220" style="border:0" allowfullscreen
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          -->
+          <div class="map-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Googleマップを埋め込む</span>
+            <a class="map-open-btn"
+               href="https://maps.google.com/?q=神戸ポートピアホテル"
+               target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Googleマップで開く →
+            </a>
+          </div>
+        </div>
+
+        <!-- アクセス情報 -->
+        <div class="info-row">
+          <div class="info-row-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="info-row-content">
+            <div class="info-row-label">住所</div>
+            <div class="info-row-value">〒650-0046 兵庫県神戸市中央区港島中町6-10-1</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+          <div class="info-row-content">
+            <div class="info-row-label">最寄り駅</div>
+            <div class="info-row-value">
+              ポートライナー「市民広場駅」より徒歩1分<br>
+              <span style="font-size:11px;color:var(--ink3)">三宮駅からポートライナーで約10分</span>
+            </div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="info-row-content">
+            <div class="info-row-label">駐車場</div>
+            <div class="info-row-value">ホテル駐車場あり（有料）</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- サイドバー -->
+  <aside class="detail-side">
+
+    <!-- 参加費カード -->
+    <div class="fee-card">
+      <div class="fee-card-label">参加費（一般）</div>
+      <div class="fee-card-main">3,000</div>
+      <div class="fee-card-unit">円</div>
+      <div class="fee-divider"></div>
+      <div class="fee-card-sub">
+        <div class="fee-sub-row">
+          <span>一般参加</span><span>3,000円</span>
+        </div>
+        <div class="fee-sub-row">
+          <span>学生リボン</span><span>要確認</span>
+        </div>
+        <div class="fee-sub-row">
+          <span>プロリボン</span><span>要確認</span>
+        </div>
+      </div>
+      <div class="fee-divider"></div>
+      <div class="fee-card-note">
+        ※ 参加費は当日受付にてお支払いください
+      </div>
+    </div>
+
+    <!-- 連絡・予約 -->
+    <div class="reserve-card">
+      <div class="reserve-title">お問い合わせ・予約</div>
+      <a href="tel:078-XXX-XXXX" class="btn-tel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.87a16 16 0 0 0 6.03 6.03l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+        078-XXX-XXXX
+      </a>
+      <div class="reserve-note">
+        ※ 事前予約が必要です<br>定員になり次第締め切ります
+      </div>
+    </div>
+
+    <!-- 主催者 -->
+    <div class="org-card">
+      <div style="font-size:10px;color:var(--ink3);letter-spacing:.08em;margin-bottom:6px">主催</div>
+      <div class="org-name">兵庫県社交ダンス教師協会</div>
+      <div class="org-meta">
+        TEL：078-XXX-XXXX<br>
+        受付時間：平日 10:00〜17:00
+      </div>
+      <a href="http://www.jbdf-hsdta.jp" target="_blank" rel="noopener" class="org-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        公式サイトを見る
+      </a>
+    </div>
+
+    <!-- 関連パーティー -->
+    <div class="related-card">
+      <div class="related-title">近日開催のパーティー</div>
+      <a href="party.html?id=P-005" class="related-item">
+        <div class="related-date">
+          15
+          <small>6月（日）</small>
+        </div>
+        <div class="related-info">
+          <div class="related-name">甲東ダンス愛好会 月例パーティー</div>
+          <div class="related-venue">アプリ甲東（西宮市）</div>
+        </div>
+      </a>
+      <a href="party.html?id=P-006" class="related-item">
+        <div class="related-date">
+          22
+          <small>6月（日）</small>
+        </div>
+        <div class="related-info">
+          <div class="related-name">JDSF兵庫 会員交流パーティー</div>
+          <div class="related-venue">神戸市中央区文化センター</div>
+        </div>
+      </a>
+      <a href="party.html?id=P-007" class="related-item">
+        <div class="related-date">
+          28
+          <small>6月（土）</small>
+        </div>
+        <div class="related-info">
+          <div class="related-name">ダンススクールパッション 夏のパーティー</div>
+          <div class="related-venue">ネスタリゾート神戸（三田）</div>
+        </div>
+      </a>
+      <a href="index.html" style="display:block;text-align:center;padding:10px;font-size:12px;color:var(--ink3);text-decoration:none;border-top:1px solid var(--bg2)">
+        すべて見る →
+      </a>
+    </div>
+
+    <!-- 戻るリンク -->
+    <a href="index.html" style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink3);text-decoration:none;padding:4px 0;transition:color .15s"
+       onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink3)'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="15 18 9 12 15 6"/></svg>
+      パーティー一覧に戻る
+    </a>
+
+  </aside>
+</div>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">兵庫 Dance Party</div>
+    <div class="footer-links">
+      <a href="about.html">このサイトについて</a>
+      <a href="submit.html">掲載申請</a>
+      <a href="about.html#contact">お問い合わせ</a>
+    </div>
+    <div>© 2026 兵庫ダンスパーティー情報</div>
+  </div>
+</footer>
+
+<script>
+// URLコピー
+function copyURL() {
+  navigator.clipboard.writeText(location.href).then(() => {
+    const btn = document.querySelector('.share-btn');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><polyline points="20 6 9 17 4 12"/></svg> コピーしました';
+    setTimeout(() => btn.innerHTML = orig, 2000);
+  });
+}
+</script>
+
+</body>
+</html>

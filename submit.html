@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>パーティー掲載申請 | 兵庫ダンスパーティー情報</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── リセット & 変数（index.htmlと共通） ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:       #FAF8F3;
+  --bg2:      #F2EFE7;
+  --ink:      #1C1A14;
+  --ink2:     #5C5847;
+  --ink3:     #9C9580;
+  --gold:     #B8933A;
+  --gold-l:   #F0E4C0;
+  --teal:     #1D7A6B;
+  --teal-l:   #DCF0EC;
+  --red:      #C0392B;
+  --border:   #DDD9CE;
+  --card-bg:  #FFFFFF;
+  --radius:   10px;
+  --ff-serif: 'Cormorant Garamond','Noto Serif JP',serif;
+  --ff-sans:  'Noto Sans JP',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--ff-sans);
+  font-size:15px;line-height:1.7;
+}
+
+/* ── ヘッダー（共通） ────────────────────────── */
+.site-header{
+  background:var(--ink);color:#fff;
+  padding:0 clamp(16px,5vw,48px);
+  position:sticky;top:0;z-index:100;
+}
+.header-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;gap:16px;height:56px;
+}
+.site-logo{
+  font-family:var(--ff-serif);font-size:clamp(14px,2.5vw,20px);
+  font-weight:600;letter-spacing:.04em;color:#fff;text-decoration:none;
+  white-space:nowrap;
+}
+.site-logo span{color:var(--gold);font-style:italic}
+.header-nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+.header-nav a{
+  color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;
+  padding:6px 12px;border-radius:6px;transition:background .15s,color .15s;
+  white-space:nowrap;
+}
+.header-nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.btn-post{
+  background:var(--gold);color:var(--ink)!important;font-weight:500;
+  font-size:13px!important;padding:7px 16px!important;border-radius:99px!important;
+}
+
+/* ── パンくず ────────────────────────────────── */
+.breadcrumb{
+  max-width:900px;margin:0 auto;
+  padding:12px clamp(16px,5vw,48px);
+  font-size:12px;color:var(--ink3);
+  display:flex;align-items:center;gap:6px;
+}
+.breadcrumb a{color:var(--ink3);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb-sep{opacity:.4}
+
+/* ── ページヘッダー ──────────────────────────── */
+.page-hero{
+  background:var(--ink);
+  padding:clamp(32px,6vw,56px) clamp(16px,5vw,48px) clamp(24px,4vw,40px);
+  position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 50% 100% at 90% 50%,
+    rgba(184,147,58,.15) 0%,transparent 70%);
+  pointer-events:none;
+}
+.page-hero-inner{max-width:900px;margin:0 auto;position:relative}
+.page-hero-eyebrow{
+  font-size:11px;letter-spacing:.18em;color:var(--gold);
+  font-weight:500;margin-bottom:10px;
+}
+.page-hero-title{
+  font-family:var(--ff-serif);
+  font-size:clamp(24px,4vw,38px);font-weight:600;
+  color:#fff;line-height:1.3;margin-bottom:10px;
+}
+.page-hero-desc{
+  font-size:13px;color:rgba(255,255,255,.65);max-width:480px;line-height:1.8;
+}
+
+/* ── ステップインジケーター ──────────────────── */
+.step-indicator{
+  background:var(--bg2);border-bottom:1px solid var(--border);
+  padding:16px clamp(16px,5vw,48px);
+}
+.step-indicator-inner{
+  max-width:900px;margin:0 auto;
+  display:flex;align-items:center;gap:0;
+}
+.step-item{
+  display:flex;align-items:center;gap:8px;
+  flex:1;
+}
+.step-circle{
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:500;flex-shrink:0;
+  border:1.5px solid var(--border);
+  background:var(--card-bg);color:var(--ink3);
+  transition:all .2s;
+}
+.step-circle.active{
+  background:var(--gold);border-color:var(--gold);color:var(--ink);
+}
+.step-circle.done{
+  background:var(--teal);border-color:var(--teal);color:#fff;
+}
+.step-label{font-size:11px;color:var(--ink3);white-space:nowrap}
+.step-label.active{color:var(--ink);font-weight:500}
+.step-line{
+  flex:1;height:1px;background:var(--border);
+  margin:0 8px;
+  max-width:60px;
+}
+@media(max-width:500px){
+  .step-label{display:none}
+  .step-line{margin:0 4px}
+}
+
+/* ── メインコンテンツ ────────────────────────── */
+.submit-wrap{
+  max-width:900px;margin:0 auto;
+  padding:clamp(24px,5vw,48px) clamp(16px,5vw,48px);
+  display:grid;
+  grid-template-columns:1fr 260px;
+  gap:32px;align-items:start;
+}
+@media(max-width:780px){
+  .submit-wrap{grid-template-columns:1fr}
+  .submit-side{display:none}
+}
+
+/* ── フォームカード ──────────────────────────── */
+.form-card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.form-card-header{
+  padding:16px 24px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:10px;
+}
+.form-card-header h2{
+  font-size:15px;font-weight:500;
+}
+.form-card-num{
+  width:24px;height:24px;border-radius:50%;
+  background:var(--gold-l);color:var(--gold);
+  font-size:11px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+
+/* Googleフォーム埋め込みエリア */
+.form-embed-area{
+  padding:0;
+  /* Googleフォームのデフォルトスタイルを上書きするコンテナ */
+}
+.form-embed-area iframe{
+  width:100%;
+  border:none;
+  min-height:1800px;
+  display:block;
+}
+
+/* フォームURLが未設定の場合のプレースホルダー */
+.form-placeholder{
+  padding:40px 24px;
+  text-align:center;
+}
+.placeholder-icon{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--gold-l);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+}
+.placeholder-icon svg{width:26px;height:26px;color:var(--gold)}
+.placeholder-title{
+  font-size:16px;font-weight:500;margin-bottom:8px;
+}
+.placeholder-desc{
+  font-size:13px;color:var(--ink2);line-height:1.7;margin-bottom:24px;
+}
+.placeholder-code{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:8px;padding:16px;
+  font-family:monospace;font-size:12px;
+  color:var(--ink2);text-align:left;
+  margin-bottom:20px;line-height:1.8;
+}
+.placeholder-code .cm{color:var(--ink3)}
+.placeholder-code .ck{color:var(--teal)}
+.placeholder-code .cs{color:#B85A20}
+.placeholder-hint{
+  font-size:12px;color:var(--ink3);
+  background:var(--gold-l);border-radius:8px;
+  padding:10px 14px;text-align:left;line-height:1.7;
+}
+.placeholder-hint strong{color:var(--ink)}
+
+/* ── サイドバー ──────────────────────────────── */
+.submit-side{display:flex;flex-direction:column;gap:16px}
+
+.side-card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+}
+.side-title{
+  font-size:11px;font-weight:500;letter-spacing:.1em;
+  color:var(--ink3);padding:12px 16px 8px;
+  border-bottom:1px solid var(--border);
+  text-transform:uppercase;
+}
+.side-body{padding:14px 16px}
+.side-body p{font-size:12px;color:var(--ink2);line-height:1.7}
+
+/* フロー図 */
+.flow-list{display:flex;flex-direction:column;gap:0}
+.flow-item{display:flex;gap:10px;align-items:flex-start}
+.flow-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.flow-num{
+  width:22px;height:22px;border-radius:50%;
+  background:var(--gold-l);color:var(--gold);
+  font-size:10px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;
+}
+.flow-vline{
+  width:1px;background:var(--border);
+  flex:1;min-height:12px;margin:2px 0;
+}
+.flow-body{padding:1px 0 12px;flex:1}
+.flow-title{font-size:12px;font-weight:500;margin-bottom:1px}
+.flow-desc{font-size:11px;color:var(--ink3);line-height:1.5}
+
+/* チェックリスト */
+.check-list{display:flex;flex-direction:column;gap:6px}
+.check-item{
+  display:flex;align-items:flex-start;gap:7px;
+  font-size:12px;color:var(--ink2);line-height:1.5;
+}
+.check-dot{
+  width:16px;height:16px;border-radius:50%;
+  background:var(--teal-l);flex-shrink:0;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;
+}
+.check-dot svg{width:9px;height:9px;color:var(--teal)}
+
+/* お問い合わせ */
+.contact-box{
+  background:var(--ink);color:#fff;
+  padding:16px;text-align:center;
+}
+.contact-box p{font-size:11px;color:rgba(255,255,255,.6);margin-bottom:8px;line-height:1.6}
+.contact-box a{
+  color:var(--gold);font-size:12px;font-weight:500;
+  text-decoration:none;
+}
+.contact-box a:hover{text-decoration:underline}
+
+/* ── フッター（共通） ────────────────────────── */
+.site-footer{
+  background:var(--ink);color:rgba(255,255,255,.6);
+  padding:32px clamp(16px,5vw,48px);margin-top:48px;font-size:12px;
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-logo{font-family:var(--ff-serif);font-size:16px;color:#fff;font-weight:600}
+.footer-links{display:flex;gap:16px}
+.footer-links a{color:rgba(255,255,255,.5);text-decoration:none}
+.footer-links a:hover{color:#fff}
+
+/* ── アニメーション ──────────────────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.form-card{animation:fadeUp .35s ease both}
+.submit-side{animation:fadeUp .35s ease .1s both}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">兵庫<span>Dance</span>Party</a>
+    <nav class="header-nav">
+      <a href="calendar.html">カレンダー</a>
+      <a href="index.html">パーティー一覧</a>
+      <a href="about.html">このサイトについて</a>
+      <a href="submit.html" class="btn-post">＋ 掲載申請</a>
+    </nav>
+  </div>
+</header>
+
+<!-- パンくず -->
+<div style="background:var(--bg2);border-bottom:1px solid var(--border)">
+  <div class="breadcrumb">
+    <a href="index.html">トップ</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>パーティー掲載申請</span>
+  </div>
+</div>
+
+<!-- ページヘッダー -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-eyebrow">Party Submission</p>
+    <h1 class="page-hero-title">パーティー掲載申請</h1>
+    <p class="page-hero-desc">兵庫県内で開催される社交ダンスパーティーの情報を募集しています。掲載は無料です。審査後、3営業日以内にご連絡します。</p>
+  </div>
+</div>
+
+<!-- ステップインジケーター -->
+<div class="step-indicator">
+  <div class="step-indicator-inner">
+    <div class="step-item">
+      <div class="step-circle active">1</div>
+      <div class="step-label active">情報を入力</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-circle">2</div>
+      <div class="step-label">審査（3営業日）</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-circle">3</div>
+      <div class="step-label">サイトに掲載</div>
+    </div>
+  </div>
+</div>
+
+<!-- メインコンテンツ -->
+<div class="submit-wrap">
+
+  <!-- フォームカード -->
+  <main>
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="form-card-num">1</div>
+        <h2>パーティー情報を入力してください</h2>
+      </div>
+
+      <div class="form-embed-area">
+
+        <!--
+        ════════════════════════════════════════════════════
+          ▼ ここを編集してください
+          Googleフォームを公開して取得した埋め込みコードを
+          下の <iframe> と差し替えてください。
+
+          取得方法：
+          1. Googleフォームを開く
+          2. 右上「送信」ボタンをクリック
+          3. 「<>」（埋め込み）タブを選択
+          4. 「コピー」してここに貼り付け
+
+          例：
+          <iframe
+            src="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdfqzh611b2Lkmu7kNM0kAnMAasbMkmR9fE5Fmci1jH5_XeQ/viewform?embedded=true" width="640" height="1523" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>"
+            width="100%"
+            height="2000"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0">
+            読み込んでいます…
+          </iframe>
+        ════════════════════════════════════════════════════
+        -->
+
+        <!-- ↓↓↓ Googleフォームのiframeをここに貼り付け ↓↓↓ -->
+        <!--
+        <iframe
+          src="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdfqzh611b2Lkmu7kNM0kAnMAasbMkmR9fE5Fmci1jH5_XeQ/viewform?embedded=true" width="640" height="1523" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>"
+          width="100%"
+          height="2000"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0">読み込んでいます…</iframe>
+        -->
+
+   
+
+      </div>
+    </div>
+  </main>
+
+  <!-- サイドバー -->
+  <aside class="submit-side">
+
+    <!-- 掲載の流れ -->
+    <div class="side-card">
+      <div class="side-title">掲載の流れ</div>
+      <div class="side-body">
+        <div class="flow-list">
+          <div class="flow-item">
+            <div class="flow-left">
+              <div class="flow-num">1</div>
+              <div class="flow-vline"></div>
+            </div>
+            <div class="flow-body">
+              <div class="flow-title">フォームを送信</div>
+              <div class="flow-desc">左のフォームにパーティー情報を入力して送信してください</div>
+            </div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-left">
+              <div class="flow-num">2</div>
+              <div class="flow-vline"></div>
+            </div>
+            <div class="flow-body">
+              <div class="flow-title">内容審査（3営業日）</div>
+              <div class="flow-desc">管理者が内容を確認します。不備がある場合はメールでご連絡します</div>
+            </div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-left">
+              <div class="flow-num">3</div>
+            </div>
+            <div class="flow-body">
+              <div class="flow-title">掲載完了のご連絡</div>
+              <div class="flow-desc">承認後、掲載完了メールをお送りします。サイトへの反映は即日です</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 掲載基準 -->
+    <div class="side-card">
+      <div class="side-title">掲載基準</div>
+      <div class="side-body">
+        <div class="check-list">
+          <div class="check-item">
+            <div class="check-dot">
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="2,5 4,7 8,3"/>
+              </svg>
+            </div>
+            兵庫県内で開催される社交ダンスパーティーであること
+          </div>
+          <div class="check-item">
+            <div class="check-dot">
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="2,5 4,7 8,3"/>
+              </svg>
+            </div>
+            会場・日時・連絡先が明確であること
+          </div>
+          <div class="check-item">
+            <div class="check-dot">
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="2,5 4,7 8,3"/>
+              </svg>
+            </div>
+            掲載情報が正確であること
+          </div>
+          <div class="check-item">
+            <div class="check-dot">
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="2,5 4,7 8,3"/>
+              </svg>
+            </div>
+            開催日が申請日より未来であること
+          </div>
+        </div>
+        <p style="font-size:11px;color:var(--ink3);margin-top:10px;line-height:1.6">
+          上記を満たさない場合や内容が不適切と判断した場合は、掲載をお断りする場合があります。
+        </p>
+      </div>
+    </div>
+
+    <!-- よくある質問 -->
+    <div class="side-card">
+      <div class="side-title">よくある質問</div>
+      <div class="side-body" style="display:flex;flex-direction:column;gap:12px">
+        <div>
+          <div style="font-size:12px;font-weight:500;margin-bottom:3px">掲載は有料ですか？</div>
+          <p style="font-size:12px;color:var(--ink2)">無料です。費用は一切かかりません。</p>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:12px">
+          <div style="font-size:12px;font-weight:500;margin-bottom:3px">内容を変更したい場合は？</div>
+          <p style="font-size:12px;color:var(--ink2)">お問い合わせフォームよりご連絡ください。</p>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:12px">
+          <div style="font-size:12px;font-weight:500;margin-bottom:3px">定期開催のパーティーも申請できますか？</div>
+          <p style="font-size:12px;color:var(--ink2)">はい。毎月・毎週など定期開催の場合は備考欄にその旨をご記入ください。</p>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:12px">
+          <div style="font-size:12px;font-weight:500;margin-bottom:3px">掲載を削除したい場合は？</div>
+          <p style="font-size:12px;color:var(--ink2)">お問い合わせよりご連絡いただければ即日対応します。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- お問い合わせ -->
+    <div class="side-card">
+      <div class="contact-box">
+        <p>フォームが表示されない場合や<br>ご不明な点はこちらへ</p>
+        <a href="about.html#contact">→ お問い合わせはこちら</a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">兵庫 Dance Party</div>
+    <div class="footer-links">
+      <a href="about.html">このサイトについて</a>
+      <a href="submit.html">掲載申請</a>
+      <a href="about.html#contact">お問い合わせ</a>
+    </div>
+    <div>© 2026 兵庫ダンスパーティー情報</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カレンダー | 兵庫ダンスパーティー情報</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:       #FAF8F3;
+  --bg2:      #F2EFE7;
+  --ink:      #1C1A14;
+  --ink2:     #5C5847;
+  --ink3:     #9C9580;
+  --gold:     #B8933A;
+  --gold-l:   #F0E4C0;
+  --teal:     #1D7A6B;
+  --teal-l:   #DCF0EC;
+  --red:      #C0392B;
+  --red-l:    #FEF0F0;
+  --border:   #DDD9CE;
+  --card-bg:  #FFFFFF;
+  --radius:   10px;
+  --ff-serif: 'Cormorant Garamond','Noto Serif JP',serif;
+  --ff-sans:  'Noto Sans JP',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:var(--ff-sans);font-size:15px;line-height:1.7;
+}
+
+/* ── ヘッダー ─────────────────────────────────── */
+.site-header{
+  background:var(--ink);color:#fff;
+  padding:0 clamp(16px,5vw,48px);
+  position:sticky;top:0;z-index:100;
+}
+.header-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;gap:16px;height:56px;
+}
+.site-logo{
+  font-family:var(--ff-serif);font-size:clamp(14px,2.5vw,20px);
+  font-weight:600;letter-spacing:.04em;color:#fff;text-decoration:none;white-space:nowrap;
+}
+.site-logo span{color:var(--gold);font-style:italic}
+.header-nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+.header-nav a{
+  color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;
+  padding:6px 12px;border-radius:6px;transition:background .15s,color .15s;white-space:nowrap;
+}
+.header-nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.header-nav a.active{color:#fff;background:rgba(255,255,255,.1)}
+.btn-post{
+  background:var(--gold);color:var(--ink)!important;font-weight:500;
+  font-size:13px!important;padding:7px 16px!important;border-radius:99px!important;
+}
+@media(max-width:600px){.nav-hide{display:none}}
+
+/* ── ページヘッダー ───────────────────────────── */
+.page-header{
+  background:var(--ink);
+  padding:clamp(20px,4vw,36px) clamp(16px,5vw,48px);
+  position:relative;overflow:hidden;
+}
+.page-header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 50% 120% at 90% 50%,rgba(184,147,58,.15) 0%,transparent 70%);
+}
+.ph-inner{max-width:1200px;margin:0 auto;position:relative;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ph-title-group{}
+.ph-eyebrow{font-size:10px;letter-spacing:.18em;color:var(--gold);font-weight:500;margin-bottom:4px}
+.ph-title{font-family:var(--ff-serif);font-size:clamp(20px,3.5vw,32px);font-weight:600;color:#fff}
+
+/* 月ナビゲーター */
+.month-nav{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  border-radius:99px;padding:4px 6px;
+}
+.month-nav-btn{
+  width:32px;height:32px;border-radius:50%;
+  background:none;border:none;cursor:pointer;
+  color:rgba(255,255,255,.7);font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s,color .15s;
+  font-family:var(--ff-sans);
+}
+.month-nav-btn:hover{background:rgba(255,255,255,.12);color:#fff}
+.month-nav-label{
+  font-family:var(--ff-serif);font-size:clamp(18px,2.5vw,24px);
+  font-weight:600;color:#fff;
+  min-width:clamp(140px,20vw,200px);text-align:center;
+  letter-spacing:.02em;
+}
+.month-today-btn{
+  font-size:11px;font-weight:500;
+  background:none;border:1px solid rgba(255,255,255,.3);
+  color:rgba(255,255,255,.7);padding:4px 10px;border-radius:99px;cursor:pointer;
+  font-family:var(--ff-sans);transition:all .15s;
+}
+.month-today-btn:hover{background:rgba(255,255,255,.1);color:#fff}
+
+/* ── フィルターバー ───────────────────────────── */
+.filter-bar{
+  background:var(--bg2);border-bottom:1px solid var(--border);
+  padding:10px clamp(16px,5vw,48px);
+}
+.filter-bar-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.filter-label{font-size:11px;color:var(--ink3);white-space:nowrap}
+.fbtn{
+  border:1px solid var(--border);background:var(--card-bg);
+  color:var(--ink2);font-size:11px;padding:4px 12px;border-radius:99px;
+  cursor:pointer;font-family:var(--ff-sans);transition:all .15s;
+}
+.fbtn:hover,.fbtn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ── メインレイアウト ─────────────────────────── */
+.cal-wrap{
+  max-width:1200px;margin:0 auto;
+  padding:clamp(16px,4vw,32px) clamp(16px,5vw,48px);
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:24px;align-items:start;
+}
+@media(max-width:860px){
+  .cal-wrap{grid-template-columns:1fr}
+  .cal-side{display:none}
+}
+
+/* ── カレンダーグリッド ───────────────────────── */
+.cal-grid-wrap{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+}
+
+/* 曜日ヘッダー */
+.dow-row{
+  display:grid;grid-template-columns:repeat(7,1fr);
+  border-bottom:1px solid var(--border);
+  background:var(--bg2);
+}
+.dow-cell{
+  padding:8px 4px;text-align:center;
+  font-size:11px;font-weight:500;letter-spacing:.05em;color:var(--ink3);
+}
+.dow-cell:first-child{color:var(--red)}
+.dow-cell:last-child{color:var(--teal)}
+
+/* 日付グリッド本体 */
+.date-grid{
+  display:grid;grid-template-columns:repeat(7,1fr);
+}
+.date-cell{
+  min-height:clamp(70px,10vw,110px);
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:6px 6px 4px;
+  position:relative;
+  cursor:default;
+  transition:background .12s;
+  vertical-align:top;
+}
+.date-cell:nth-child(7n){border-right:none}
+.date-cell.other-month{background:var(--bg2)}
+.date-cell.other-month .date-num{color:var(--border)}
+.date-cell.today{background:#FDFBF4}
+.date-cell.has-party{cursor:pointer}
+.date-cell.has-party:hover{background:var(--gold-l)}
+.date-cell.selected{background:var(--gold-l);outline:2px solid var(--gold);outline-offset:-2px}
+.date-cell.sunday .date-num{color:var(--red)}
+.date-cell.saturday .date-num{color:var(--teal)}
+
+.date-num{
+  font-family:var(--ff-serif);
+  font-size:clamp(14px,2vw,18px);font-weight:600;
+  line-height:1;margin-bottom:4px;display:block;
+}
+.today-ring{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:#fff !important;
+  font-size:14px;margin:-4px 0 2px -4px;
+}
+
+/* パーティードット */
+.party-dots{display:flex;flex-direction:column;gap:2px}
+.party-dot{
+  font-size:clamp(9px,1.2vw,11px);
+  border-radius:4px;
+  padding:1px 4px;
+  line-height:1.4;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  cursor:pointer;transition:opacity .1s;
+}
+.party-dot:hover{opacity:.75}
+.dot-normal{background:var(--gold-l);color:#7A5F1A}
+.dot-big{background:var(--red-l);color:var(--red)}
+.dot-free{background:var(--teal-l);color:var(--teal)}
+.dot-more{font-size:9px;color:var(--ink3);padding-left:2px}
+
+/* ── 日付詳細パネル（カレンダー下に出る） ──── */
+.day-panel{
+  background:var(--ink);color:#fff;
+  border-radius:0 0 var(--radius) var(--radius);
+  overflow:hidden;
+  max-height:0;transition:max-height .3s ease;
+}
+.day-panel.open{max-height:600px}
+.day-panel-inner{padding:16px 20px}
+.day-panel-date{
+  font-family:var(--ff-serif);font-size:18px;font-weight:600;
+  color:var(--gold);margin-bottom:12px;
+}
+.day-panel-list{display:flex;flex-direction:column;gap:8px}
+.day-panel-card{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  border-radius:8px;padding:10px 14px;
+  display:flex;gap:12px;align-items:flex-start;
+  text-decoration:none;color:#fff;
+  transition:background .15s;
+}
+.day-panel-card:hover{background:rgba(255,255,255,.12)}
+.dpc-time{
+  font-size:11px;color:rgba(255,255,255,.5);
+  white-space:nowrap;padding-top:2px;min-width:52px;
+}
+.dpc-body{flex:1}
+.dpc-name{font-size:13px;font-weight:500;margin-bottom:2px;line-height:1.4}
+.dpc-venue{font-size:11px;color:rgba(255,255,255,.5)}
+.dpc-fee{
+  font-size:12px;font-weight:500;white-space:nowrap;
+  padding:2px 8px;border-radius:99px;
+  background:rgba(184,147,58,.2);color:var(--gold);
+  align-self:flex-start;margin-top:2px;flex-shrink:0;
+}
+.dpc-fee.free{background:rgba(29,122,107,.2);color:#5DCAA5}
+.day-panel-close{
+  background:none;border:none;color:rgba(255,255,255,.4);
+  cursor:pointer;font-size:18px;float:right;
+  padding:0;line-height:1;transition:color .15s;
+  font-family:var(--ff-sans);
+}
+.day-panel-close:hover{color:#fff}
+
+/* ── リスト表示（スマホ向け） ────────────────── */
+.list-view{display:none}
+@media(max-width:860px){
+  .cal-grid-wrap{display:none}
+  .list-view{display:block}
+}
+.list-month-header{
+  font-family:var(--ff-serif);font-size:18px;font-weight:600;
+  color:var(--ink);padding:16px 0 8px;
+  border-bottom:2px solid var(--gold-l);margin-bottom:12px;
+}
+.list-day-group{margin-bottom:16px}
+.list-day-header{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:6px;
+}
+.list-day-num{
+  font-family:var(--ff-serif);font-size:26px;font-weight:600;line-height:1;
+}
+.list-day-info{font-size:11px;color:var(--ink3);line-height:1.4}
+.list-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:8px;padding:12px 14px;margin-bottom:8px;
+  display:flex;gap:10px;align-items:flex-start;
+  text-decoration:none;color:inherit;
+  transition:box-shadow .15s;
+}
+.list-card:hover{box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.list-card-bar{width:3px;border-radius:99px;align-self:stretch;flex-shrink:0}
+.list-card-body{flex:1}
+.list-card-name{font-size:13px;font-weight:500;margin-bottom:4px;line-height:1.4}
+.list-card-meta{font-size:11px;color:var(--ink3);display:flex;gap:10px;flex-wrap:wrap}
+.list-card-fee{
+  font-family:var(--ff-serif);font-size:16px;font-weight:600;
+  color:var(--gold);white-space:nowrap;align-self:flex-start;
+}
+
+/* ── サイドバー ───────────────────────────────── */
+.cal-side{display:flex;flex-direction:column;gap:16px}
+.side-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+}
+.side-title{
+  font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--ink3);
+  padding:10px 14px 6px;border-bottom:1px solid var(--border);text-transform:uppercase;
+}
+.side-body{padding:12px 14px}
+
+/* 凡例 */
+.legend-list{display:flex;flex-direction:column;gap:7px}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink2)}
+.legend-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+
+/* 今月の集計 */
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat-box{
+  background:var(--bg2);border-radius:8px;padding:10px;text-align:center;
+}
+.stat-num{
+  font-family:var(--ff-serif);font-size:24px;font-weight:600;
+  color:var(--ink);line-height:1;margin-bottom:2px;
+}
+.stat-label{font-size:10px;color:var(--ink3)}
+
+/* 近日パーティー */
+.upcoming-list{display:flex;flex-direction:column;gap:0}
+.upcoming-item{
+  display:flex;gap:10px;padding:9px 0;
+  border-bottom:1px solid var(--bg2);
+  text-decoration:none;color:inherit;
+  transition:background .12s;
+  align-items:flex-start;
+}
+.upcoming-item:last-child{border-bottom:none}
+.upcoming-item:hover .upcoming-name{color:var(--gold)}
+.upcoming-date-block{
+  text-align:center;min-width:36px;
+  font-family:var(--ff-serif);
+}
+.upcoming-month{font-size:9px;color:var(--ink3)}
+.upcoming-day{font-size:20px;font-weight:600;line-height:1;color:var(--ink)}
+.upcoming-name{font-size:12px;font-weight:500;line-height:1.4;transition:color .12s}
+.upcoming-venue{font-size:10px;color:var(--ink3);margin-top:1px}
+
+/* ── アニメーション ───────────────────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.cal-grid-wrap{animation:fadeUp .3s ease .05s both}
+.cal-side{animation:fadeUp .3s ease .1s both}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">兵庫<span>Dance</span>Party</a>
+    <nav class="header-nav">
+      <a href="calendar.html" class="active nav-hide">カレンダー</a>
+      <a href="index.html" class="nav-hide">パーティー一覧</a>
+      <a href="about.html" class="nav-hide">このサイトについて</a>
+      <a href="submit.html" class="btn-post">＋ 掲載申請</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ページヘッダー -->
+<div class="page-header">
+  <div class="ph-inner">
+    <div class="ph-title-group">
+      <div class="ph-eyebrow">Dance Party Calendar</div>
+      <h1 class="ph-title" id="ph-title">2026年6月</h1>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <button class="month-today-btn" onclick="goToday()">今月</button>
+      <div class="month-nav">
+        <button class="month-nav-btn" onclick="changeMonth(-1)">‹</button>
+        <div class="month-nav-label" id="month-label">2026年6月</div>
+        <button class="month-nav-btn" onclick="changeMonth(1)">›</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- フィルターバー -->
+<div class="filter-bar">
+  <div class="filter-bar-inner">
+    <span class="filter-label">地域</span>
+    <button class="fbtn active" onclick="setFilter(this,'all')">すべて</button>
+    <button class="fbtn" onclick="setFilter(this,'kobe')">神戸市内</button>
+    <button class="fbtn" onclick="setFilter(this,'hanshin')">阪神</button>
+    <button class="fbtn" onclick="setFilter(this,'sanda')">三田・北摂</button>
+    <button class="fbtn" onclick="setFilter(this,'harima')">播磨</button>
+    <button class="fbtn" onclick="setFilter(this,'other')">その他</button>
+  </div>
+</div>
+
+<!-- メインコンテンツ -->
+<div class="cal-wrap">
+
+  <!-- カレンダー（PC） -->
+  <div>
+    <div class="cal-grid-wrap" id="cal-grid-wrap">
+      <!-- 曜日ヘッダー -->
+      <div class="dow-row">
+        <div class="dow-cell">日</div>
+        <div class="dow-cell">月</div>
+        <div class="dow-cell">火</div>
+        <div class="dow-cell">水</div>
+        <div class="dow-cell">木</div>
+        <div class="dow-cell">金</div>
+        <div class="dow-cell">土</div>
+      </div>
+      <!-- 日付グリッド（JSで生成） -->
+      <div class="date-grid" id="date-grid"></div>
+      <!-- 詳細パネル -->
+      <div class="day-panel" id="day-panel">
+        <div class="day-panel-inner">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <div class="day-panel-date" id="panel-date"></div>
+            <button class="day-panel-close" onclick="closePanel()">×</button>
+          </div>
+          <div class="day-panel-list" id="panel-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- リスト表示（スマホ） -->
+    <div class="list-view" id="list-view"></div>
+  </div>
+
+  <!-- サイドバー -->
+  <aside class="cal-side">
+
+    <!-- 凡例 -->
+    <div class="side-card">
+      <div class="side-title">凡例</div>
+      <div class="side-body">
+        <div class="legend-list">
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#EDD99A"></div>
+            通常パーティー
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#F5C6C6"></div>
+            大型イベント
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#5DCAA5"></div>
+            無料・会員無料
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="width:10px;height:10px;border-radius:50%;background:var(--ink)"></div>
+            今日
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 今月の集計 -->
+    <div class="side-card">
+      <div class="side-title">今月の開催数</div>
+      <div class="side-body">
+        <div class="stat-grid" id="stat-grid">
+          <div class="stat-box">
+            <div class="stat-num" id="stat-total">—</div>
+            <div class="stat-label">合計</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num" id="stat-free" style="color:var(--teal)">—</div>
+            <div class="stat-label">無料・会員無料</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num" id="stat-kobe">—</div>
+            <div class="stat-label">神戸市内</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num" id="stat-harima">—</div>
+            <div class="stat-label">播磨</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 直近パーティー -->
+    <div class="side-card">
+      <div class="side-title">直近のパーティー</div>
+      <div class="side-body" style="padding:8px 14px">
+        <div class="upcoming-list" id="upcoming-list"></div>
+      </div>
+    </div>
+
+    <!-- 掲載バナー -->
+    <div class="side-card" style="overflow:hidden">
+      <div style="background:var(--ink);padding:16px;text-align:center">
+        <p style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:10px;line-height:1.6">主催者の方へ<br>掲載は無料・審査制です</p>
+        <a href="submit.html" style="display:block;background:var(--gold);color:var(--ink);text-decoration:none;font-weight:500;font-size:13px;padding:9px 0;border-radius:99px">＋ 掲載を申請する</a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- フッター -->
+<footer style="background:var(--ink);color:rgba(255,255,255,.6);padding:32px clamp(16px,5vw,48px);margin-top:32px;font-size:12px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <div style="font-family:var(--ff-serif);font-size:16px;color:#fff;font-weight:600">兵庫 Dance Party</div>
+    <div style="display:flex;gap:16px">
+      <a href="about.html" style="color:rgba(255,255,255,.5);text-decoration:none">このサイトについて</a>
+      <a href="submit.html" style="color:rgba(255,255,255,.5);text-decoration:none">掲載申請</a>
+    </div>
+    <div>© 2026 兵庫ダンスパーティー情報</div>
+  </div>
+</footer>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+//  パーティーデータ（実運用時はAPIまたはJSONファイルから読み込む）
+// ══════════════════════════════════════════════════════════════
+const PARTIES = [
+  {id:'P-001', date:'2026-06-07', name:'スマイルダンスサークル 定期パーティー',
+   venue:'三宮クレアホール', time:'13:00〜16:00', fee:0,    region:'kobe',    type:'free'},
+  {id:'P-002', date:'2026-06-08', name:'三田広野 日曜ダンスパーティー',
+   venue:'三田市広野市民センター', time:'13:00〜16:00', fee:1000, region:'sanda',   type:'normal'},
+  {id:'P-003', date:'2026-06-08', name:'ふれあいダンスパーティー in 姫路',
+   venue:'姫路市灘市民センター', time:'13:30〜16:30', fee:800,  region:'harima',  type:'normal'},
+  {id:'P-004', date:'2026-06-14', name:'第80回 ダンスカーニバル 神戸',
+   venue:'神戸ポートピアホテル 南館', time:'11:30〜17:00', fee:3000, region:'kobe',  type:'big'},
+  {id:'P-005', date:'2026-06-15', name:'甲東ダンス愛好会 月例パーティー',
+   venue:'アプリ甲東（西宮市）', time:'13:00〜16:00', fee:900,  region:'hanshin', type:'normal'},
+  {id:'P-006', date:'2026-06-22', name:'JDSF兵庫 会員交流パーティー',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:00', fee:900, region:'kobe',   type:'free'},
+  {id:'P-007', date:'2026-06-28', name:'ダンススクールパッション 夏のパーティー',
+   venue:'ネスタリゾート神戸（三田）', time:'11:30〜17:00', fee:14000,region:'sanda', type:'big'},
+  {id:'P-008', date:'2026-07-05', name:'三田広野 7月パーティー',
+   venue:'三田市広野市民センター', time:'13:00〜16:00', fee:1000, region:'sanda',   type:'normal'},
+  {id:'P-009', date:'2026-07-12', name:'第79回 ダンスカーニバル（兵庫）',
+   venue:'神戸ポートピアホテル 南館', time:'11:30〜17:00', fee:3000, region:'kobe',  type:'big'},
+  {id:'P-010', date:'2026-07-20', name:'明石ダンスサークル 7月定例',
+   venue:'明石市生涯学習センター', time:'13:30〜16:30', fee:1000, region:'harima', type:'normal'},
+  {id:'P-011', date:'2026-08-09', name:'JDSF兵庫 会員交流パーティー（第2回）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:00', fee:900, region:'kobe',   type:'free'},
+];
+
+// ══════════════════════════════════════════════════════════════
+//  状態
+// ══════════════════════════════════════════════════════════════
+const TODAY    = new Date();
+let currentYear  = TODAY.getFullYear();
+let currentMonth = TODAY.getMonth(); // 0-indexed
+let selectedDate = null;
+let activeFilter = 'all';
+
+// ══════════════════════════════════════════════════════════════
+//  フィルター
+// ══════════════════════════════════════════════════════════════
+function setFilter(btn, region) {
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = region;
+  renderCalendar();
+  closePanel();
+}
+
+function filteredParties() {
+  if (activeFilter === 'all') return PARTIES;
+  return PARTIES.filter(p => p.region === activeFilter);
+}
+
+// ══════════════════════════════════════════════════════════════
+//  月移動
+// ══════════════════════════════════════════════════════════════
+function changeMonth(delta) {
+  currentMonth += delta;
+  if (currentMonth > 11) { currentMonth = 0;  currentYear++; }
+  if (currentMonth < 0)  { currentMonth = 11; currentYear--; }
+  closePanel();
+  renderCalendar();
+}
+function goToday() {
+  currentYear  = TODAY.getFullYear();
+  currentMonth = TODAY.getMonth();
+  closePanel();
+  renderCalendar();
+}
+
+// ══════════════════════════════════════════════════════════════
+//  カレンダー描画
+// ══════════════════════════════════════════════════════════════
+function renderCalendar() {
+  const label = `${currentYear}年${currentMonth+1}月`;
+  document.getElementById('month-label').textContent = label;
+  document.getElementById('ph-title').textContent    = label;
+  renderGrid();
+  renderListView();
+  renderStats();
+  renderUpcoming();
+}
+
+function getPartiesForDate(dateStr) {
+  return filteredParties().filter(p => p.date === dateStr);
+}
+
+function dateStr(y, m, d) {
+  return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+}
+
+function feeLabel(p) {
+  if (p.type === 'free' || p.fee === 0) return '無料';
+  return p.fee.toLocaleString() + '円';
+}
+
+// ── PCグリッド ─────────────────────────────────────────────
+function renderGrid() {
+  const grid = document.getElementById('date-grid');
+  grid.innerHTML = '';
+
+  const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+  const daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
+  const prevMonthDays = new Date(currentYear, currentMonth, 0).getDate();
+
+  // 前月の日
+  for (let i = firstDay-1; i >= 0; i--) {
+    const d = prevMonthDays - i;
+    const cell = makeCell(currentYear, currentMonth-1, d, true);
+    grid.appendChild(cell);
+  }
+  // 今月の日
+  for (let d = 1; d <= daysInMonth; d++) {
+    const cell = makeCell(currentYear, currentMonth, d, false);
+    grid.appendChild(cell);
+  }
+  // 次月の補完
+  const total = firstDay + daysInMonth;
+  const remainder = total % 7 === 0 ? 0 : 7 - (total % 7);
+  for (let d = 1; d <= remainder; d++) {
+    const cell = makeCell(currentYear, currentMonth+1, d, true);
+    grid.appendChild(cell);
+  }
+}
+
+function makeCell(y, m, d, isOther) {
+  // 正規化
+  const realDate = new Date(y, m, d);
+  const ry = realDate.getFullYear();
+  const rm = realDate.getMonth();
+  const rd = realDate.getDate();
+  const ds = dateStr(ry, rm, rd);
+
+  const parties = isOther ? [] : getPartiesForDate(ds);
+  const dow = realDate.getDay();
+  const isToday = ds === dateStr(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate());
+  const isSel   = ds === selectedDate;
+
+  const cell = document.createElement('div');
+  cell.className = [
+    'date-cell',
+    isOther  ? 'other-month' : '',
+    isToday  ? 'today'       : '',
+    parties.length > 0 ? 'has-party' : '',
+    isSel ? 'selected' : '',
+    dow === 0 ? 'sunday'   : '',
+    dow === 6 ? 'saturday' : '',
+  ].filter(Boolean).join(' ');
+
+  // 日付番号
+  const numEl = document.createElement('span');
+  numEl.className = isToday ? 'date-num today-ring' : 'date-num';
+  numEl.textContent = rd;
+  cell.appendChild(numEl);
+
+  // パーティードット
+  if (parties.length > 0) {
+    const dotsWrap = document.createElement('div');
+    dotsWrap.className = 'party-dots';
+    const show = parties.slice(0, 2);
+    show.forEach(p => {
+      const dot = document.createElement('div');
+      dot.className = 'party-dot ' + (
+        p.type === 'big'  ? 'dot-big'  :
+        p.type === 'free' ? 'dot-free' : 'dot-normal'
+      );
+      dot.textContent = p.name;
+      dot.title = p.name;
+      dotsWrap.appendChild(dot);
+    });
+    if (parties.length > 2) {
+      const more = document.createElement('div');
+      more.className = 'dot-more';
+      more.textContent = `+${parties.length-2}件`;
+      dotsWrap.appendChild(more);
+    }
+    cell.appendChild(dotsWrap);
+  }
+
+  if (parties.length > 0) {
+    cell.addEventListener('click', () => openPanel(ds, parties));
+  }
+
+  return cell;
+}
+
+// ── 詳細パネル ──────────────────────────────────────────────
+function openPanel(ds, parties) {
+  selectedDate = ds;
+  renderGrid(); // 選択状態を再描画
+
+  const [y, m, d] = ds.split('-').map(Number);
+  const dateObj = new Date(y, m-1, d);
+  const dow = ['日','月','火','水','木','金','土'][dateObj.getDay()];
+  document.getElementById('panel-date').textContent =
+    `${y}年${m}月${d}日（${dow}）のパーティー`;
+
+  const list = document.getElementById('panel-list');
+  list.innerHTML = '';
+  parties.forEach(p => {
+    const card = document.createElement('a');
+    card.href = `party.html?id=${p.id}`;
+    card.className = 'day-panel-card';
+    card.innerHTML = `
+      <div class="dpc-time">${p.time}</div>
+      <div class="dpc-body">
+        <div class="dpc-name">${p.name}</div>
+        <div class="dpc-venue">${p.venue}</div>
+      </div>
+      <div class="dpc-fee ${p.type==='free'||p.fee===0?'free':''}">${feeLabel(p)}</div>
+    `;
+    list.appendChild(card);
+  });
+
+  const panel = document.getElementById('day-panel');
+  panel.classList.add('open');
+  setTimeout(() => panel.scrollIntoView({behavior:'smooth', block:'nearest'}), 50);
+}
+
+function closePanel() {
+  selectedDate = null;
+  document.getElementById('day-panel').classList.remove('open');
+  renderGrid();
+}
+
+// ── スマホ用リスト ──────────────────────────────────────────
+function renderListView() {
+  const container = document.getElementById('list-view');
+  container.innerHTML = '';
+
+  const daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
+  const monthParties = {};
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const ds = dateStr(currentYear, currentMonth, d);
+    const pp = getPartiesForDate(ds);
+    if (pp.length > 0) monthParties[ds] = pp;
+  }
+
+  if (Object.keys(monthParties).length === 0) {
+    container.innerHTML = '<p style="font-size:13px;color:var(--ink3);text-align:center;padding:32px 0">この月のパーティーはありません</p>';
+    return;
+  }
+
+  Object.entries(monthParties).forEach(([ds, parties]) => {
+    const [y, m, d] = ds.split('-').map(Number);
+    const dateObj = new Date(y, m-1, d);
+    const dow = ['日','月','火','水','木','金','土'][dateObj.getDay()];
+    const isToday = ds === dateStr(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate());
+
+    const group = document.createElement('div');
+    group.className = 'list-day-group';
+
+    const hdr = document.createElement('div');
+    hdr.className = 'list-day-header';
+    hdr.innerHTML = `
+      <div class="list-day-num" style="color:${dateObj.getDay()===0?'var(--red)':dateObj.getDay()===6?'var(--teal)':'var(--ink)'}">${d}</div>
+      <div class="list-day-info">
+        ${y}年${m}月（${dow}）${isToday?'<span style="font-size:10px;background:var(--ink);color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px">今日</span>':''}
+      </div>
+    `;
+    group.appendChild(hdr);
+
+    parties.forEach(p => {
+      const card = document.createElement('a');
+      card.href = `party.html?id=${p.id}`;
+      card.className = 'list-card';
+      const barColor = p.type==='big' ? 'var(--red)' : p.type==='free' ? 'var(--teal)' : 'var(--gold)';
+      card.innerHTML = `
+        <div class="list-card-bar" style="background:${barColor}"></div>
+        <div class="list-card-body">
+          <div class="list-card-name">${p.name}</div>
+          <div class="list-card-meta">
+            <span>${p.time}</span>
+            <span>${p.venue}</span>
+          </div>
+        </div>
+        <div class="list-card-fee" style="color:${p.type==='free'||p.fee===0?'var(--teal)':'var(--gold)'}">${feeLabel(p)}</div>
+      `;
+      group.appendChild(card);
+    });
+    container.appendChild(group);
+  });
+}
+
+// ── 集計 ────────────────────────────────────────────────────
+function renderStats() {
+  const daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
+  let total=0, free=0, kobe=0, harima=0;
+  for (let d=1; d<=daysInMonth; d++) {
+    const ds = dateStr(currentYear, currentMonth, d);
+    filteredParties().filter(p => p.date===ds).forEach(p => {
+      total++;
+      if (p.type==='free' || p.fee===0) free++;
+      if (p.region==='kobe')   kobe++;
+      if (p.region==='harima') harima++;
+    });
+  }
+  document.getElementById('stat-total').textContent  = total;
+  document.getElementById('stat-free').textContent   = free;
+  document.getElementById('stat-kobe').textContent   = kobe;
+  document.getElementById('stat-harima').textContent = harima;
+}
+
+// ── 直近パーティー ──────────────────────────────────────────
+function renderUpcoming() {
+  const todayStr = dateStr(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate());
+  const upcoming = filteredParties()
+    .filter(p => p.date >= todayStr)
+    .sort((a,b) => a.date.localeCompare(b.date))
+    .slice(0, 5);
+
+  const container = document.getElementById('upcoming-list');
+  container.innerHTML = '';
+  upcoming.forEach(p => {
+    const [y,m,d] = p.date.split('-').map(Number);
+    const item = document.createElement('a');
+    item.href = `party.html?id=${p.id}`;
+    item.className = 'upcoming-item';
+    item.innerHTML = `
+      <div class="upcoming-date-block">
+        <div class="upcoming-month">${m}月</div>
+        <div class="upcoming-day">${d}</div>
+      </div>
+      <div>
+        <div class="upcoming-name">${p.name}</div>
+        <div class="upcoming-venue">${p.venue}</div>
+      </div>
+    `;
+    container.appendChild(item);
+  });
+  if (upcoming.length === 0) {
+    container.innerHTML = '<p style="font-size:12px;color:var(--ink3)">直近のパーティーはありません</p>';
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+//  初期化：今月を表示
+// ══════════════════════════════════════════════════════════════
+// 2026年6月を初期表示（デモ用）
+currentYear  = 2026;
+currentMonth = 5; // 6月
+renderCalendar();
+</script>
+</body>
+</html>
