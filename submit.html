@@ -396,14 +396,49 @@ body{
         ════════════════════════════════════════════════════
         -->
 
-        <!-- Googleフォーム埋め込み -->
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfdfqzh611b2Lkmu7kNM0kAnMAasbMkmR9fE5Fmci1jH5_XeQ/viewform?embedded=true"
-          width="100%"
-          height="1600"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0">読み込んでいます…</iframe>
+        <!-- Googleフォームへのリンク -->
+        <div style="padding:40px 24px;text-align:center">
+          <div style="margin-bottom:20px">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#B8933A" stroke-width="1.2" style="margin-bottom:12px">
+              <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"/>
+            </svg>
+            <p style="font-size:15px;font-weight:500;color:#1C1A14;margin-bottom:6px">パーティー情報の入力フォーム</p>
+            <p style="font-size:13px;color:#5C5847;line-height:1.7;margin-bottom:24px">
+              下のボタンをクリックするとGoogleフォームが開きます。<br>
+              入力後「送信」を押してください。審査後3営業日以内にご連絡します。
+            </p>
+          </div>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfdfqzh611b2Lkmu7kNM0kAnMAasbMkmR9fE5Fmci1jH5_XeQ/viewform"
+            target="_blank"
+            rel="noopener"
+            style="display:inline-flex;align-items:center;gap:8px;background:#B8933A;color:#1C1A14;text-decoration:none;font-weight:500;font-size:15px;padding:14px 36px;border-radius:99px;transition:opacity .15s"
+            onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            掲載申請フォームを開く
+          </a>
+          <p style="font-size:11px;color:#9C9580;margin-top:12px">※ 新しいタブで開きます</p>
+
+          <div style="margin-top:32px;background:#F2EFE7;border-radius:10px;padding:18px 20px;text-align:left;max-width:420px;margin-left:auto;margin-right:auto">
+            <p style="font-size:12px;font-weight:500;color:#1C1A14;margin-bottom:8px">📋 入力できる項目</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;font-size:12px;color:#5C5847">
+              <span>✓ パーティー名</span>
+              <span>✓ 開催日・時間</span>
+              <span>✓ 開催地域</span>
+              <span>✓ 会場名・住所</span>
+              <span>✓ 参加費</span>
+              <span>✓ リボン情報</span>
+              <span>✓ 主催サークル名</span>
+              <span>✓ 問い合わせ先</span>
+              <span>✓ PR文</span>
+              <span>✓ ウェブサイトURL</span>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
