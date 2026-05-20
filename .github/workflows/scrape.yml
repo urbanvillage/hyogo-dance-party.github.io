@@ -1,0 +1,60 @@
+# ============================================================
+#  GitHub Actions ワークフロー
+#  毎朝9時（JST）に自動でスクレイピングを実行する
+#
+#  設置場所：
+#    .github/workflows/scrape.yml
+#    （リポジトリのルートに .github/workflows/ フォルダを作って配置）
+#
+#  事前準備（GitHub Secrets に登録が必要）：
+#    GMAIL_USER → 管理者のGmailアドレス
+#    GMAIL_PASS → GmailのアプリパスワードPythonコード
+# ============================================================
+
+name: 社交ダンスパーティー自動収集
+
+on:
+  # 毎朝9:00（JST = UTC 0:00）に実行
+  schedule:
+    - cron: '0 0 * * *'
+
+  # 手動でも実行できるようにする
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. リポジトリをチェックアウト
+      - name: リポジトリを取得
+        uses: actions/checkout@v4
+
+      # 2. Pythonをセットアップ
+      - name: Python 3.11 をセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3. 必要なライブラリをインストール
+      - name: ライブラリをインストール
+        run: pip install requests beautifulsoup4
+
+      # 4. scraper.py 内の設定をSecretsで上書き
+      - name: 設定を注入
+        run: |
+          sed -i "s/your-admin@gmail.com/${{ secrets.GMAIL_USER }}/g" scraper.py
+          sed -i "s/xxxx-xxxx-xxxx-xxxx/${{ secrets.GMAIL_PASS }}/g" scraper.py
+
+      # 5. スクレイパーを実行
+      - name: スクレイピング実行
+        run: python3 scraper.py
+
+      # 6. 収集結果と既知IDファイルをリポジトリに保存
+      - name: 結果をコミット
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions"
+          git add scraped_parties.json known_parties.json || true
+          git diff --staged --quiet || git commit -m "🤖 自動収集: $(date '+%Y-%m-%d')"
+          git push || true
