@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>このサイトについて | 兵庫ダンスパーティー情報</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:       #FAF8F3;
+  --bg2:      #F2EFE7;
+  --ink:      #1C1A14;
+  --ink2:     #5C5847;
+  --ink3:     #9C9580;
+  --gold:     #B8933A;
+  --gold-l:   #F0E4C0;
+  --teal:     #1D7A6B;
+  --teal-l:   #DCF0EC;
+  --border:   #DDD9CE;
+  --card-bg:  #FFFFFF;
+  --radius:   10px;
+  --ff-serif: 'Cormorant Garamond','Noto Serif JP',serif;
+  --ff-sans:  'Noto Sans JP',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:var(--ff-sans);font-size:15px;line-height:1.8;
+}
+
+/* ── ヘッダー ─────────────────────────────────── */
+.site-header{
+  background:var(--ink);color:#fff;
+  padding:0 clamp(16px,5vw,48px);
+  position:sticky;top:0;z-index:100;
+}
+.header-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;gap:16px;height:56px;
+}
+.site-logo{
+  font-family:var(--ff-serif);font-size:clamp(14px,2.5vw,20px);
+  font-weight:600;letter-spacing:.04em;color:#fff;text-decoration:none;white-space:nowrap;
+}
+.site-logo span{color:var(--gold);font-style:italic}
+.header-nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+.header-nav a{
+  color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;
+  padding:6px 12px;border-radius:6px;transition:background .15s,color .15s;white-space:nowrap;
+}
+.header-nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.header-nav a.active{color:#fff;background:rgba(255,255,255,.1)}
+.btn-post{
+  background:var(--gold);color:var(--ink)!important;font-weight:500;
+  font-size:13px!important;padding:7px 16px!important;border-radius:99px!important;
+}
+@media(max-width:600px){.nav-hide{display:none}}
+
+/* ── パンくず ─────────────────────────────────── */
+.breadcrumb-bar{background:var(--bg2);border-bottom:1px solid var(--border)}
+.breadcrumb{
+  max-width:900px;margin:0 auto;
+  padding:10px clamp(16px,5vw,48px);
+  font-size:12px;color:var(--ink3);
+  display:flex;align-items:center;gap:6px;
+}
+.breadcrumb a{color:var(--ink3);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+
+/* ── ページヘッダー ───────────────────────────── */
+.page-hero{
+  background:var(--ink);
+  padding:clamp(36px,7vw,64px) clamp(16px,5vw,48px) clamp(28px,5vw,48px);
+  position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 55% 90% at 85% 40%, rgba(184,147,58,.18) 0%,transparent 65%),
+    radial-gradient(ellipse 35% 55% at 10% 80%, rgba(29,122,107,.12) 0%,transparent 60%);
+}
+/* 和風の縦線装飾 */
+.page-hero::after{
+  content:'';position:absolute;
+  left:clamp(16px,5vw,48px);top:0;bottom:0;
+  width:1px;background:rgba(184,147,58,.2);
+}
+.ph-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.ph-eyebrow{font-size:10px;letter-spacing:.2em;color:var(--gold);font-weight:500;margin-bottom:12px}
+.ph-title{
+  font-family:var(--ff-serif);
+  font-size:clamp(26px,4.5vw,44px);
+  font-weight:600;color:#fff;line-height:1.25;margin-bottom:12px;
+}
+.ph-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.9;max-width:480px}
+
+/* ── メインコンテンツ ─────────────────────────── */
+.content-wrap{
+  max-width:900px;margin:0 auto;
+  padding:clamp(32px,6vw,56px) clamp(16px,5vw,48px);
+}
+
+/* ── セクション ───────────────────────────────── */
+.section{margin-bottom:clamp(40px,7vw,64px)}
+.section-header{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:20px;
+}
+.section-num{
+  font-family:var(--ff-serif);font-size:clamp(28px,4vw,40px);
+  font-weight:600;color:var(--gold-l);line-height:1;
+  flex-shrink:0;
+}
+.section-title{
+  font-family:var(--ff-serif);
+  font-size:clamp(18px,2.8vw,26px);
+  font-weight:600;color:var(--ink);line-height:1.3;
+}
+.section-line{
+  height:1px;background:linear-gradient(to right,var(--gold-l),transparent);
+  margin-bottom:20px;
+}
+
+/* ── 本文テキスト ─────────────────────────────── */
+.prose{
+  font-size:14px;color:var(--ink2);line-height:1.95;
+}
+.prose p{margin-bottom:14px}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--ink);font-weight:500}
+
+/* ── サイトの特徴カード ───────────────────────── */
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px;margin-top:24px;
+}
+.feature-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:var(--radius);padding:20px 18px;
+  border-top:3px solid var(--gold);
+}
+.feature-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:var(--gold-l);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:12px;
+}
+.feature-icon svg{width:20px;height:20px;color:var(--gold)}
+.feature-title{font-size:13px;font-weight:500;margin-bottom:6px;color:var(--ink)}
+.feature-desc{font-size:12px;color:var(--ink3);line-height:1.7}
+
+/* ── 掲載基準テーブル ─────────────────────────── */
+.criteria-list{
+  display:flex;flex-direction:column;gap:0;
+  border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;background:var(--card-bg);
+}
+.criteria-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 18px;border-bottom:1px solid var(--bg2);
+}
+.criteria-item:last-child{border-bottom:none}
+.criteria-check{
+  width:22px;height:22px;border-radius:50%;
+  background:var(--teal-l);flex-shrink:0;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;
+}
+.criteria-check svg{width:11px;height:11px;color:var(--teal)}
+.criteria-text{font-size:13px;color:var(--ink2);line-height:1.6}
+.criteria-text strong{color:var(--ink);font-weight:500}
+
+/* ── お問い合わせセクション ───────────────────── */
+.contact-section{
+  background:var(--ink);border-radius:var(--radius);
+  padding:clamp(24px,5vw,40px);
+  position:relative;overflow:hidden;
+}
+.contact-section::before{
+  content:'';position:absolute;
+  right:-40px;bottom:-40px;
+  width:200px;height:200px;border-radius:50%;
+  background:rgba(184,147,58,.08);
+}
+.contact-section::after{
+  content:'';position:absolute;
+  right:40px;bottom:-20px;
+  width:120px;height:120px;border-radius:50%;
+  background:rgba(29,122,107,.08);
+}
+.contact-inner{position:relative;z-index:1}
+.contact-title{
+  font-family:var(--ff-serif);
+  font-size:clamp(18px,2.8vw,26px);
+  font-weight:600;color:#fff;margin-bottom:8px;
+}
+.contact-desc{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:24px;line-height:1.8}
+.contact-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;
+}
+.contact-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:8px;padding:16px;
+}
+.contact-card-label{font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:6px}
+.contact-card-value{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6}
+.contact-card-value a{color:var(--gold);text-decoration:none}
+.contact-card-value a:hover{text-decoration:underline}
+
+/* ── 免責事項 ─────────────────────────────────── */
+.disclaimer{
+  background:var(--bg2);border-radius:var(--radius);
+  padding:20px 24px;
+  border-left:3px solid var(--border);
+}
+.disclaimer-title{font-size:12px;font-weight:500;color:var(--ink3);margin-bottom:8px;letter-spacing:.05em}
+.disclaimer-text{font-size:12px;color:var(--ink3);line-height:1.8}
+
+/* ── フッター ─────────────────────────────────── */
+.site-footer{
+  background:var(--ink);color:rgba(255,255,255,.6);
+  padding:32px clamp(16px,5vw,48px);margin-top:0;font-size:12px;
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-logo{font-family:var(--ff-serif);font-size:16px;color:#fff;font-weight:600}
+.footer-links{display:flex;gap:16px}
+.footer-links a{color:rgba(255,255,255,.5);text-decoration:none}
+.footer-links a:hover{color:#fff}
+
+/* ── アニメーション ───────────────────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.section{animation:fadeUp .35s ease both}
+.section:nth-child(1){animation-delay:.05s}
+.section:nth-child(2){animation-delay:.1s}
+.section:nth-child(3){animation-delay:.15s}
+.section:nth-child(4){animation-delay:.2s}
+.section:nth-child(5){animation-delay:.25s}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">兵庫<span>Dance</span>Party</a>
+    <nav class="header-nav">
+      <a href="calendar.html" class="nav-hide">カレンダー</a>
+      <a href="index.html" class="nav-hide">パーティー一覧</a>
+      <a href="about.html" class="active nav-hide">このサイトについて</a>
+      <a href="submit.html" class="btn-post">＋ 掲載申請</a>
+    </nav>
+  </div>
+</header>
+
+<!-- パンくず -->
+<div class="breadcrumb-bar">
+  <div class="breadcrumb">
+    <a href="index.html">トップ</a>
+    <span>›</span>
+    <span>このサイトについて</span>
+  </div>
+</div>
+
+<!-- ページヘッダー -->
+<div class="page-hero">
+  <div class="ph-inner">
+    <p class="ph-eyebrow">About This Site</p>
+    <h1 class="ph-title">このサイトについて</h1>
+    <p class="ph-desc">兵庫県内の社交ダンスパーティーを愛好するすべての方に、正確で使いやすい情報をお届けするために運営しています。</p>
+  </div>
+</div>
+
+<!-- メインコンテンツ -->
+<div class="content-wrap">
+
+  <!-- サイトの目的 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <h2 class="section-title">サイトの目的</h2>
+    </div>
+    <div class="section-line"></div>
+    <div class="prose">
+      <p>兵庫県内では、神戸・阪神・三田・播磨・丹波・但馬など各地域で多くの社交ダンスパーティーが開催されています。しかし、その情報は各主催者のホームページや口コミに分散しており、参加したい愛好家の方が一覧で確認できる場所がありませんでした。</p>
+      <p>このサイトは、<strong>兵庫県内で開催される社交ダンスパーティーの情報を一か所に集め、誰でも無料で閲覧できる情報サービス</strong>として運営しています。参加者の方が「どこで・いつ・いくらで楽しめるか」をすぐに確認でき、主催者の方には告知の場として活用していただけることを目指しています。</p>
+    </div>
+
+    <!-- サイトの特徴 -->
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+        </div>
+        <div class="feature-title">一覧で探せる</div>
+        <div class="feature-desc">地域・日付・参加費で絞り込み。見たい情報にすぐたどり着けます</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <div class="feature-title">カレンダー表示</div>
+        <div class="feature-desc">月別カレンダーで開催日を一目で確認。日付タップで詳細が表示されます</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <div class="feature-title">常に最新情報</div>
+        <div class="feature-desc">主催者からの申請と自動収集で情報を随時更新しています</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="feature-title">掲載は無料</div>
+        <div class="feature-desc">主催者の方の掲載申請は完全無料。審査後3営業日以内に掲載します</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 掲載基準 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <h2 class="section-title">掲載基準</h2>
+    </div>
+    <div class="section-line"></div>
+    <div class="prose" style="margin-bottom:16px">
+      <p>以下の基準を満たすパーティーを掲載しています。審査は管理者が手動で行い、基準を満たさない場合はご連絡のうえお断りする場合があります。</p>
+    </div>
+    <div class="criteria-list">
+      <div class="criteria-item">
+        <div class="criteria-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="criteria-text"><strong>兵庫県内で開催されること</strong><br>神戸市・阪神・三田・播磨・丹波・但馬・淡路島など兵庫県内全域が対象です</div>
+      </div>
+      <div class="criteria-item">
+        <div class="criteria-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="criteria-text"><strong>社交ダンスのパーティーであること</strong><br>競技会・発表会・交流パーティーなど、社交ダンスを主目的とするイベントが対象です</div>
+      </div>
+      <div class="criteria-item">
+        <div class="criteria-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="criteria-text"><strong>会場・日時・連絡先が明確であること</strong><br>参加者が問い合わせや参加申込みができる連絡先が必要です</div>
+      </div>
+      <div class="criteria-item">
+        <div class="criteria-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="criteria-text"><strong>掲載情報が正確であること</strong><br>虚偽・誇大な情報は掲載できません。変更が生じた場合はご連絡ください</div>
+      </div>
+      <div class="criteria-item">
+        <div class="criteria-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="criteria-text"><strong>開催日が申請日より未来であること</strong><br>過去の日程の掲載は受け付けていません</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 情報収集方法 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <h2 class="section-title">情報収集について</h2>
+    </div>
+    <div class="section-line"></div>
+    <div class="prose">
+      <p>このサイトのパーティー情報は、以下の方法で収集・掲載しています。</p>
+      <p><strong>主催者からの掲載申請</strong>　主催者の方が掲載申請フォームから直接ご投稿いただいた情報を掲載しています。最も正確な情報源です。</p>
+      <p><strong>公開情報の収集</strong>　JDSF兵庫・兵庫県社交ダンス教師協会などの公開サイトから、一般に公開されているパーティー情報を収集・掲載しています。掲載に問題がある場合はご連絡ください。</p>
+      <p><strong>情報の正確性について</strong>　掲載情報は投稿時点のものであり、変更・中止となる場合があります。参加前に必ず主催者へご確認ください。当サイトは情報の正確性を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <!-- 個人情報 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <h2 class="section-title">個人情報の取り扱い</h2>
+    </div>
+    <div class="section-line"></div>
+    <div class="prose">
+      <p>掲載申請フォームでお預かりする「投稿者メールアドレス」は、掲載可否のご連絡にのみ使用し、サイトには公開しません。第三者への提供も行いません。</p>
+      <p>サイトに掲載する「問い合わせ先」は、申請時にご入力いただいた公開用の連絡先のみを掲載します。掲載情報の削除・修正をご希望の場合は、下記のお問い合わせ先までご連絡ください。</p>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="section" id="contact">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <h2 class="section-title">お問い合わせ</h2>
+    </div>
+    <div class="section-line"></div>
+    <div class="contact-section">
+      <div class="contact-inner">
+        <h3 class="contact-title">ご連絡はこちらへ</h3>
+        <p class="contact-desc">
+          掲載内容の修正・削除依頼、掲載申請のご相談、その他お問い合わせは<br>
+          下記の方法でご連絡ください。通常3営業日以内にご返答します。
+        </p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-card-label">メールアドレス</div>
+            <div class="contact-card-value">
+              <a href="mailto:urban.village.japan@gmail.com">urban.village.japan@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-label">掲載申請フォーム</div>
+            <div class="contact-card-value">
+              <a href="submit.html">掲載申請はこちら →</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-label">返答目安</div>
+            <div class="contact-card-value">3営業日以内<br>（土日祝を除く）</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 免責事項 -->
+  <section class="section">
+    <div class="disclaimer">
+      <div class="disclaimer-title">免責事項</div>
+      <div class="disclaimer-text">
+        当サイトに掲載されているパーティー情報は、主催者および公開情報をもとに作成しており、内容の正確性・完全性・最新性を保証するものではありません。掲載情報に基づくいかなる損害についても、当サイトは責任を負いかねます。参加前に必ず主催者へ直接ご確認ください。また、予告なく掲載内容の変更・削除を行う場合があります。
+      </div>
+    </div>
+  </section>
+
+</div><!-- /content-wrap -->
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">兵庫 Dance Party</div>
+    <div class="footer-links">
+      <a href="about.html">このサイトについて</a>
+      <a href="submit.html">掲載申請</a>
+      <a href="about.html#contact">お問い合わせ</a>
+    </div>
+    <div>© 2026 兵庫ダンスパーティー情報</div>
+  </div>
+</footer>
+
+</body>
+</html>
