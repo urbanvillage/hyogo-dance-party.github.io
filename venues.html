@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>兵庫県 社交ダンスパーティー 会場別一覧 | 兵庫ダンスパーティー情報</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAF8F3;--bg2:#F2EFE7;--ink:#1C1A14;--ink2:#5C5847;--ink3:#9C9580;
+  --gold:#B8933A;--gold-l:#F0E4C0;--teal:#1D7A6B;--teal-l:#DCF0EC;
+  --red:#C0392B;--red-l:#FEF0F0;--border:#DDD9CE;--card-bg:#FFFFFF;--radius:10px;
+  --ff-serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --ff-sans:'Noto Sans JP',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--ff-sans);font-size:15px;line-height:1.7}
+.site-header{background:var(--ink);color:#fff;padding:0 clamp(16px,5vw,48px);position:sticky;top:0;z-index:100}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;height:56px}
+.site-logo{font-family:var(--ff-serif);font-size:clamp(14px,2.5vw,20px);font-weight:600;letter-spacing:.04em;color:#fff;text-decoration:none;white-space:nowrap}
+.site-logo span{color:var(--gold);font-style:italic}
+.header-nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+.header-nav a{color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:6px;transition:background .15s,color .15s;white-space:nowrap}
+.header-nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.btn-post{background:var(--gold);color:var(--ink)!important;font-weight:500;font-size:13px!important;padding:7px 16px!important;border-radius:99px!important}
+@media(max-width:600px){.nav-hide{display:none}}
+.breadcrumb-bar{background:var(--bg2);border-bottom:1px solid var(--border)}
+.breadcrumb{max-width:1100px;margin:0 auto;padding:10px clamp(16px,5vw,48px);font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.breadcrumb a{color:var(--ink3);text-decoration:none}.breadcrumb a:hover{color:var(--gold)}
+.page-hero{background:var(--ink);padding:clamp(28px,5vw,48px) clamp(16px,5vw,48px) clamp(20px,4vw,36px);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 90% at 85% 40%,rgba(184,147,58,.18) 0%,transparent 65%);pointer-events:none}
+.ph-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.ph-eyebrow{font-size:10px;letter-spacing:.18em;color:var(--gold);font-weight:500;margin-bottom:8px}
+.ph-title{font-family:var(--ff-serif);font-size:clamp(20px,3.5vw,34px);font-weight:600;color:#fff;line-height:1.3;margin-bottom:6px}
+.ph-sub{font-size:12px;color:rgba(255,255,255,.55);line-height:1.7}
+.wrap{max-width:1100px;margin:0 auto;padding:clamp(20px,4vw,36px) clamp(16px,5vw,48px)}
+/* 会場セクション */
+.venue-section{margin-bottom:40px}
+.venue-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid var(--gold-l)}
+.venue-num{font-family:var(--ff-serif);font-size:28px;font-weight:600;color:var(--gold-l);line-height:1;flex-shrink:0;margin-top:2px}
+.venue-name{font-family:var(--ff-serif);font-size:clamp(17px,2.5vw,22px);font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:3px}
+.venue-meta{font-size:12px;color:var(--ink3)}
+.venue-meta a{color:var(--teal);text-decoration:none}
+/* 月タブ */
+.month-tabs{display:flex;gap:0;margin-bottom:0;border-bottom:2px solid var(--border)}
+.month-tab{padding:8px 20px;font-size:13px;font-weight:500;cursor:pointer;color:var(--ink3);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .15s;background:none;border-left:none;border-right:none;border-top:none;font-family:var(--ff-sans)}
+.month-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.month-content{display:none}
+.month-content.active{display:block}
+/* テーブル */
+.table-wrap{background:var(--card-bg);border:1px solid var(--border);border-radius:0 var(--radius) var(--radius) var(--radius);overflow:hidden;margin-bottom:6px}
+.party-table{width:100%;border-collapse:collapse;font-size:13px}
+.party-table thead tr{background:var(--bg2)}
+.party-table th{padding:9px 10px;text-align:left;font-size:11px;font-weight:500;color:var(--ink3);letter-spacing:.05em;border-bottom:1px solid var(--border);white-space:nowrap}
+.party-table td{padding:9px 10px;border-bottom:1px solid var(--bg2);color:var(--ink);vertical-align:middle;line-height:1.5}
+.party-table tr:last-child td{border-bottom:none}
+.party-table tr:hover td{background:var(--bg2)}
+.fee-cell{font-family:var(--ff-serif);font-weight:600;font-size:13px;white-space:nowrap}
+.ribbon-badge{display:inline-block;font-size:9px;font-weight:500;padding:1px 5px;border-radius:99px;background:var(--gold-l);color:#7A5F1A;margin-left:4px;vertical-align:middle}
+.contact-cell{font-size:11px;color:var(--ink3);white-space:nowrap}
+.date-cell{white-space:nowrap;font-weight:500}
+.time-cell{white-space:nowrap;font-size:12px;color:var(--ink2)}
+.tag{display:inline-block;font-size:10px;font-weight:500;padding:1px 7px;border-radius:99px}
+.tag-kobe{background:var(--teal-l);color:var(--teal)}
+.tag-hanshin{background:#FDE8D8;color:#8B3A0F}
+.tag-sanda{background:#E6F1FB;color:#0C447C}
+/* 目次 */
+.toc-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;margin-bottom:28px}
+.toc-title{font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--ink3);margin-bottom:10px}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0}
+.toc-item{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:.5px solid var(--bg2);text-decoration:none;color:var(--ink);font-size:12px;transition:color .15s}
+.toc-item:hover{color:var(--gold)}
+.toc-num{font-size:11px;color:var(--ink3);min-width:24px}
+/* フッター */
+.site-footer{background:var(--ink);color:rgba(255,255,255,.6);padding:28px clamp(16px,5vw,48px);margin-top:48px;font-size:12px}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-logo{font-family:var(--ff-serif);font-size:16px;color:#fff;font-weight:600}
+.footer-links{display:flex;gap:16px}
+.footer-links a{color:rgba(255,255,255,.5);text-decoration:none}
+.footer-links a:hover{color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.venue-section{animation:fadeUp .3s ease both}
+@media(max-width:700px){
+  .party-table th:nth-child(4),.party-table td:nth-child(4){display:none}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">兵庫<span>Dance</span>Party</a>
+    <nav class="header-nav">
+      <a href="calendar.html" class="nav-hide">カレンダー</a>
+      <a href="index.html" class="nav-hide">パーティー一覧</a>
+      <a href="about.html" class="nav-hide">このサイトについて</a>
+      <a href="submit.html" class="btn-post">＋ 掲載申請</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb-bar">
+  <div class="breadcrumb">
+    <a href="index.html">トップ</a>
+    <span>›</span>
+    <span>会場別パーティー一覧</span>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="ph-inner">
+    <p class="ph-eyebrow">Hyogo Dance Party Schedule</p>
+    <h1 class="ph-title">兵庫県 会場別パーティー一覧</h1>
+    <p class="ph-sub">
+      全16会場・194件のパーティー情報を掲載（2026年5〜11月）<br>
+      情報提供：<a href="https://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" style="color:var(--gold)">乾さんのHP</a>・スリーセブン月次予定表・クレアホール月次予定表<br>
+      ※ 参加費・日程は変更になる場合があります。参加前に各主催者へご確認ください。
+    </p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="toc-card">
+    <div class="toc-title">会場一覧（クリックでジャンプ）</div>
+    <div class="toc-grid">
+    <a href="#kobe-chuo" class="toc-item">
+      <span class="toc-num">(1)</span>
+      神戸市中央区文化センター 1F多目的ルーム
+      <span class="tag tag-kobe" style="margin-left:auto;flex-shrink:0">神戸市内</span>
+    </a>
+    <a href="#sannomiya-crea" class="toc-item">
+      <span class="toc-num">(2)</span>
+      三宮クレアホール
+      <span class="tag tag-kobe" style="margin-left:auto;flex-shrink:0">神戸市内</span>
+    </a>
+    <a href="#three-seven" class="toc-item">
+      <span class="toc-num">(3)</span>
+      スリーセブン
+      <span class="tag tag-kobe" style="margin-left:auto;flex-shrink:0">神戸市内</span>
+    </a>
+    <a href="#tarumi-nenkin" class="toc-item">
+      <span class="toc-num">(5)</span>
+      垂水年金会館
+      <span class="tag tag-kobe" style="margin-left:auto;flex-shrink:0">神戸市内（垂水区）</span>
+    </a>
+    <a href="#tarumi-suisan" class="toc-item">
+      <span class="toc-num">(6)</span>
+      垂水水産会館
+      <span class="tag tag-kobe" style="margin-left:auto;flex-shrink:0">神戸市内（垂水区）</span>
+    </a>
+    <a href="#tarumi-taiiku" class="toc-item">
+      <span class="toc-num">(7)</span>
+      垂水体育館
+      <span class="tag tag-kobe" style="margin-left:auto;flex-shrink:0">神戸市内（垂水区）</span>
+    </a>
+    <a href="#nada-bunka" class="toc-item">
+      <span class="toc-num">(8)</span>
+      灘区文化センター 5F大会議室
+      <span class="tag tag-kobe" style="margin-left:auto;flex-shrink:0">神戸市内（灘区）</span>
+    </a>
+    <a href="#ashiya-luna" class="toc-item">
+      <span class="toc-num">(9)</span>
+      芦屋ルナホール
+      <span class="tag tag-hanshin" style="margin-left:auto;flex-shrink:0">阪神（芦屋市）</span>
+    </a>
+    <a href="#amagasaki-suncivic" class="toc-item">
+      <span class="toc-num">(10)</span>
+      サンシビック尼崎 3F大ホール
+      <span class="tag tag-hanshin" style="margin-left:auto;flex-shrink:0">阪神（尼崎市）</span>
+    </a>
+    <a href="#amagasaki-chuo" class="toc-item">
+      <span class="toc-num">(11)</span>
+      尼崎中央北生涯学習プラザ
+      <span class="tag tag-hanshin" style="margin-left:auto;flex-shrink:0">阪神（尼崎市）</span>
+    </a>
+    <a href="#amagasaki-sonoda" class="toc-item">
+      <span class="toc-num">(12)</span>
+      尼崎園田東生涯学習プラザ 3F
+      <span class="tag tag-hanshin" style="margin-left:auto;flex-shrink:0">阪神（尼崎市）</span>
+    </a>
+    <a href="#amagasaki-tachibana" class="toc-item">
+      <span class="toc-num">(13)</span>
+      尼崎立花南生涯学習プラザ 3F
+      <span class="tag tag-hanshin" style="margin-left:auto;flex-shrink:0">阪神（尼崎市）</span>
+    </a>
+    <a href="#itami-suncity" class="toc-item">
+      <span class="toc-num">(14)</span>
+      伊丹サンシティホール
+      <span class="tag tag-hanshin" style="margin-left:auto;flex-shrink:0">阪神（伊丹市）</span>
+    </a>
+    <a href="#hirono-sanda" class="toc-item">
+      <span class="toc-num">(15)</span>
+      広野市民センター（三田）
+      <span class="tag tag-sanda" style="margin-left:auto;flex-shrink:0">三田・北摂</span>
+    </a>
+    <a href="#shiawase-no-mura" class="toc-item">
+      <span class="toc-num">(16)</span>
+      しあわせの村研修館
+      <span class="tag tag-kobe" style="margin-left:auto;flex-shrink:0">神戸市内（北区）</span>
+    </a>
+    <a href="#nissei-komin" class="toc-item">
+      <span class="toc-num">(17)</span>
+      北陵公民館（日生中央駅すぐ）
+      <span class="tag tag-hanshin" style="margin-left:auto;flex-shrink:0">阪神（川西市）</span>
+    </a>
+    </div>
+  </div>
+
+  <div class="venue-section" id="kobe-chuo">
+    <div class="venue-header">
+      <div class="venue-num">(1)</div>
+      <div>
+        <div class="venue-name">神戸市中央区文化センター 1F多目的ルーム<span class="tag tag-kobe" style="margin-left:8px">神戸市内</span></div>
+        <div class="venue-meta">神戸市中央区東町115番地 ／ 計23件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'kobe-chuo-0')">5月（7件）</button><button class="month-tab " onclick="switchTab(this,'kobe-chuo-1')">6月（14件）</button><button class="month-tab " onclick="switchTab(this,'kobe-chuo-2')">7月〜（2件）</button></div>
+<div class="month-content active" id="kobe-chuo-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/21（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ハーモニー</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/24（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>サークル六甲</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/25（月）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>青い鳥</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/26（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>エレガント</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/28（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ハーモニー</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/30（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>青い鳥</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/31（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>神戸YMCA</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="kobe-chuo-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/6（土）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>サークル六甲</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/7（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>神戸YMCA</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/8（月）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>サークル六甲</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/9（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ステップ神戸</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/11（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ハーモニー</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/14（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ひとみ</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/15（月）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>サークル六甲</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/16（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>エレガント</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/18（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ハーモニー</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/22（月）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>迎賓館</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/23（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>エレガント</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/25（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ハーモニー</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/29（月）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>サークル六甲</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/30（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ソワレの会</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="kobe-chuo-2"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/7/5（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>神戸YMCA</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/12（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>アダムとイブ</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="sannomiya-crea">
+    <div class="venue-header">
+      <div class="venue-num">(2)</div>
+      <div>
+        <div class="venue-name">三宮クレアホール<span class="tag tag-kobe" style="margin-left:8px">神戸市内</span></div>
+        <div class="venue-meta">神戸市中央区下山手通2-12-3 ／ TEL：<a href="tel:078-265-6566">078-265-6566</a> ／ 計47件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'sannomiya-crea-0')">5月（22件）</button><button class="month-tab " onclick="switchTab(this,'sannomiya-crea-1')">6月（22件）</button><button class="month-tab " onclick="switchTab(this,'sannomiya-crea-2')">7月〜（3件）</button></div>
+<div class="month-content active" id="sannomiya-crea-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/1（金）</td>
+            <td class="time-cell">12:20〜16:20</td>
+            <td>レッツハッピーダンス<span class="ribbon-badge">学生リボン2名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">男性900/女性1,000円</span></td>
+            <td><span class="contact-cell">穂竹 080-3788-6680</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/2（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>フレッシュ<span class="ribbon-badge">学生リボン1名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">田中 090-2066-9149</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/5（祝火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ラビットダンサーズ</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">吉原 090-4286-4349</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/6（祝水）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>かりん</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">かりん</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/7（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ボールルーム神戸</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">勝本 090-4767-1088</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/8（金）</td>
+            <td class="time-cell">12:20〜16:20</td>
+            <td>レッツハッピーダンス<span class="ribbon-badge">学生リボン2名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">男性900/女性1,000円</span></td>
+            <td><span class="contact-cell">穂竹 080-3788-6680</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/9（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>フレッシュ<span class="ribbon-badge">学生リボン1名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">田中 090-2066-9149</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/12（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ラビットダンサーズ</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">吉原 090-4286-4349</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/13（水）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>かりん</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">かりん</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/14（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ボールルーム神戸</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">勝本 090-4767-1088</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/15（金）</td>
+            <td class="time-cell">12:20〜16:20</td>
+            <td>レッツハッピーダンス<span class="ribbon-badge">学生リボン2名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">男性900/女性1,000円</span></td>
+            <td><span class="contact-cell">穂竹 080-3788-6680</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/16（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>フレッシュ<span class="ribbon-badge">学生リボン1名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">田中 090-2066-9149</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/19（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ラビットダンサーズ</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">吉原 090-4286-4349</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/20（水）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>かりん</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">かりん</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/21（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ボールルーム神戸</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">勝本 090-4767-1088</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/22（金）</td>
+            <td class="time-cell">12:20〜16:20</td>
+            <td>レッツハッピーダンス<span class="ribbon-badge">学生リボン2名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">男性900/女性1,000円</span></td>
+            <td><span class="contact-cell">穂竹 080-3788-6680</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/23（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>フレッシュ<span class="ribbon-badge">学生リボン1名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">田中 090-2066-9149</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/26（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ラビットダンサーズ</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">吉原 090-4286-4349</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/27（水）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>かりん</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">かりん</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/28（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ボールルーム神戸</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">勝本 090-4767-1088</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/29（金）</td>
+            <td class="time-cell">12:20〜16:20</td>
+            <td>レッツハッピーダンス<span class="ribbon-badge">学生リボン2名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">男性900/女性1,000円</span></td>
+            <td><span class="contact-cell">穂竹 080-3788-6680</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/30（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>フレッシュ<span class="ribbon-badge">学生リボン1名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">田中 090-2066-9149</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="sannomiya-crea-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/3（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ラビットダンサーズ</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">吉原 090-4286-4349</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/4（水）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>かりん</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">かりん</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/5（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ボールルーム神戸</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">勝本 090-4767-1088</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/6（金）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>レッツハッピーダンス<span class="ribbon-badge">リボン3名待機</span></td>
+            <td><span class="fee-cell">男性1,000/女性1,100円</span></td>
+            <td><span class="contact-cell">穂竹 080-3788-6680</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/7（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>フレッシュ<span class="ribbon-badge">学生リボン1名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">田中 090-2066-9149</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/8（月）</td>
+            <td class="time-cell">12:00〜16:10</td>
+            <td>プリンセス</td>
+            <td><span class="fee-cell" style="color:var(--red)">7,500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/10（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ラビットダンサーズ</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">吉原 090-4286-4349</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/11（水）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>かりん</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">かりん</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/12（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ボールルーム神戸</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">勝本 090-4767-1088</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/13（金）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>レッツハッピーダンス<span class="ribbon-badge">リボン3名待機</span></td>
+            <td><span class="fee-cell">男性1,000/女性1,100円</span></td>
+            <td><span class="contact-cell">穂竹 080-3788-6680</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/14（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>フレッシュ<span class="ribbon-badge">学生リボン1名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">田中 090-2066-9149</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/16（月）</td>
+            <td class="time-cell">12:30〜16:10</td>
+            <td>ダンスの森KUDO倶楽部</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/17（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ラビットダンサーズ</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">吉原 090-4286-4349</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/18（水）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>かりん</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">かりん</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/19（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ボールルーム神戸</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">勝本 090-4767-1088</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/20（金）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>レッツハッピーダンス<span class="ribbon-badge">リボン3名待機</span></td>
+            <td><span class="fee-cell">男性1,000/女性1,100円</span></td>
+            <td><span class="contact-cell">穂竹 080-3788-6680</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/21（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>フレッシュ<span class="ribbon-badge">学生リボン1名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">田中 090-2066-9149</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/24（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ラビットダンサーズ</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">吉原 090-4286-4349</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/25（水）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>かりん</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">かりん</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/26（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ボールルーム神戸</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">勝本 090-4767-1088</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/27（金）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>レッツハッピーダンス<span class="ribbon-badge">リボン3名待機</span></td>
+            <td><span class="fee-cell">男性1,000/女性1,100円</span></td>
+            <td><span class="contact-cell">穂竹 080-3788-6680</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/28（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>フレッシュ<span class="ribbon-badge">学生リボン1名・社会人リボン数名</span></td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">田中 090-2066-9149</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="sannomiya-crea-2"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/7/13（月）</td>
+            <td class="time-cell">12:00〜16:10</td>
+            <td>プリンセス</td>
+            <td><span class="fee-cell" style="color:var(--red)">7,500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/20（月）</td>
+            <td class="time-cell">12:30〜16:10</td>
+            <td>ダンスの森KUDO倶楽部</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/27（月）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>迎賓館</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="three-seven">
+    <div class="venue-header">
+      <div class="venue-num">(3)</div>
+      <div>
+        <div class="venue-name">スリーセブン<span class="tag tag-kobe" style="margin-left:8px">神戸市内</span></div>
+        <div class="venue-meta">神戸市長田区北町1-54 高速長田ステーションビル4F ／ TEL：<a href="tel:078-578-0777">078-578-0777</a> ／ 計17件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'three-seven-0')">5月（8件）</button><button class="month-tab " onclick="switchTab(this,'three-seven-1')">6月（9件）</button></div>
+<div class="month-content active" id="three-seven-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/4（月）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>パッションパーティー</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/10（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>花＆はなパーティー</td>
+            <td><span class="fee-cell">1,100円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/11（月）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>パッションパーティー</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/17（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>花＆はなパーティー</td>
+            <td><span class="fee-cell">1,100円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/18（月）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>パッションパーティー</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/21（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>学生パーティー（貸切）</td>
+            <td><span class="fee-cell" style="color:var(--ink3)">貸切</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/25（月）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>パッションパーティー</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/31（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>花＆はなパーティー</td>
+            <td><span class="fee-cell">1,100円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="three-seven-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/1（月）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>パッションパーティー</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/7（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>花＆はなパーティー</td>
+            <td><span class="fee-cell">1,100円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/8（月）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>パッションパーティー</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/15（月）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>パッションパーティー</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/17（水）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>学生パーティー（貸切）</td>
+            <td><span class="fee-cell" style="color:var(--ink3)">貸切</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/18（木）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>学生パーティー（貸切）</td>
+            <td><span class="fee-cell" style="color:var(--ink3)">貸切</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/21（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>花＆はなパーティー</td>
+            <td><span class="fee-cell">1,100円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/22（月）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>パッションパーティー</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/29（月）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>パッションパーティー</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="tarumi-nenkin">
+    <div class="venue-header">
+      <div class="venue-num">(5)</div>
+      <div>
+        <div class="venue-name">垂水年金会館<span class="tag tag-kobe" style="margin-left:8px">神戸市内（垂水区）</span></div>
+        <div class="venue-meta">神戸市垂水区平磯1丁目2-5 ／ 計1件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'tarumi-nenkin-0')">6月（1件）</button></div>
+<div class="month-content active" id="tarumi-nenkin-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/7（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>ソワレの会</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="tarumi-suisan">
+    <div class="venue-header">
+      <div class="venue-num">(6)</div>
+      <div>
+        <div class="venue-name">垂水水産会館<span class="tag tag-kobe" style="margin-left:8px">神戸市内（垂水区）</span></div>
+        <div class="venue-meta">神戸市垂水区平磯3丁目2 ／ TEL：<a href="tel:078-707-4626">078-707-4626</a> ／ 計11件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'tarumi-suisan-0')">5月（2件）</button><button class="month-tab " onclick="switchTab(this,'tarumi-suisan-1')">6月（6件）</button><button class="month-tab " onclick="switchTab(this,'tarumi-suisan-2')">7月〜（3件）</button></div>
+<div class="month-content active" id="tarumi-suisan-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/21（木）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>ルピナス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/28（木）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>ルピナス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="tarumi-suisan-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/4（木）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>ルピナス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/11（木）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>ルピナス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/18（木）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>ルピナス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/21（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>CKダンス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/25（木）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>ルピナス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/29（月）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>垂水OT</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="tarumi-suisan-2"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/7/2（木）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>ルピナス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/16（木）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>ルピナス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/30（木）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>ルピナス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="tarumi-taiiku">
+    <div class="venue-header">
+      <div class="venue-num">(7)</div>
+      <div>
+        <div class="venue-name">垂水体育館<span class="tag tag-kobe" style="margin-left:8px">神戸市内（垂水区）</span></div>
+        <div class="venue-meta">神戸市垂水区平磯1丁目1-56 ／ 計3件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'tarumi-taiiku-0')">5月（1件）</button><button class="month-tab " onclick="switchTab(this,'tarumi-taiiku-1')">6月（2件）</button></div>
+<div class="month-content active" id="tarumi-taiiku-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/21（木）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>垂水OT</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="tarumi-taiiku-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/18（木）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>垂水OT</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/21（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>垂水OT（ダンス大会）</td>
+            <td><span class="fee-cell" style="color:var(--red)">3,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="nada-bunka">
+    <div class="venue-header">
+      <div class="venue-num">(8)</div>
+      <div>
+        <div class="venue-name">灘区文化センター 5F大会議室<span class="tag tag-kobe" style="margin-left:8px">神戸市内（灘区）</span></div>
+        <div class="venue-meta">神戸市灘区深田町4丁目1 ／ TEL：<a href="tel:078-841-1711">078-841-1711</a> ／ 計12件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'nada-bunka-0')">5月（1件）</button><button class="month-tab " onclick="switchTab(this,'nada-bunka-1')">6月（6件）</button><button class="month-tab " onclick="switchTab(this,'nada-bunka-2')">7月〜（5件）</button></div>
+<div class="month-content active" id="nada-bunka-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/30（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>コスモス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="nada-bunka-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/6（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ひまわり</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/13（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>コスモス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/20（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>エレガント</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/21（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ひまわり</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/27（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>コスモス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/28（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>スカイダンス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="nada-bunka-2"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/7/4（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>コスモス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/11（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ひまわり</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/12（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>迎賓舞踏会</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/19（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ひまわり</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/26（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>コスモス</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="ashiya-luna">
+    <div class="venue-header">
+      <div class="venue-num">(9)</div>
+      <div>
+        <div class="venue-name">芦屋ルナホール<span class="tag tag-hanshin" style="margin-left:8px">阪神（芦屋市）</span></div>
+        <div class="venue-meta">兵庫県芦屋市業平町8-24 ／ 計2件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'ashiya-luna-0')">5月（1件）</button><button class="month-tab " onclick="switchTab(this,'ashiya-luna-1')">6月（1件）</button></div>
+<div class="month-content active" id="ashiya-luna-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/24（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ステップ芦屋</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="ashiya-luna-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/21（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>ステップ芦屋</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="amagasaki-suncivic">
+    <div class="venue-header">
+      <div class="venue-num">(10)</div>
+      <div>
+        <div class="venue-name">サンシビック尼崎 3F大ホール<span class="tag tag-hanshin" style="margin-left:8px">阪神（尼崎市）</span></div>
+        <div class="venue-meta">兵庫県尼崎市西御園町93-2 ／ TEL：<a href="tel:06-6413-8171">06-6413-8171</a> ／ 計10件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'amagasaki-suncivic-0')">6月（3件）</button><button class="month-tab " onclick="switchTab(this,'amagasaki-suncivic-1')">7月〜（7件）</button></div>
+<div class="month-content active" id="amagasaki-suncivic-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/3（水）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>スマイル</td>
+            <td><span class="fee-cell">800円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/17（水）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>スマイル</td>
+            <td><span class="fee-cell">800円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/21（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>フレンズ</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="amagasaki-suncivic-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/7/8（水）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>スマイル</td>
+            <td><span class="fee-cell">800円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/18（土）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>スマイル</td>
+            <td><span class="fee-cell">800円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/2（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>スマイル</td>
+            <td><span class="fee-cell">800円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/16（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>フレンズ</td>
+            <td><span class="fee-cell">900円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/23（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>スマイル</td>
+            <td><span class="fee-cell">800円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/9/6（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>スマイル</td>
+            <td><span class="fee-cell">800円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/9/20（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>スマイル</td>
+            <td><span class="fee-cell">800円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="amagasaki-chuo">
+    <div class="venue-header">
+      <div class="venue-num">(11)</div>
+      <div>
+        <div class="venue-name">尼崎中央北生涯学習プラザ<span class="tag tag-hanshin" style="margin-left:8px">阪神（尼崎市）</span></div>
+        <div class="venue-meta">尼崎市東難波町2丁目14-1 ／ TEL：<a href="tel:06-6482-1750">06-6482-1750</a> ／ 計10件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'amagasaki-chuo-0')">5月（2件）</button><button class="month-tab " onclick="switchTab(this,'amagasaki-chuo-1')">6月（4件）</button><button class="month-tab " onclick="switchTab(this,'amagasaki-chuo-2')">7月〜（4件）</button></div>
+<div class="month-content active" id="amagasaki-chuo-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/26（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>グリーンピース（3F小ホール）</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/31（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>グリーンピース（1F大ホール）</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="amagasaki-chuo-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/9（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>グリーンピース（3F小ホール）</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/14（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>グリーンピース（1F大ホール）</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/21（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>グリーンピース（1F大ホール）</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/23（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>グリーンピース（3F小ホール）</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="amagasaki-chuo-2"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/7/12（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>グリーンピース（1F大ホール）</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/14（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>グリーンピース（3F小ホール）</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/26（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>グリーンピース（1F大ホール）</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/28（火）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>グリーンピース（3F小ホール）</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="amagasaki-sonoda">
+    <div class="venue-header">
+      <div class="venue-num">(12)</div>
+      <div>
+        <div class="venue-name">尼崎園田東生涯学習プラザ 3F<span class="tag tag-hanshin" style="margin-left:8px">阪神（尼崎市）</span></div>
+        <div class="venue-meta">兵庫県尼崎市食満5丁目8-46 ／ TEL：<a href="tel:06-6493-0140">06-6493-0140</a> ／ 計5件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'amagasaki-sonoda-0')">5月（1件）</button><button class="month-tab " onclick="switchTab(this,'amagasaki-sonoda-1')">6月（2件）</button><button class="month-tab " onclick="switchTab(this,'amagasaki-sonoda-2')">7月〜（2件）</button></div>
+<div class="month-content active" id="amagasaki-sonoda-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/24（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>夢工房</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="amagasaki-sonoda-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/7（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>夢工房</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/28（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>夢工房</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="amagasaki-sonoda-2"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/7/5（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>夢工房</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/19（日）</td>
+            <td class="time-cell">13:00〜16:30</td>
+            <td>夢工房</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="amagasaki-tachibana">
+    <div class="venue-header">
+      <div class="venue-num">(13)</div>
+      <div>
+        <div class="venue-name">尼崎立花南生涯学習プラザ 3F<span class="tag tag-hanshin" style="margin-left:8px">阪神（尼崎市）</span></div>
+        <div class="venue-meta">兵庫県尼崎市栗山町2丁目25-28 ／ 計19件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'amagasaki-tachibana-0')">6月（4件）</button><button class="month-tab " onclick="switchTab(this,'amagasaki-tachibana-1')">7月〜（15件）</button></div>
+<div class="month-content active" id="amagasaki-tachibana-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/6（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/13（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/20（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/27（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="amagasaki-tachibana-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/7/4（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/11（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/25（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/1（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/8（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/22（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/29（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/9/5（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/9/12（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/9/19（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/9/26（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/10/3（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/10/10（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/10/17（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/11/7（土）</td>
+            <td class="time-cell">13:00〜17:00</td>
+            <td>ポパイ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="itami-suncity">
+    <div class="venue-header">
+      <div class="venue-num">(14)</div>
+      <div>
+        <div class="venue-name">伊丹サンシティホール<span class="tag tag-hanshin" style="margin-left:8px">阪神（伊丹市）</span></div>
+        <div class="venue-meta">兵庫県伊丹市中野西1-148-1 ／ 計5件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'itami-suncity-0')">5月（1件）</button><button class="month-tab " onclick="switchTab(this,'itami-suncity-1')">6月（4件）</button></div>
+<div class="month-content active" id="itami-suncity-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/21（木）</td>
+            <td class="time-cell">13:00〜15:30</td>
+            <td>ソシアル北野</td>
+            <td><span class="fee-cell" style="color:var(--teal)">300円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="itami-suncity-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/4（木）</td>
+            <td class="time-cell">13:00〜15:30</td>
+            <td>ソシアル北野</td>
+            <td><span class="fee-cell" style="color:var(--teal)">300円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/11（木）</td>
+            <td class="time-cell">13:00〜15:30</td>
+            <td>ソシアル北野</td>
+            <td><span class="fee-cell" style="color:var(--teal)">300円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/18（木）</td>
+            <td class="time-cell">13:00〜15:30</td>
+            <td>ソシアル北野</td>
+            <td><span class="fee-cell" style="color:var(--teal)">300円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/25（木）</td>
+            <td class="time-cell">13:00〜15:30</td>
+            <td>ソシアル北野</td>
+            <td><span class="fee-cell" style="color:var(--teal)">300円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="hirono-sanda">
+    <div class="venue-header">
+      <div class="venue-num">(15)</div>
+      <div>
+        <div class="venue-name">広野市民センター（三田）<span class="tag tag-sanda" style="margin-left:8px">三田・北摂</span></div>
+        <div class="venue-meta">兵庫県三田市上井沢28-1 ／ TEL：<a href="tel:079-567-0490">079-567-0490</a> ／ 計15件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'hirono-sanda-0')">5月（2件）</button><button class="month-tab " onclick="switchTab(this,'hirono-sanda-1')">6月（4件）</button><button class="month-tab " onclick="switchTab(this,'hirono-sanda-2')">7月〜（9件）</button></div>
+<div class="month-content active" id="hirono-sanda-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/24（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>三田ダンシングJoy</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/31（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>花の会</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="hirono-sanda-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/7（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>スマイル三田</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/14（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>三田社交ダンス同好会</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/21（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>スマイル三田</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/28（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>シグナル</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="hirono-sanda-2"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/7/5（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>カサブランカ</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/12（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>スマイル三田</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/20（月）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>愛メロディー</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/7/26（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>三田ダンシングJoy</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/2（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>シグナル</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/9（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>カサブランカ</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/16（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>スマイル三田</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/23（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>三田社交ダンス同好会</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/30（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>スマイル三田</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="shiawase-no-mura">
+    <div class="venue-header">
+      <div class="venue-num">(16)</div>
+      <div>
+        <div class="venue-name">しあわせの村研修館<span class="tag tag-kobe" style="margin-left:8px">神戸市内（北区）</span></div>
+        <div class="venue-meta">神戸市北区山田町下谷上中一里山14-1 ／ TEL：<a href="tel:078-743-8000">078-743-8000</a> ／ 計10件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'shiawase-no-mura-0')">5月（2件）</button><button class="month-tab " onclick="switchTab(this,'shiawase-no-mura-1')">6月（6件）</button><button class="month-tab " onclick="switchTab(this,'shiawase-no-mura-2')">7月〜（2件）</button></div>
+<div class="month-content active" id="shiawase-no-mura-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/24（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>オレンジ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/5/31（日）</td>
+            <td class="time-cell">12:00〜16:00</td>
+            <td>神戸ダンシングJoy</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="shiawase-no-mura-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/6（土）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>オレンジ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/7（日）</td>
+            <td class="time-cell">12:00〜16:00</td>
+            <td>紳士淑女の会</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/14（日）</td>
+            <td class="time-cell">12:00〜16:00</td>
+            <td>神戸ダンシングJoy</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/21（日）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>神戸ダンシングJoy</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/27（土）</td>
+            <td class="time-cell">13:00〜16:00</td>
+            <td>オレンジ</td>
+            <td><span class="fee-cell">700円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/6/28（日）</td>
+            <td class="time-cell">12:00〜16:00</td>
+            <td>迎賓館</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="shiawase-no-mura-2"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/7/19（日）</td>
+            <td class="time-cell">12:00〜16:00</td>
+            <td>神戸ダンシングJoy</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/23（日）</td>
+            <td class="time-cell">12:00〜16:00</td>
+            <td>神戸ダンシングJoy</td>
+            <td><span class="fee-cell">1,000円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+  <div class="venue-section" id="nissei-komin">
+    <div class="venue-header">
+      <div class="venue-num">(17)</div>
+      <div>
+        <div class="venue-name">北陵公民館（日生中央駅すぐ）<span class="tag tag-hanshin" style="margin-left:8px">阪神（川西市）</span></div>
+        <div class="venue-meta">兵庫県川西市丸山台1丁目5-2 ／ 計4件</div>
+      </div>
+    </div>
+    <div class="month-tabs"><button class="month-tab active" onclick="switchTab(this,'nissei-komin-0')">5月（1件）</button><button class="month-tab " onclick="switchTab(this,'nissei-komin-1')">6月（1件）</button><button class="month-tab " onclick="switchTab(this,'nissei-komin-2')">7月〜（2件）</button></div>
+<div class="month-content active" id="nissei-komin-0"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/5/23（土）</td>
+            <td class="time-cell">13:10〜15:45</td>
+            <td>日生社交ダンス愛好会</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="nissei-komin-1"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/6/27（土）</td>
+            <td class="time-cell">13:10〜15:45</td>
+            <td>日生社交ダンス愛好会</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+<div class="month-content " id="nissei-komin-2"><div class="table-wrap"><table class="party-table"><thead><tr><th>開催日</th><th>時間</th><th>主催サークル</th><th>参加費</th><th>連絡先</th></tr></thead><tbody>
+          <tr>
+            <td class="date-cell">2026/7/19（日）</td>
+            <td class="time-cell">13:10〜15:45</td>
+            <td>日生社交ダンス愛好会</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+          <tr>
+            <td class="date-cell">2026/8/22（土）</td>
+            <td class="time-cell">13:10〜15:45</td>
+            <td>日生社交ダンス愛好会</td>
+            <td><span class="fee-cell" style="color:var(--teal)">500円</span></td>
+            <td><span class="contact-cell">—</span></td>
+          </tr>
+</tbody></table></div></div>
+
+  </div>
+
+  <p style="font-size:11px;color:var(--ink3);line-height:1.8;margin-top:8px">
+    ※ 掲載情報は乾さんのHP・各会場の月次予定表をもとに作成しています。<br>
+    ※ 最新情報は <a href="https://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" style="color:var(--teal)">tatsumi-n.private.coocan.jp</a> または各主催サークルにご確認ください。
+  </p>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">兵庫 Dance Party</div>
+    <div class="footer-links">
+      <a href="about.html">このサイトについて</a>
+      <a href="submit.html">掲載申請</a>
+      <a href="about.html#contact">お問い合わせ</a>
+    </div>
+    <div>© 2026 兵庫ダンスパーティー情報</div>
+  </div>
+</footer>
+
+<script>
+function switchTab(btn, contentId) {
+  const section = btn.closest('.venue-section');
+  section.querySelectorAll('.month-tab').forEach(t => t.classList.remove('active'));
+  section.querySelectorAll('.month-content').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(contentId).classList.add('active');
+}
+</script>
+</body>
+</html>

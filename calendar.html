@@ -354,6 +354,7 @@ body{
     <nav class="header-nav">
       <a href="calendar.html" class="active nav-hide">カレンダー</a>
       <a href="index.html" class="nav-hide">パーティー一覧</a>
+      <a href="venues.html" class="nav-hide">会場別一覧</a>
       <a href="about.html" class="nav-hide">このサイトについて</a>
       <a href="submit.html" class="btn-post">＋ 掲載申請</a>
     </nav>
@@ -486,6 +487,18 @@ body{
       </div>
     </div>
 
+    <!-- 会場別一覧リンク -->
+    <div class="side-card">
+      <div class="side-title">定期パーティー</div>
+      <div class="side-body" style="padding:10px 14px">
+        <p style="font-size:12px;color:var(--ink2);line-height:1.7;margin-bottom:8px">三宮クレアホール・スリーセブン・広野市民センターなど16会場の定期パーティー情報</p>
+        <a href="venues.html" style="display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;text-decoration:none;color:var(--ink);font-size:12px;font-weight:500;transition:border-color .15s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span>会場別一覧を見る</span>
+          <span style="font-size:11px;color:var(--ink3)">194件 →</span>
+        </a>
+      </div>
+    </div>
+
     <!-- 掲載バナー -->
     <div class="side-card" style="overflow:hidden">
       <div style="background:var(--ink);padding:16px;text-align:center">
@@ -608,6 +621,164 @@ const PARTIES = [
    venue:'三田市広野市民センター', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
   {id:'P-006', date:'2026-12-27', name:'三田広野 毎週日曜ダンスパーティー',
    venue:'三田市広野市民センター', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+
+  // ── 三宮クレアホール（定期）──
+  {id:'sannomiya-crea', date:'2026-05-21', name:'ボールルーム神戸（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-05-22', name:'レッツハッピーダンス（クレアホール）',
+   venue:'三宮クレアホール', time:'12:20〜16:20', fee:900, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-05-23', name:'フレッシュ（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-05-26', name:'ラビットダンサーズ（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-05-27', name:'かりん（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-05-28', name:'ボールルーム神戸（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-05-29', name:'レッツハッピーダンス（クレアホール）',
+   venue:'三宮クレアホール', time:'12:20〜16:20', fee:900, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-05-30', name:'フレッシュ（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-03', name:'ラビットダンサーズ（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-04', name:'かりん（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-05', name:'ボールルーム神戸（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-06', name:'レッツハッピーダンス（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-07', name:'フレッシュ（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-08', name:'プリンセス（クレアホール）',
+   venue:'三宮クレアホール', time:'12:00〜16:10', fee:7500, region:'kobe', type:'big'},
+  {id:'sannomiya-crea', date:'2026-06-10', name:'ラビットダンサーズ（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-11', name:'かりん（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-12', name:'ボールルーム神戸（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-13', name:'レッツハッピーダンス（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-14', name:'フレッシュ（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-17', name:'ラビットダンサーズ（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-18', name:'かりん（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-19', name:'ボールルーム神戸（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-20', name:'レッツハッピーダンス（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-21', name:'フレッシュ（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-24', name:'ラビットダンサーズ（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-25', name:'かりん（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-26', name:'ボールルーム神戸（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-27', name:'レッツハッピーダンス（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-06-28', name:'フレッシュ（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-07-13', name:'プリンセス（クレアホール）',
+   venue:'三宮クレアホール', time:'12:00〜16:10', fee:7500, region:'kobe', type:'big'},
+  {id:'sannomiya-crea', date:'2026-07-20', name:'ダンスの森KUDO倶楽部（クレアホール）',
+   venue:'三宮クレアホール', time:'12:30〜16:10', fee:1000, region:'kobe', type:'normal'},
+  {id:'sannomiya-crea', date:'2026-07-27', name:'迎賓館（クレアホール）',
+   venue:'三宮クレアホール', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+
+  // ── スリーセブン（定期） ──
+  {id:'three-seven', date:'2026-05-04', name:'パッションパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-05-10', name:'花＆はなパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1100, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-05-11', name:'パッションパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-05-17', name:'花＆はなパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1100, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-05-18', name:'パッションパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-05-25', name:'パッションパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-05-31', name:'花＆はなパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1100, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-06-01', name:'パッションパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-06-07', name:'花＆はなパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1100, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-06-08', name:'パッションパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-06-15', name:'パッションパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-06-21', name:'花＆はなパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1100, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-06-22', name:'パッションパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+  {id:'three-seven', date:'2026-06-29', name:'パッションパーティー（スリーセブン）',
+   venue:'スリーセブン', time:'13:00〜16:30', fee:1000, region:'kobe', type:'normal'},
+
+  // ── 神戸市中央区文化センター（定期）──
+  {id:'kobe-chuo', date:'2026-05-21', name:'ハーモニー（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-05-24', name:'サークル六甲（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:00', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-05-25', name:'青い鳥（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-05-28', name:'ハーモニー（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-05-30', name:'青い鳥（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-05-31', name:'神戸YMCA（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-06-06', name:'サークル六甲（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:00', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-06-07', name:'神戸YMCA（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-06-09', name:'ステップ神戸（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-06-11', name:'ハーモニー（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-06-14', name:'ひとみ（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-06-18', name:'ハーモニー（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-06-22', name:'迎賓館（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-06-25', name:'ハーモニー（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+  {id:'kobe-chuo', date:'2026-06-30', name:'ソワレの会（中央区文化センター）',
+   venue:'神戸市中央区文化センター', time:'13:00〜16:30', fee:900, region:'kobe', type:'normal'},
+
+  // ── 広野市民センター（三田）──
+  {id:'hirono-sanda', date:'2026-05-24', name:'三田ダンシングJoy（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-05-31', name:'花の会（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-06-07', name:'スマイル三田（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-06-14', name:'三田社交ダンス同好会（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-06-21', name:'スマイル三田（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-06-28', name:'シグナル（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-07-05', name:'カサブランカ（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-07-12', name:'スマイル三田（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-07-26', name:'三田ダンシングJoy（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-08-02', name:'シグナル（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-08-09', name:'カサブランカ（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-08-16', name:'スマイル三田（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-08-23', name:'三田社交ダンス同好会（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
+  {id:'hirono-sanda', date:'2026-08-30', name:'スマイル三田（広野市民センター）',
+   venue:'広野市民センター（三田）', time:'13:00〜16:00', fee:1000, region:'sanda', type:'normal'},
 ];
 
 // ══════════════════════════════════════════════════════════════
@@ -783,7 +954,15 @@ function openPanel(ds, parties) {
   list.innerHTML = '';
   parties.forEach(p => {
     const card = document.createElement('a');
-    card.href = `party-${p.id.toLowerCase()}.html`;
+    if (p.id.startsWith('sannomiya') || p.id.startsWith('three') || p.id.startsWith('kobe-chuo') || p.id.startsWith('hirono')) {
+      card.href = `venues.html#${p.id}`;
+    } else {
+      if (p.id.startsWith('sannomiya') || p.id.startsWith('three') || p.id.startsWith('kobe-chuo') || p.id.startsWith('hirono')) {
+        card.href = `venues.html#${p.id}`;
+      } else {
+        card.href = `party-${p.id.toLowerCase()}.html`;
+      }
+    }
     card.className = 'day-panel-card';
     card.innerHTML = `
       <div class="dpc-time">${p.time}</div>
@@ -899,7 +1078,11 @@ function renderUpcoming() {
   upcoming.forEach(p => {
     const [y,m,d] = p.date.split('-').map(Number);
     const item = document.createElement('a');
-    item.href = `party-${p.id.toLowerCase()}.html`;
+    if (p.id.startsWith('sannomiya') || p.id.startsWith('three') || p.id.startsWith('kobe-chuo') || p.id.startsWith('hirono')) {
+      item.href = `venues.html#${p.id}`;
+    } else {
+      item.href = `party-${p.id.toLowerCase()}.html`;
+    }
     item.className = 'upcoming-item';
     item.innerHTML = `
       <div class="upcoming-date-block">
