@@ -130,9 +130,40 @@ body{
   grid-template-columns:minmax(0,1fr) 280px;
   gap:24px;align-items:start;
 }
+/* ── レスポンシブ（タブレット：〜860px） ──────── */
 @media(max-width:860px){
   .cal-wrap{grid-template-columns:1fr}
-  .cal-side{display:none}
+  .cal-side{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:12px;
+  }
+  .cal-grid-wrap{display:block}
+  .list-view{display:none}
+}
+
+/* ── レスポンシブ（スマホ：〜600px） ─────────── */
+@media(max-width:600px){
+  .nav-hide{display:none}
+  .btn-post{font-size:12px!important;padding:6px 12px!important}
+  .ph-inner{flex-direction:column;align-items:flex-start;gap:10px}
+  .month-nav{align-self:stretch;justify-content:center}
+  .month-nav-label{min-width:0;flex:1;text-align:center}
+  .filter-bar-inner{gap:5px}
+  .fbtn{font-size:10px;padding:3px 9px}
+  .filter-label{display:none}
+  .cal-grid-wrap{display:none}
+  .list-view{display:block!important}
+  .list-card{padding:10px 12px;gap:8px}
+  .list-card-name{font-size:12px}
+  .list-card-meta{gap:6px;font-size:10px}
+  .list-card-fee{font-size:14px}
+  .list-day-num{font-size:22px}
+  .cal-side{display:flex;flex-direction:column;gap:10px}
+  .side-card{margin-bottom:0}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:8px}
+  .footer-links{flex-wrap:wrap;gap:12px}
+  .day-panel-card{flex-wrap:wrap;gap:6px}
 }
 
 /* ── カレンダーグリッド ───────────────────────── */
