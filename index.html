@@ -479,23 +479,25 @@ body{
 </section>
 
 <!-- ── 今週のピックアップ ────────────────────── -->
-<div class="pickup">
+  <div class="pickup">
   <div class="pickup-inner">
-    <span class="pickup-label">今週開催</span>
+    <span class="pickup-label">直近開催</span>
     <div class="pickup-items">
-      <a href="party.html?id=P-001" class="pickup-item">
-        スマイルダンスパーティー
-        <span class="date">6/7（土）</span>
+      <a href="party-p-001.html" class="pickup-item">
+        JDSF兵庫 会員交流パーティー
+        <span class="date">5/25（日）</span>
       </a>
-      <a href="party.html?id=P-002" class="pickup-item">
-        三田広野ダンスパーティー
-        <span class="date">6/8（日）</span>
+      <a href="party-p-002.html" class="pickup-item">
+        第79回 ダンスカーニバル
+        <span class="date">7/12（日）</span>
       </a>
-      <a href="party.html?id=P-003" class="pickup-item">
-        ふれあいダンス in 姫路
-        <span class="date">6/8（日）</span>
+      <a href="party-p-006.html" class="pickup-item">
+        三田広野 毎週日曜パーティー
+        <span class="date">毎週日曜</span>
       </a>
     </div>
+  </div>
+</div>
   </div>
 </div>
 
@@ -512,26 +514,25 @@ body{
       <button class="filter-btn" onclick="filterRegion(this,'sanda')">三田・北摂</button>
       <button class="filter-btn" onclick="filterRegion(this,'harima')">播磨</button>
       <button class="filter-btn" onclick="filterRegion(this,'other')">その他</button>
-      <span class="filter-count" id="filter-count">8件</span>
+      <span class="filter-count" id="filter-count">7件</span>
     </div>
 
     <!-- パーティーカード一覧 -->
     <div class="card-list" id="party-list">
-
-      <!-- カード1 -->
-      <a class="party-card card-free" href="party.html?id=P-001" data-region="kobe">
+      <!-- カード1: JDSF兵庫パーティー第1回 -->
+      <a class="party-card card-free" href="party-p-001.html" data-region="kobe">
         <div class="card-border-left"></div>
         <div class="card-date-block">
-          <div class="card-month">6月</div>
-          <div class="card-day">7</div>
-          <div class="card-weekday">土</div>
+          <div class="card-month">5月</div>
+          <div class="card-day">25</div>
+          <div class="card-weekday">日</div>
         </div>
         <div class="card-body">
           <div class="card-tags">
             <span class="tag tag-region">神戸市内</span>
-            <span class="tag tag-new">NEW</span>
+            <span class="tag tag-free">JDSF会員無料</span>
           </div>
-          <div class="card-name">スマイルダンスサークル 定期パーティー</div>
+          <div class="card-name">JDSF兵庫 会員交流無料パーティー（第1回）</div>
           <div class="card-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -539,93 +540,29 @@ body{
             </span>
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              三宮クレアホール
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              ダンシングスマイル
+              神戸市中央区文化センター
             </span>
           </div>
         </div>
         <div class="card-fee">
-          <span class="fee-free">無料</span>
+          <span class="fee-free">JDSF会員無料</span>
         </div>
       </a>
 
-      <!-- カード2 -->
-      <a class="party-card" href="party.html?id=P-002" data-region="sanda">
+      <!-- カード2: 第79回ダンスカーニバル -->
+      <a class="party-card card-hot" href="party-p-002.html" data-region="kobe">
         <div class="card-border-left"></div>
         <div class="card-date-block">
-          <div class="card-month">6月</div>
-          <div class="card-day">8</div>
+          <div class="card-month">7月</div>
+          <div class="card-day">12</div>
           <div class="card-weekday">日</div>
-        </div>
-        <div class="card-body">
-          <div class="card-tags">
-            <span class="tag tag-region">三田・北摂</span>
-          </div>
-          <div class="card-name">三田広野 日曜ダンスパーティー</div>
-          <div class="card-meta">
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              13:00〜16:00
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              三田市広野市民センター
-            </span>
-          </div>
-        </div>
-        <div class="card-fee">
-          <div class="fee-num">1,000</div>
-          <div class="fee-unit">円</div>
-        </div>
-      </a>
-
-      <!-- カード3 -->
-      <a class="party-card" href="party.html?id=P-003" data-region="harima">
-        <div class="card-border-left"></div>
-        <div class="card-date-block">
-          <div class="card-month">6月</div>
-          <div class="card-day">8</div>
-          <div class="card-weekday">日</div>
-        </div>
-        <div class="card-body">
-          <div class="card-tags">
-            <span class="tag tag-region" style="background:#EDE9F8;color:#5B3DB7">播磨</span>
-          </div>
-          <div class="card-name">ふれあいダンスパーティー in 姫路</div>
-          <div class="card-meta">
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              13:30〜16:30
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              姫路市灘市民センター
-            </span>
-          </div>
-        </div>
-        <div class="card-fee">
-          <div class="fee-num">800</div>
-          <div class="fee-unit">円</div>
-        </div>
-      </a>
-
-      <!-- カード4 -->
-      <a class="party-card card-hot" href="party.html?id=P-004" data-region="kobe">
-        <div class="card-border-left"></div>
-        <div class="card-date-block">
-          <div class="card-month">6月</div>
-          <div class="card-day">14</div>
-          <div class="card-weekday">土</div>
         </div>
         <div class="card-body">
           <div class="card-tags">
             <span class="tag tag-region">神戸市内</span>
             <span class="tag tag-big">大型</span>
           </div>
-          <div class="card-name">第80回 ダンスカーニバル 神戸</div>
+          <div class="card-name">第79回 ダンスカーニバル</div>
           <div class="card-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -647,42 +584,12 @@ body{
         </div>
       </a>
 
-      <!-- カード5 -->
-      <a class="party-card" href="party.html?id=P-005" data-region="hanshin">
+      <!-- カード3: JDSF兵庫パーティー第2回 -->
+      <a class="party-card card-free" href="party-p-003.html" data-region="kobe">
         <div class="card-border-left"></div>
         <div class="card-date-block">
-          <div class="card-month">6月</div>
-          <div class="card-day">15</div>
-          <div class="card-weekday">日</div>
-        </div>
-        <div class="card-body">
-          <div class="card-tags">
-            <span class="tag tag-region" style="background:#FDE8D8;color:#8B3A0F">阪神</span>
-          </div>
-          <div class="card-name">甲東ダンス愛好会 月例パーティー</div>
-          <div class="card-meta">
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              13:00〜16:00
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              アプリ甲東（西宮市）
-            </span>
-          </div>
-        </div>
-        <div class="card-fee">
-          <div class="fee-num">900</div>
-          <div class="fee-unit">円</div>
-        </div>
-      </a>
-
-      <!-- カード6 -->
-      <a class="party-card card-free" href="party.html?id=P-006" data-region="kobe">
-        <div class="card-border-left"></div>
-        <div class="card-date-block">
-          <div class="card-month">6月</div>
-          <div class="card-day">22</div>
+          <div class="card-month">8月</div>
+          <div class="card-day">9</div>
           <div class="card-weekday">日</div>
         </div>
         <div class="card-body">
@@ -690,7 +597,7 @@ body{
             <span class="tag tag-region">神戸市内</span>
             <span class="tag tag-free">JDSF会員無料</span>
           </div>
-          <div class="card-name">JDSF兵庫 会員交流パーティー</div>
+          <div class="card-name">JDSF兵庫 会員交流無料パーティー（第2回）</div>
           <div class="card-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -703,25 +610,116 @@ body{
           </div>
         </div>
         <div class="card-fee">
-          <div class="fee-num">900</div>
-          <div class="fee-unit">円（非会員）</div>
+          <span class="fee-free">JDSF会員無料</span>
         </div>
       </a>
 
-      <!-- カード7 -->
-      <a class="party-card" href="party.html?id=P-007" data-region="sanda">
+      <!-- カード4: D.C.サザンクロス -->
+      <a class="party-card card-hot" href="party-p-004.html" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">9月</div>
+          <div class="card-day">13</div>
+          <div class="card-weekday">日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-big">大型</span>
+          </div>
+          <div class="card-name">D.C.サザンクロス・ダンスパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              11:30〜17:00
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              神戸市内（詳細要問合せ）
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">17,000</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード5: 音楽とダンスの祭典 -->
+      <a class="party-card card-hot" href="party-p-005.html" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">11月</div>
+          <div class="card-day">3</div>
+          <div class="card-weekday">火・祝</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-big">大型</span>
+          </div>
+          <div class="card-name">音楽とダンスの祭典2026 in Hyogo</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              兵庫県立文化体育館
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              兵庫県ダンススポーツ連盟
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">未定</div>
+        </div>
+      </a>
+
+      <!-- カード6: 三田広野定期 -->
+      <a class="party-card" href="party-p-006.html" data-region="sanda">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">毎週</div>
+          <div class="card-day" style="font-size:22px">日曜</div>
+          <div class="card-weekday">定期</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">三田・北摂</span>
+            <span style="font-size:10px;font-weight:500;padding:2px 8px;border-radius:99px;background:#F1EFE8;color:#444441">定期開催</span>
+          </div>
+          <div class="card-name">三田広野 毎週日曜ダンスパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:00
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              三田市広野市民センター
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">1,000</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード7: ネスタリゾート -->
+      <a class="party-card card-hot" href="party-p-007.html" data-region="sanda">
         <div class="card-border-left"></div>
         <div class="card-date-block">
           <div class="card-month">6月</div>
           <div class="card-day">28</div>
-          <div class="card-weekday">土</div>
+          <div class="card-weekday">日</div>
         </div>
         <div class="card-body">
           <div class="card-tags">
             <span class="tag tag-region">三田・北摂</span>
             <span class="tag tag-big">大型</span>
           </div>
-          <div class="card-name">ダンススクールパッション 夏のパーティー</div>
+          <div class="card-name">ダンススクールパッション 夏のダンスパーティー</div>
           <div class="card-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -738,41 +736,10 @@ body{
           <div class="fee-unit">円</div>
         </div>
       </a>
-
-      <!-- カード8 -->
-      <a class="party-card" href="party.html?id=P-008" data-region="harima">
-        <div class="card-border-left"></div>
-        <div class="card-date-block">
-          <div class="card-month">7月</div>
-          <div class="card-day">12</div>
-          <div class="card-weekday">土</div>
-        </div>
-        <div class="card-body">
-          <div class="card-tags">
-            <span class="tag tag-region" style="background:#EDE9F8;color:#5B3DB7">播磨</span>
-          </div>
-          <div class="card-name">明石ダンスサークル 7月定例パーティー</div>
-          <div class="card-meta">
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              13:30〜16:30
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              明石市生涯学習センター
-            </span>
-          </div>
-        </div>
-        <div class="card-fee">
-          <div class="fee-num">1,000</div>
-          <div class="fee-unit">円</div>
-        </div>
-      </a>
-
-    </div><!-- /card-list -->
+</div><!-- /card-list -->
 
     <div class="load-more">
-      <button class="btn-load">もっと見る（残り12件）</button>
+      <button class="btn-load">すべて表示中（7件）</button>
     </div>
 
   </main>

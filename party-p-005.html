@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>音楽とダンスの祭典2026 in Hyogo | 兵庫ダンスパーティー情報</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAF8F3;--bg2:#F2EFE7;--ink:#1C1A14;--ink2:#5C5847;--ink3:#9C9580;
+  --gold:#B8933A;--gold-l:#F0E4C0;--teal:#1D7A6B;--teal-l:#DCF0EC;
+  --red:#C0392B;--border:#DDD9CE;--card-bg:#FFFFFF;--radius:10px;
+  --ff-serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --ff-sans:'Noto Sans JP',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--ff-sans);font-size:15px;line-height:1.7}
+.site-header{background:var(--ink);color:#fff;padding:0 clamp(16px,5vw,48px);position:sticky;top:0;z-index:100}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;height:56px}
+.site-logo{font-family:var(--ff-serif);font-size:clamp(14px,2.5vw,20px);font-weight:600;letter-spacing:.04em;color:#fff;text-decoration:none;white-space:nowrap}
+.site-logo span{color:var(--gold);font-style:italic}
+.header-nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+.header-nav a{color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:6px;transition:background .15s,color .15s;white-space:nowrap}
+.header-nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.btn-post{background:var(--gold);color:var(--ink)!important;font-weight:500;font-size:13px!important;padding:7px 16px!important;border-radius:99px!important}
+.breadcrumb-bar{background:var(--bg2);border-bottom:1px solid var(--border)}
+.breadcrumb{max-width:1100px;margin:0 auto;padding:10px clamp(16px,5vw,48px);font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.breadcrumb a{color:var(--ink3);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+.party-hero{background:var(--ink);padding:clamp(32px,6vw,56px) clamp(16px,5vw,48px) 0;position:relative;overflow:hidden}
+.party-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 85% 40%,rgba(184,147,58,.2) 0%,transparent 65%),radial-gradient(ellipse 40% 60% at 15% 80%,rgba(29,122,107,.12) 0%,transparent 55%);pointer-events:none}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.hero-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.htag{font-size:10px;font-weight:500;padding:2px 9px;border-radius:99px;letter-spacing:.04em}
+.htag-region{background:rgba(29,122,107,.25);color:#5DCAA5;border:1px solid rgba(29,122,107,.3)}
+.htag-big{background:rgba(192,57,43,.25);color:#F08080;border:1px solid rgba(192,57,43,.3)}
+.htag-free{background:rgba(29,122,107,.3);color:#5DCAA5;border:1px solid rgba(29,122,107,.4)}
+.htag-normal{background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.2)}
+.hero-title{font-family:var(--ff-serif);font-size:clamp(20px,4vw,38px);font-weight:600;color:#fff;line-height:1.25;margin-bottom:20px}
+.hero-date-bar{display:flex;align-items:stretch;gap:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);overflow:hidden;width:fit-content;margin-bottom:24px;flex-wrap:wrap}
+.date-block{padding:12px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid rgba(255,255,255,.1)}
+.date-block:last-child{border-right:none}
+.date-label{font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.08em;margin-bottom:2px}
+.date-value{font-family:var(--ff-serif);font-size:clamp(14px,2.2vw,20px);font-weight:600;color:#fff;line-height:1.1}
+.date-value small{font-size:11px;font-weight:400;margin-left:2px;color:rgba(255,255,255,.7);font-family:var(--ff-sans)}
+.hero-bottom{display:flex;align-items:flex-end;gap:24px;padding-top:8px}
+.share-btn{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.65);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:6px 12px;border-radius:99px;cursor:pointer;transition:all .15s;text-decoration:none;font-family:var(--ff-sans);margin-bottom:16px}
+.share-btn:hover{background:rgba(255,255,255,.15);color:#fff}
+.detail-wrap{max-width:1100px;margin:0 auto;padding:clamp(24px,5vw,40px) clamp(16px,5vw,48px);display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start}
+@media(max-width:800px){.detail-wrap{grid-template-columns:1fr}.detail-side{order:-1}}
+.info-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:16px;overflow:hidden}
+.info-card-title{font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--ink3);text-transform:uppercase;padding:12px 20px 8px;border-bottom:1px solid var(--border)}
+.info-body{padding:16px 20px}
+.detail-table{width:100%;border-collapse:collapse}
+.detail-table tr{border-bottom:1px solid var(--bg2)}
+.detail-table tr:last-child{border-bottom:none}
+.detail-table th{width:110px;padding:11px 0;font-size:12px;font-weight:500;color:var(--ink3);text-align:left;vertical-align:top;white-space:nowrap}
+.detail-table td{padding:11px 0 11px 12px;font-size:13px;color:var(--ink);vertical-align:top;line-height:1.6}
+.pr-text{font-size:13px;color:var(--ink2);line-height:1.85;padding:16px 20px;border-left:3px solid var(--gold-l);background:linear-gradient(to right,rgba(240,228,192,.3),transparent)}
+.tag{font-size:10px;font-weight:500;padding:2px 8px;border-radius:99px;letter-spacing:.03em}
+.tag-free{background:var(--teal-l);color:var(--teal)}
+.tag-big{background:#FEF0F0;color:var(--red);border:1px solid #F5C6C6}
+.tag-normal{background:var(--gold-l);color:#7A5F1A}
+.fee-card{background:var(--ink);color:#fff;border-radius:var(--radius);padding:20px;position:relative;overflow:hidden}
+.fee-card::before{content:'';position:absolute;right:-20px;top:-20px;width:120px;height:120px;border-radius:50%;background:rgba(184,147,58,.12)}
+.fee-card-label{font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;margin-bottom:6px}
+.fee-card-main{font-family:var(--ff-serif);font-size:clamp(24px,4vw,36px);font-weight:600;color:var(--gold);line-height:1;margin-bottom:4px}
+.fee-card-unit{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:12px}
+.fee-card-note{font-size:11px;color:rgba(255,255,255,.5);line-height:1.6}
+.reserve-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+.reserve-title{font-size:12px;font-weight:500;margin-bottom:10px;color:var(--ink)}
+.btn-contact{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--gold);color:var(--ink);text-decoration:none;font-weight:500;font-size:13px;padding:11px 0;border-radius:99px;transition:opacity .15s;width:100%;text-align:center}
+.btn-contact:hover{opacity:.85}
+.btn-back{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink3);text-decoration:none;padding:4px 0;transition:color .15s}
+.btn-back:hover{color:var(--gold)}
+.org-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+.org-label{font-size:10px;color:var(--ink3);letter-spacing:.08em;margin-bottom:6px}
+.org-name{font-size:14px;font-weight:500;margin-bottom:4px}
+.org-link{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--teal);text-decoration:none;margin-top:6px}
+.org-link:hover{text-decoration:underline}
+.detail-side{display:flex;flex-direction:column;gap:16px}
+.site-footer{background:var(--ink);color:rgba(255,255,255,.6);padding:32px clamp(16px,5vw,48px);margin-top:48px;font-size:12px}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-logo{font-family:var(--ff-serif);font-size:16px;color:#fff;font-weight:600}
+.footer-links{display:flex;gap:16px}
+.footer-links a{color:rgba(255,255,255,.5);text-decoration:none}
+.footer-links a:hover{color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.info-card{animation:fadeUp .3s ease both}
+.info-card:nth-child(1){animation-delay:.05s}
+.info-card:nth-child(2){animation-delay:.1s}
+.detail-side .fee-card{animation:fadeUp .3s ease .05s both}
+.detail-side .reserve-card{animation:fadeUp .3s ease .1s both}
+.detail-side .org-card{animation:fadeUp .3s ease .15s both}
+@media(max-width:600px){.header-nav .nav-hide{display:none}.hero-date-bar{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">兵庫<span>Dance</span>Party</a>
+    <nav class="header-nav">
+      <a href="calendar.html" class="nav-hide">カレンダー</a>
+      <a href="index.html" class="nav-hide">パーティー一覧</a>
+      <a href="about.html" class="nav-hide">このサイトについて</a>
+      <a href="submit.html" class="btn-post">＋ 掲載申請</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb-bar">
+  <div class="breadcrumb">
+    <a href="index.html">トップ</a>
+    <span>›</span>
+    <a href="index.html">神戸市内</a>
+    <span>›</span>
+    <span>音楽とダンスの祭典2026 in Hyogo</span>
+  </div>
+</div>
+
+<div class="party-hero">
+  <div class="hero-inner">
+    <div class="hero-tags"><span class="htag htag-region">神戸市内</span>
+<span class="htag htag-big">大型イベント</span></div>
+    <h1 class="hero-title">音楽とダンスの祭典2026 in Hyogo</h1>
+    <div class="hero-date-bar">
+      <div class="date-block">
+        <div class="date-label">開催日</div>
+        <div class="date-value">2026/11/3<small>（火・祝）</small></div>
+      </div>
+      <div class="date-block">
+        <div class="date-label">時間</div>
+        <div class="date-value">未定</div>
+      </div>
+      <div class="date-block">
+        <div class="date-label">会場</div>
+        <div class="date-value" style="font-size:clamp(12px,1.6vw,15px);font-family:var(--ff-sans)">兵庫県立文化体育館（旧神戸常盤アリーナ）</div>
+      </div>
+      <div class="date-block">
+        <div class="date-label">参加費</div>
+        <div class="date-value" style="color:var(--gold)">未定</div>
+      </div>
+    </div>
+    <div class="hero-bottom">
+      <button class="share-btn" onclick="navigator.clipboard.writeText(location.href).then(()=>this.textContent='コピーしました')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        URLをコピー
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="detail-wrap">
+  <main>
+    <div class="info-card">
+      <div class="info-card-title">パーティー詳細</div>
+      <div class="info-body">
+        <table class="detail-table">
+          <tr><th>開催日</th><td><strong>2026/11/3（火・祝）</strong></td></tr>
+          <tr><th>時間</th><td>未定</td></tr>
+          <tr><th>会場</th><td><strong>兵庫県立文化体育館（旧神戸常盤アリーナ）</strong><br><span style="font-size:12px;color:var(--ink3)">兵庫県神戸市兵庫区荒田町3-36</span></td></tr>
+          <tr><th>参加費</th><td><span style="font-family:var(--ff-serif);font-size:18px;font-weight:600">未定</span><br><span style="font-size:12px;color:var(--ink2)">詳細未定</span></td></tr>
+          <tr><th>予約</th><td>詳細未定</td></tr>
+          <tr><th>主催</th><td>兵庫県ダンススポーツ連盟</td></tr>
+          
+          <tr><th>アクセス</th><td>JR「兵庫駅」より徒歩10分</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-title">主催者からのメッセージ</div>
+      <div class="pr-text">兵庫県ダンススポーツ連盟主催の大型イベント。デモンストレーターは未定です。詳細は主催者サイトをご確認ください。</div>
+    </div>
+  </main>
+
+  <aside class="detail-side">
+    <div class="fee-card">
+      <div class="fee-card-label">参加費</div>
+      <div class="fee-card-main">未定</div>
+      <div class="fee-card-unit"></div>
+      <div class="fee-card-note">詳細未定</div>
+    </div>
+
+    <div class="reserve-card">
+      <div class="reserve-title">お問い合わせ・予約</div>
+      <a href="https://www.jdsf-hyogo.com/" target="_blank" rel="noopener" class="btn-contact">公式サイトを見る →</a>
+      <div style="font-size:11px;color:var(--ink3);margin-top:8px;text-align:center;line-height:1.5">
+        予約：詳細未定
+      </div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-label">主催</div>
+      <div class="org-name">兵庫県ダンススポーツ連盟</div>
+      <a href="https://www.jdsf-hyogo.com/" target="_blank" rel="noopener" class="org-link">公式サイト →</a>
+    </div>
+
+    <a href="index.html" class="btn-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="15 18 9 12 15 6"/></svg>
+      パーティー一覧に戻る
+    </a>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">兵庫 Dance Party</div>
+    <div class="footer-links">
+      <a href="about.html">このサイトについて</a>
+      <a href="submit.html">掲載申請</a>
+      <a href="about.html#contact">お問い合わせ</a>
+    </div>
+    <div>© 2026 兵庫ダンスパーティー情報</div>
+  </div>
+</footer>
+</body>
+</html>
