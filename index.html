@@ -499,6 +499,29 @@ body{
   /* もっと見るボタン */
   .btn-load{font-size:13px;padding:10px 24px}
 }
+
+/* ── 広告カード（ソシエテエレガン） ── */
+.ad-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:16px}
+.ad-card-head{background:var(--ink);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ad-logo{font-family:var(--ff-serif);font-size:17px;font-style:italic;font-weight:400;color:#C9A84C;line-height:1.2}
+.ad-logo small{display:block;font-size:9px;font-style:normal;font-family:var(--ff-sans);font-weight:300;letter-spacing:.18em;color:rgba(255,255,255,.38);margin-top:2px}
+.ad-pr-badge{font-size:9px;letter-spacing:.12em;color:rgba(255,255,255,.3);border:0.5px solid rgba(255,255,255,.18);padding:2px 7px;border-radius:2px;flex-shrink:0}
+.ad-card-body{display:grid;grid-template-columns:1fr auto;gap:14px;padding:16px 18px;align-items:center}
+.ad-catch{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:5px}
+.ad-desc{font-size:12px;color:var(--ink2);line-height:1.8}
+.ad-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0}
+.ad-chips{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.ad-chip{font-size:10px;padding:2px 9px;border-radius:99px;background:var(--gold-l);color:#7A5C1E;white-space:nowrap}
+.ad-btn{display:inline-flex;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:11px;padding:7px 14px;border-radius:4px;text-decoration:none;white-space:nowrap;transition:opacity .15s}
+.ad-btn:hover{opacity:.78}
+.ad-btn svg{width:11px;height:11px}
+.ad-card-foot{border-top:1px solid var(--border);padding:9px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ad-loc{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--ink3);text-decoration:none}
+.ad-loc svg{width:12px;height:12px;color:var(--gold)}
+.ad-loc:hover{color:var(--gold)}
+.ad-tel{font-size:11px;color:var(--ink3);text-decoration:none}
+.ad-tel:hover{color:var(--ink)}
+@media(max-width:600px){.ad-card-body{grid-template-columns:1fr}.ad-right{flex-direction:row;align-items:center;flex-wrap:wrap}}
 </style>
 </head>
 <body>
@@ -540,6 +563,10 @@ body{
   <div class="pickup-inner">
     <span class="pickup-label">直近開催</span>
     <div class="pickup-items">
+      <a href="party-p-008.html" class="pickup-item" style="border-color:var(--gold)">
+        ソシエテエレガン earlyサマーパーティー
+        <span class="date">6/14（日）</span>
+      </a>
       <a href="party-p-001.html" class="pickup-item">
         JDSF兵庫 会員交流パーティー
         <span class="date">5/25（日）</span>
@@ -575,7 +602,7 @@ body{
       <button class="filter-btn" onclick="filterRegion(this,'sanda')">三田・北摂</button>
       <button class="filter-btn" onclick="filterRegion(this,'harima')">播磨</button>
       <button class="filter-btn" onclick="filterRegion(this,'other')">その他</button>
-      <span class="filter-count" id="filter-count">7件</span>
+      <span class="filter-count" id="filter-count">8件</span>
     </div>
 
     <!-- パーティーカード一覧 -->
@@ -607,6 +634,42 @@ body{
         </div>
         <div class="card-fee">
           <span class="fee-free">JDSF会員無料</span>
+        </div>
+      </a>
+
+      <!-- カード新: ソシエテエレガン earlyサマーパーティー2026 -->
+      <a class="party-card" href="party-p-008.html" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">6月</div>
+          <div class="card-day">14</div>
+          <div class="card-weekday">日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-new">NEW</span>
+            <span style="font-size:10px;font-weight:500;padding:1px 7px;border-radius:99px;background:#FEF9EC;color:#92620A;border:1px solid #EDD99A">要事前予約</span>
+          </div>
+          <div class="card-name">ダンス教室ソシエテエレガン earlyサマーパーティー2026</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              11:30〜16:30
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              神戸ポートピアホテル
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              ダンス教室ソシエテエレガン
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">24,000</div>
+          <div class="fee-unit">円</div>
         </div>
       </a>
 
@@ -800,7 +863,7 @@ body{
 </div><!-- /card-list -->
 
     <div class="load-more">
-      <button class="btn-load">すべて表示中（7件）</button>
+      <button class="btn-load">すべて表示中（8件）</button>
     </div>
 
   </main>
@@ -881,7 +944,7 @@ body{
         <div class="region-list">
           <a href="#" class="region-item" onclick="filterRegion(null,'kobe');return false">
             <span class="region-name">神戸市内</span>
-            <span class="region-count">3件</span>
+            <span class="region-count">4件</span>
           </a>
           <a href="#" class="region-item" onclick="filterRegion(null,'hanshin');return false">
             <span class="region-name">阪神（西宮・尼崎等）</span>
@@ -912,6 +975,40 @@ body{
           <span>会場別パーティー一覧</span>
           <span style="font-size:11px;color:var(--ink3)">16会場 194件 →</span>
         </a>
+      </div>
+    </div>
+
+    <!-- 広告カード: ソシエテエレガン -->
+    <div class="ad-card">
+      <div class="ad-card-head">
+        <div class="ad-logo">
+          société élégante
+          <small>Dance Studio · Sannomiya</small>
+        </div>
+        <div class="ad-pr-badge">PR</div>
+      </div>
+      <div class="ad-card-body">
+        <div>
+          <div class="ad-catch">神戸三宮の社交ダンス教室</div>
+          <div class="ad-desc">初心者から経験者まで、音楽に合わせて楽しく踊れる環境を提供。<br>ワルツ・タンゴ・ルンバ・チャチャチャなど多彩な種目に対応。</div>
+        </div>
+        <div class="ad-right">
+          <div class="ad-chips">
+            <span class="ad-chip">無料体験</span>
+            <span class="ad-chip">チケット制</span>
+          </div>
+          <a href="https://societeelegante.wixsite.com/mysite" target="_blank" rel="noopener" class="ad-btn">
+            教室サイトへ
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="ad-card-foot">
+        <a href="https://maps.app.goo.gl/5LNnWi9U1c1sXz6G7" target="_blank" rel="noopener" class="ad-loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          三宮センタープラザ西館 5階
+        </a>
+        <a href="tel:0783912565" class="ad-tel">TEL: 078-391-2565</a>
       </div>
     </div>
 
