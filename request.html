@@ -646,14 +646,17 @@ function selectType(type) {
     isCreate ? 'ホームページ作成の詳細' : 'リンク掲載の詳細';
 }
 
-// ── 送信処理 ──────────────────────────────────────
+// ── 送信処理（mailto方式） ────────────────────────
 function submitForm() {
-  // 必須チェック
-  const name = document.getElementById('name').value.trim();
-  const org  = document.getElementById('org').value.trim();
-  const email= document.getElementById('email').value.trim();
-  const loc  = document.getElementById('location').value.trim();
-  const cat  = document.getElementById('category').value;
+
+  // ── 必須チェック ──
+  const name    = document.getElementById('name').value.trim();
+  const org     = document.getElementById('org').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const loc     = document.getElementById('location').value.trim();
+  const cat     = document.getElementById('category').value;
+  const tel     = document.getElementById('tel').value.trim();
+  const message = document.getElementById('message').value.trim();
   const privacy = document.getElementById('privacy').checked;
 
   if (!name || !org || !email || !loc || !cat) {
@@ -669,10 +672,80 @@ function submitForm() {
     return;
   }
 
-  // 完了表示
-  document.getElementById('form-area').style.display = 'none';
-  document.getElementById('done-msg').classList.add('show');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // ── 依頼種別を取得 ──
+  const typeLabel = document.getElementById('tab-create').classList.contains('selected')
+    ? 'ホームページ新規作成'
+    : '広告枠リンクカード掲載';
+
+  // ── 業種ラベルを取得 ──
+  const catEl  = document.getElementById('category');
+  const catLabel = catEl.options[catEl.selectedIndex].text;
+
+  // ── 作成依頼の追加項目 ──
+  let extraBody = '';
+  if (typeLabel === 'ホームページ新規作成') {
+    const currentUrl   = document.getElementById('current-url').value.trim();
+    const designEl     = document.getElementById('design-style');
+    const designLabel  = designEl.options[designEl.selectedIndex]?.text || '未選択';
+    const budgetEl     = document.getElementById('budget');
+    const budgetLabel  = budgetEl.options[budgetEl.selectedIndex]?.text || '未選択';
+    const deadline     = document.getElementById('deadline').value.trim();
+
+    // チェックされた機能を収集
+    const checked = [...document.querySelectorAll('#fields-create .check-group input:checked')]
+      .map(el => el.closest('label').querySelector('span').textContent).join('、');
+
+    extraBody =
+      '\n希望機能: ' + (checked || 'なし') +
+      '\nデザイン志向: ' + designLabel +
+      '\n予算目安: ' + budgetLabel +
+      '\n希望納期: ' + (deadline || '未入力') +
+      '\n現在のURL: ' + (currentUrl || 'なし');
+
+  } else {
+    // リンク依頼の追加項目
+    const linkUrl  = document.getElementById('link-url').value.trim();
+    const sns      = document.getElementById('sns').value.trim();
+    const linkDesc = document.getElementById('link-desc').value.trim();
+    const linkCat  = document.querySelector('input[name="link-cat"]:checked');
+    const linkCatLabel = linkCat
+      ? linkCat.closest('label').querySelector('span').textContent : '未選択';
+
+    extraBody =
+      '\n掲載URL: ' + (linkUrl || '未入力') +
+      '\nSNSアカウント: ' + (sns || 'なし') +
+      '\n掲載カテゴリ: ' + linkCatLabel +
+      '\n紹介文: ' + (linkDesc || '未入力');
+  }
+
+  // ── メール本文を組み立て ──
+  const subject = '【依頼：' + typeLabel + '】' + org + ' / ' + name;
+
+  const body =
+    '■ 依頼種別\n' + typeLabel +
+    '\n\n■ 依頼者情報' +
+    '\nお名前: '     + name +
+    '\n団体・教室名: ' + org +
+    '\n業種: '       + catLabel +
+    '\nメール: '     + email +
+    '\n電話: '       + (tel || '未入力') +
+    '\n所在地: '     + loc +
+    '\n\n■ 依頼内容' + extraBody +
+    '\n\n■ ご要望・ご質問\n' + (message || 'なし') +
+    '\n\n──────────────────\n兵庫ダンスパーティー情報 依頼フォームより';
+
+  // ── メールアプリを起動 ──
+  window.location.href =
+    'mailto:gondot2000@gmail.com' +
+    '?subject=' + encodeURIComponent(subject) +
+    '&body='    + encodeURIComponent(body);
+
+  // ── 完了メッセージ表示 ──
+  setTimeout(() => {
+    document.getElementById('form-area').style.display = 'none';
+    document.getElementById('done-msg').classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 500);
 }
 </script>
 </body>
