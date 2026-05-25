@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ホームページ作成・リンク依頼 | 兵庫ダンスパーティー情報</title>
+<meta name="description" content="ダンス教室・スタジオ・ショップ向けのホームページ作成依頼、および作成済みホームページへのリンク掲載依頼を受け付けています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:      #FAF8F3;
+  --bg2:     #F2EFE7;
+  --ink:     #1C1A14;
+  --ink2:    #5C5847;
+  --ink3:    #9C9580;
+  --gold:    #B8933A;
+  --gold-l:  #F0E4C0;
+  --teal:    #1D7A6B;
+  --teal-l:  #DCF0EC;
+  --border:  #DDD9CE;
+  --card-bg: #FFFFFF;
+  --radius:  10px;
+  --ff-serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --ff-sans: 'Noto Sans JP',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--ff-sans);font-size:15px;line-height:1.7}
+
+/* ── ヘッダー ── */
+.site-header{background:var(--ink);color:#fff;padding:0 clamp(16px,5vw,48px);position:sticky;top:0;z-index:100}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;height:56px}
+.site-logo{font-family:var(--ff-serif);font-size:clamp(14px,2.5vw,20px);font-weight:600;letter-spacing:.04em;color:#fff;text-decoration:none;white-space:nowrap}
+.site-logo span{color:var(--gold);font-style:italic}
+.header-nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+.header-nav a{color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:6px;transition:background .15s,color .15s;white-space:nowrap}
+.header-nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.btn-post{background:var(--gold);color:var(--ink)!important;font-weight:500;font-size:13px!important;padding:7px 16px!important;border-radius:99px!important}
+@media(max-width:640px){.nav-hide{display:none}}
+
+/* ── パンくず ── */
+.breadcrumb-wrap{background:var(--bg2);border-bottom:1px solid var(--border)}
+.breadcrumb{max-width:900px;margin:0 auto;padding:10px clamp(16px,5vw,48px);font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.breadcrumb a{color:var(--ink3);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+
+/* ── ページヒーロー ── */
+.page-hero{background:var(--ink);padding:clamp(32px,6vw,56px) clamp(16px,5vw,48px) clamp(24px,4vw,40px);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 100% at 90% 50%,rgba(184,147,58,.15) 0%,transparent 70%);pointer-events:none}
+.page-hero-inner{max-width:900px;margin:0 auto;position:relative}
+.page-hero-eyebrow{font-size:11px;letter-spacing:.18em;color:var(--gold);font-weight:500;margin-bottom:10px}
+.page-hero-title{font-family:var(--ff-serif);font-size:clamp(24px,4vw,38px);font-weight:600;color:#fff;line-height:1.3;margin-bottom:10px}
+.page-hero-desc{font-size:13px;color:rgba(255,255,255,.65);max-width:540px;line-height:1.9}
+
+/* ── 種別選択タブ ── */
+.type-selector{background:var(--bg2);border-bottom:1px solid var(--border);padding:20px clamp(16px,5vw,48px)}
+.type-selector-inner{max-width:900px;margin:0 auto}
+.type-tabs{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:560px}
+.type-tab{
+  background:var(--card-bg);border:2px solid var(--border);border-radius:var(--radius);
+  padding:16px 20px;cursor:pointer;text-align:left;
+  transition:border-color .2s,background .2s;
+  display:flex;align-items:flex-start;gap:12px;
+}
+.type-tab:hover{border-color:var(--gold)}
+.type-tab.selected{border-color:var(--gold);background:var(--gold-l)}
+.type-tab-icon{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:background .2s;
+}
+.type-tab.selected .type-tab-icon{background:var(--gold)}
+.type-tab-icon svg{width:17px;height:17px;color:var(--ink3)}
+.type-tab.selected .type-tab-icon svg{color:#fff}
+.type-tab-label{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:3px}
+.type-tab-desc{font-size:11px;color:var(--ink3);line-height:1.5}
+.type-tab.selected .type-tab-desc{color:var(--ink2)}
+
+/* ── メインレイアウト ── */
+.wrap{max-width:900px;margin:0 auto;padding:clamp(24px,5vw,48px) clamp(16px,5vw,48px);display:grid;grid-template-columns:1fr 260px;gap:32px;align-items:start}
+@media(max-width:780px){.wrap{grid-template-columns:1fr}}
+@media(max-width:780px){.side{display:none}}
+
+/* ── フォームカード ── */
+.form-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:20px}
+.form-card-header{padding:16px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.form-card-num{width:24px;height:24px;border-radius:50%;background:var(--gold-l);color:var(--gold);font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.form-card-header h2{font-size:15px;font-weight:500}
+.form-body{padding:24px}
+
+/* フォーム部品 */
+.field{margin-bottom:20px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+@media(max-width:560px){.field-row{grid-template-columns:1fr}}
+label{display:block;font-size:12px;font-weight:500;color:var(--ink2);margin-bottom:6px;letter-spacing:.02em}
+label .req{color:#C0392B;margin-left:3px}
+label .opt{color:var(--ink3);font-weight:400;font-size:11px;margin-left:4px}
+input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{
+  width:100%;font-family:var(--ff-sans);font-size:14px;color:var(--ink);
+  background:var(--bg);border:1px solid var(--border);border-radius:6px;
+  padding:10px 14px;outline:none;transition:border-color .15s,box-shadow .15s;
+  appearance:none;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,147,58,.12)}
+textarea{resize:vertical;min-height:110px;line-height:1.7}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239C9580' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+
+/* ラジオ・チェック */
+.radio-group,.check-group{display:flex;flex-direction:column;gap:8px}
+.radio-item,.check-item-field{display:flex;align-items:flex-start;gap:8px;cursor:pointer}
+.radio-item input,.check-item-field input{width:16px;height:16px;margin-top:3px;accent-color:var(--gold);flex-shrink:0;cursor:pointer}
+.radio-item span,.check-item-field span{font-size:13px;color:var(--ink2);line-height:1.5}
+
+/* 条件付き表示 */
+.conditional{display:none}
+.conditional.show{display:block}
+
+/* 注意ボックス */
+.note-box{background:var(--gold-l);border:1px solid rgba(184,147,58,.3);border-radius:8px;padding:14px 16px;font-size:12px;color:var(--ink2);line-height:1.8;margin-bottom:20px}
+.note-box strong{color:var(--ink)}
+.note-box ul{padding-left:16px;margin-top:6px}
+.note-box ul li{margin-bottom:3px}
+.info-box{background:var(--teal-l);border:1px solid rgba(29,122,107,.25);border-radius:8px;padding:14px 16px;font-size:12px;color:var(--ink2);line-height:1.8;margin-bottom:20px}
+
+/* 送信ボタン */
+.submit-btn{
+  width:100%;background:var(--gold);color:var(--ink);
+  font-family:var(--ff-sans);font-size:15px;font-weight:500;
+  padding:14px;border:none;border-radius:8px;
+  cursor:pointer;transition:opacity .15s;letter-spacing:.04em;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.submit-btn:hover{opacity:.85}
+.submit-btn svg{width:18px;height:18px}
+.submit-note{font-size:11px;color:var(--ink3);text-align:center;margin-top:10px;line-height:1.7}
+
+/* 完了メッセージ */
+.done-msg{display:none;background:var(--teal-l);border:1px solid rgba(29,122,107,.3);border-radius:var(--radius);padding:32px;text-align:center}
+.done-msg.show{display:block}
+.done-icon{width:56px;height:56px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.done-icon svg{width:28px;height:28px;color:#fff}
+.done-title{font-family:var(--ff-serif);font-size:22px;color:var(--teal);margin-bottom:8px}
+.done-desc{font-size:13px;color:var(--ink2);line-height:1.9}
+
+/* ── サイドバー ── */
+.side{display:flex;flex-direction:column;gap:16px}
+.side-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.side-title{font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--ink3);padding:12px 16px 8px;border-bottom:1px solid var(--border);text-transform:uppercase}
+.side-body{padding:14px 16px}
+.side-body p{font-size:12px;color:var(--ink2);line-height:1.8}
+
+/* 料金テーブル */
+.price-table{width:100%;border-collapse:collapse;font-size:12px}
+.price-table tr{border-bottom:1px solid var(--bg2)}
+.price-table tr:last-child{border:none}
+.price-table th{text-align:left;padding:8px 0;color:var(--ink3);font-weight:400;width:50%}
+.price-table td{text-align:right;padding:8px 0;font-weight:500;color:var(--ink)}
+.price-free{color:var(--teal);font-weight:500}
+.price-ask{color:var(--gold)}
+
+/* フロー */
+.flow-list{display:flex;flex-direction:column}
+.flow-item{display:flex;gap:10px;align-items:flex-start}
+.flow-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.flow-num{width:22px;height:22px;border-radius:50%;background:var(--gold-l);color:var(--gold);font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center}
+.flow-vline{width:1px;background:var(--border);flex:1;min-height:12px;margin:2px 0}
+.flow-body{padding:1px 0 12px;flex:1}
+.flow-title{font-size:12px;font-weight:500;margin-bottom:1px}
+.flow-desc{font-size:11px;color:var(--ink3);line-height:1.5}
+
+/* ── フッター ── */
+.site-footer{background:var(--ink);color:rgba(255,255,255,.6);padding:32px clamp(16px,5vw,48px);margin-top:48px;font-size:12px}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-logo{font-family:var(--ff-serif);font-size:16px;color:#fff;font-weight:600}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.5);text-decoration:none}
+.footer-links a:hover{color:#fff}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.form-card{animation:fadeUp .3s ease both}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">兵庫<span>Dance</span>Party</a>
+    <nav class="header-nav">
+      <a href="calendar.html" class="nav-hide">カレンダー</a>
+      <a href="index.html" class="nav-hide">パーティー一覧</a>
+      <a href="venues.html" class="nav-hide">会場別一覧</a>
+      <a href="about.html" class="nav-hide">このサイトについて</a>
+      <a href="submit.html" class="btn-post">＋ パーティーを掲載する</a>
+    </nav>
+  </div>
+</header>
+
+<!-- パンくず -->
+<div class="breadcrumb-wrap">
+  <div class="breadcrumb">
+    <a href="index.html">トップ</a>
+    <span style="opacity:.4">›</span>
+    <span>ホームページ作成・リンク依頼</span>
+  </div>
+</div>
+
+<!-- ページヒーロー -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-eyebrow">Website Request</p>
+    <h1 class="page-hero-title">ホームページ作成・リンク依頼</h1>
+    <p class="page-hero-desc">ダンス教室・スタジオ・ショップ・その他事業者の方を対象に、ホームページの新規作成依頼、または作成済みサイトへのリンク掲載依頼を受け付けています。</p>
+  </div>
+</div>
+
+<!-- 種別選択 -->
+<div class="type-selector">
+  <div class="type-selector-inner">
+    <p style="font-size:12px;color:var(--ink3);margin-bottom:12px;letter-spacing:.04em">ご依頼の種類を選択してください</p>
+    <div class="type-tabs">
+      <button class="type-tab selected" id="tab-create" onclick="selectType('create')">
+        <div class="type-tab-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+        </div>
+        <div>
+          <div class="type-tab-label">ホームページ作成依頼</div>
+          <div class="type-tab-desc">作成費用無料・月々5,500円〜<br>広告リンクカード付き</div>
+        </div>
+      </button>
+      <button class="type-tab" id="tab-link" onclick="selectType('link')">
+        <div class="type-tab-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </div>
+        <div>
+          <div class="type-tab-label">リンク掲載依頼</div>
+          <div class="type-tab-desc">既存サイトの広告リンクカードを作成・掲載</div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- メインコンテンツ -->
+<div class="wrap">
+  <main>
+
+    <!-- 完了メッセージ -->
+    <div class="done-msg" id="done-msg">
+      <div class="done-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="done-title">送信が完了しました</div>
+      <p class="done-desc">お問い合わせありがとうございます。<br>内容を確認のうえ、通常3営業日以内にご連絡いたします。<br>しばらくお待ちください。</p>
+    </div>
+
+    <div id="form-area">
+
+      <!-- 注意書き（作成依頼） -->
+      <div id="note-create">
+        <!-- 料金カード -->
+        <div style="background:var(--ink);border-radius:var(--radius);overflow:hidden;margin-bottom:20px">
+          <div style="padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)">
+            <div style="font-size:10px;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;text-transform:uppercase">New Website Plan</div>
+            <div style="font-family:var(--ff-serif);font-size:22px;font-style:italic;color:#fff;line-height:1.2">ホームページ新規作成</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(255,255,255,.08)">
+            <div style="padding:16px 20px;border-right:1px solid rgba(255,255,255,.08)">
+              <div style="font-size:10px;color:rgba(255,255,255,.45);letter-spacing:.1em;margin-bottom:6px">初期費用</div>
+              <div style="font-family:var(--ff-serif);font-size:28px;font-weight:600;color:var(--teal-l);line-height:1">無料</div>
+              <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:3px">作成費用 0円</div>
+            </div>
+            <div style="padding:16px 20px">
+              <div style="font-size:10px;color:rgba(255,255,255,.45);letter-spacing:.1em;margin-bottom:6px">月額費用</div>
+              <div style="font-family:var(--ff-serif);font-size:28px;font-weight:600;color:var(--gold);line-height:1">5,500<span style="font-size:14px;font-style:italic">円</span></div>
+              <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:3px">税込・月払い</div>
+            </div>
+          </div>
+          <div style="padding:14px 20px">
+            <div style="font-size:10px;color:rgba(255,255,255,.45);letter-spacing:.08em;margin-bottom:8px">含まれるサービス</div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.75)">
+                <span style="width:16px;height:16px;border-radius:50%;background:var(--gold);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#1C1A14" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                ホームページ新規制作（スマホ対応）
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.75)">
+                <span style="width:16px;height:16px;border-radius:50%;background:var(--gold);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#1C1A14" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                このサイトへの広告枠リンクカード作成・掲載（無料）
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.75)">
+                <span style="width:16px;height:16px;border-radius:50%;background:var(--gold);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#1C1A14" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                サイト運用・維持・更新サポート
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="note-box">
+          <strong>ご注意</strong>
+          <ul>
+            <li>社交ダンス教室・スタジオ・関連ショップ・その他事業者の方が対象です</li>
+            <li>お申し込み後、内容確認のうえ3営業日以内にご連絡します</li>
+            <li>ページ構成・デザイン等はヒアリング後にご提案します</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 注意書き（リンク依頼） -->
+      <div class="conditional" id="note-link">
+        <!-- 料金カード リンク -->
+        <div style="background:var(--ink);border-radius:var(--radius);overflow:hidden;margin-bottom:20px">
+          <div style="padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)">
+            <div style="font-size:10px;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;text-transform:uppercase">Link Card Plan</div>
+            <div style="font-family:var(--ff-serif);font-size:22px;font-style:italic;color:#fff;line-height:1.2">広告枠リンクカード掲載</div>
+          </div>
+          <div style="padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)">
+            <div style="font-size:10px;color:rgba(255,255,255,.45);letter-spacing:.1em;margin-bottom:8px">サービス内容</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:rgba(255,255,255,.75);line-height:1.6">
+                <span style="width:16px;height:16px;border-radius:50%;background:var(--gold);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#1C1A14" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                既存ホームページへの広告枠リンクカードを作成・掲載
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:rgba(255,255,255,.75);line-height:1.6">
+                <span style="width:16px;height:16px;border-radius:50%;background:var(--gold);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#1C1A14" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                教室名・住所・電話番号・紹介文・SNSリンク等を掲載
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:rgba(255,255,255,.75);line-height:1.6">
+                <span style="width:16px;height:16px;border-radius:50%;background:var(--gold);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#1C1A14" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                兵庫ダンスパーティー情報サイトのサイドバー・特集枠に表示
+              </div>
+            </div>
+          </div>
+          <div style="padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+            <div>
+              <div style="font-size:10px;color:rgba(255,255,255,.45);margin-bottom:4px">掲載料金</div>
+              <div style="font-family:var(--ff-serif);font-size:24px;font-weight:600;color:var(--teal-l)">お問い合わせください</div>
+            </div>
+          </div>
+        </div>
+        <div class="note-box">
+          <strong>ご注意</strong>
+          <ul>
+            <li>兵庫県内で活動するダンス教室・スタジオ・関連事業者が対象です</li>
+            <li>リンクカードのデザインはこちらで作成します（情報をご提供ください）</li>
+            <li>内容審査後、3営業日以内にご連絡します</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- フォーム: 基本情報 -->
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="form-card-num">1</div>
+          <h2>ご依頼者・団体情報</h2>
+        </div>
+        <div class="form-body">
+
+          <div class="field-row">
+            <div>
+              <label>お名前<span class="req">*</span></label>
+              <input type="text" id="name" placeholder="山田 花子" required>
+            </div>
+            <div>
+              <label>団体・教室名<span class="req">*</span></label>
+              <input type="text" id="org" placeholder="○○ダンス教室">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>業種<span class="req">*</span></label>
+            <select id="category">
+              <option value="">選択してください</option>
+              <option value="dance_school">社交ダンス教室・スタジオ</option>
+              <option value="dance_other">その他ダンス教室</option>
+              <option value="shop">ダンス関連ショップ</option>
+              <option value="organizer">パーティー主催者・団体</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <div>
+              <label>メールアドレス<span class="req">*</span></label>
+              <input type="email" id="email" placeholder="example@email.com" required>
+            </div>
+            <div>
+              <label>電話番号<span class="opt">任意</span></label>
+              <input type="tel" id="tel" placeholder="078-000-0000">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>所在地（都道府県・市区町村）<span class="req">*</span></label>
+            <input type="text" id="location" placeholder="兵庫県神戸市中央区">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- フォーム: 依頼内容 -->
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="form-card-num">2</div>
+          <h2 id="section2-title">ホームページ作成の詳細</h2>
+        </div>
+        <div class="form-body">
+
+          <!-- 作成依頼の項目 -->
+          <div id="fields-create">
+
+            <div class="field">
+              <label>現在のウェブサイト<span class="opt">あれば</span></label>
+              <input type="url" id="current-url" placeholder="https://example.com">
+            </div>
+
+            <div class="field">
+              <label>ご希望の機能・ページ構成<span class="req">*</span></label>
+              <div class="check-group" style="margin-bottom:10px">
+                <label class="check-item-field"><input type="checkbox" value="top"><span>トップページ（ヒーロー・紹介）</span></label>
+                <label class="check-item-field"><input type="checkbox" value="lesson"><span>レッスン・コース紹介ページ</span></label>
+                <label class="check-item-field"><input type="checkbox" value="schedule"><span>スケジュール・時間割</span></label>
+                <label class="check-item-field"><input type="checkbox" value="price"><span>料金ページ</span></label>
+                <label class="check-item-field"><input type="checkbox" value="teacher"><span>先生・スタッフ紹介</span></label>
+                <label class="check-item-field"><input type="checkbox" value="access"><span>アクセス・地図</span></label>
+                <label class="check-item-field"><input type="checkbox" value="contact"><span>お問い合わせフォーム</span></label>
+                <label class="check-item-field"><input type="checkbox" value="blog"><span>ブログ・お知らせ機能</span></label>
+                <label class="check-item-field"><input type="checkbox" value="gallery"><span>ギャラリー・写真集</span></label>
+                <label class="check-item-field"><input type="checkbox" value="other_func"><span>その他（下記に記入）</span></label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>デザインのご希望<span class="opt">任意</span></label>
+              <select id="design-style">
+                <option value="">選択してください</option>
+                <option value="elegant">上品・エレガント系</option>
+                <option value="modern">シンプル・モダン系</option>
+                <option value="pop">ポップ・カジュアル系</option>
+                <option value="classic">クラシック・伝統的</option>
+                <option value="no-pref">おまかせ</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>ご予算の目安<span class="opt">任意</span></label>
+              <select id="budget">
+                <option value="">選択してください</option>
+                <option value="free">無料・ボランティア希望</option>
+                <option value="low">〜5万円</option>
+                <option value="mid">5〜15万円</option>
+                <option value="high">15万円以上</option>
+                <option value="ask">相談したい</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>ご希望の納期<span class="opt">任意</span></label>
+              <input type="text" id="deadline" placeholder="例：2026年8月末まで、できるだけ早く など">
+            </div>
+
+          </div>
+
+          <!-- リンク依頼の項目 -->
+          <div id="fields-link" class="conditional">
+
+            <div class="info-box">
+              既存ホームページへの広告枠リンクカードを作成し、このサイトのサイドバー・特集枠に掲載します。教室名・紹介文・SNS・電話番号等の情報をご提供ください。
+            </div>
+
+            <div class="field">
+              <label>掲載希望のURL<span class="req">*</span></label>
+              <input type="url" id="link-url" placeholder="https://your-studio-website.com">
+            </div>
+
+            <div class="field">
+              <label>掲載希望のSNSアカウント<span class="opt">任意・複数可</span></label>
+              <input type="text" id="sns" placeholder="Instagram: @example　X: @example　LINE公式: @example">
+            </div>
+
+            <div class="field">
+              <label>掲載カテゴリ<span class="req">*</span></label>
+              <div class="radio-group">
+                <label class="radio-item"><input type="radio" name="link-cat" value="school"><span>社交ダンス教室・スタジオ</span></label>
+                <label class="radio-item"><input type="radio" name="link-cat" value="shop"><span>ダンス関連ショップ</span></label>
+                <label class="radio-item"><input type="radio" name="link-cat" value="organizer"><span>パーティー主催団体</span></label>
+                <label class="radio-item"><input type="radio" name="link-cat" value="other"><span>その他</span></label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>紹介文（50〜100文字程度）<span class="req">*</span></label>
+              <textarea id="link-desc" placeholder="神戸三宮で社交ダンスを教えています。初心者から上級者まで丁寧に指導。ワルツ・タンゴ・チャチャチャなど多彩な種目に対応しています。" rows="4"></textarea>
+            </div>
+
+          </div>
+
+          <!-- 共通: 備考 -->
+          <div class="field">
+            <label>ご要望・ご質問など<span class="opt">任意</span></label>
+            <textarea id="message" placeholder="その他ご要望やご質問がございましたらご記入ください"></textarea>
+          </div>
+
+          <!-- プライバシー -->
+          <div class="field">
+            <label class="check-item-field" id="privacy-label">
+              <input type="checkbox" id="privacy" required>
+              <span>個人情報の取り扱いに同意します。入力いただいた情報はお問い合わせへの返答のみに使用し、第三者に提供しません。<span class="req">*</span></span>
+            </label>
+          </div>
+
+          <button class="submit-btn" onclick="submitForm()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            送信する
+          </button>
+          <p class="submit-note">送信後、3営業日以内にご登録のメールアドレスへご連絡します</p>
+
+        </div>
+      </div>
+
+    </div><!-- /form-area -->
+  </main>
+
+  <!-- サイドバー -->
+  <aside class="side">
+
+    <!-- 対応内容 -->
+    <div class="side-card">
+      <div class="side-title">料金プラン</div>
+      <div class="side-body" style="padding:0">
+        <div style="padding:14px 16px;border-bottom:1px solid var(--border)">
+          <div style="font-size:10px;letter-spacing:.12em;color:var(--gold);margin-bottom:6px;text-transform:uppercase">New Website</div>
+          <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:8px">ホームページ新規作成</div>
+          <div style="display:flex;gap:10px">
+            <div style="flex:1;background:var(--bg2);border-radius:6px;padding:8px 10px;text-align:center">
+              <div style="font-size:9px;color:var(--ink3);margin-bottom:3px">初期費用</div>
+              <div style="font-family:var(--ff-serif);font-size:18px;font-weight:600;color:var(--teal)">無料</div>
+            </div>
+            <div style="flex:1;background:var(--bg2);border-radius:6px;padding:8px 10px;text-align:center">
+              <div style="font-size:9px;color:var(--ink3);margin-bottom:3px">月額</div>
+              <div style="font-family:var(--ff-serif);font-size:18px;font-weight:600;color:var(--gold)">5,500円</div>
+            </div>
+          </div>
+          <div style="font-size:11px;color:var(--ink3);margin-top:8px;line-height:1.6">広告リンクカード作成・掲載込み</div>
+        </div>
+        <div style="padding:14px 16px">
+          <div style="font-size:10px;letter-spacing:.12em;color:var(--gold);margin-bottom:6px;text-transform:uppercase">Link Card</div>
+          <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px">広告枠リンクカード掲載</div>
+          <div style="font-size:12px;color:var(--ink2);line-height:1.7">既存サイトへの広告リンクカードを作成・掲載します。料金はお問い合わせください。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 流れ -->
+    <div class="side-card">
+      <div class="side-title">ご依頼の流れ</div>
+      <div class="side-body">
+        <div class="flow-list">
+          <div class="flow-item">
+            <div class="flow-left"><div class="flow-num">1</div><div class="flow-vline"></div></div>
+            <div class="flow-body"><div class="flow-title">フォーム送信</div><div class="flow-desc">左のフォームに必要事項を入力して送信</div></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-left"><div class="flow-num">2</div><div class="flow-vline"></div></div>
+            <div class="flow-body"><div class="flow-title">内容確認・ご連絡</div><div class="flow-desc">3営業日以内にメールにてご連絡します</div></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-left"><div class="flow-num">3</div><div class="flow-vline"></div></div>
+            <div class="flow-body"><div class="flow-title">詳細打ち合わせ</div><div class="flow-desc">メール・お電話にてご要望をお伺いします</div></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-left"><div class="flow-num">4</div></div>
+            <div class="flow-body"><div class="flow-title">制作・掲載開始</div><div class="flow-desc">合意後、制作または掲載を開始します</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- よくある質問 -->
+    <div class="side-card">
+      <div class="side-title">よくある質問</div>
+      <div class="side-body" style="display:flex;flex-direction:column;gap:12px">
+        <div>
+          <div style="font-size:12px;font-weight:500;margin-bottom:3px">兵庫県外でも依頼できますか？</div>
+          <p style="font-size:12px">はい、可能です。まずはご相談ください。</p>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:12px">
+          <div style="font-size:12px;font-weight:500;margin-bottom:3px">スマートフォン対応はできますか？</div>
+          <p style="font-size:12px">はい、すべてスマートフォン対応（レスポンシブ）で制作します。</p>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:12px">
+          <div style="font-size:12px;font-weight:500;margin-bottom:3px">写真や素材は必要ですか？</div>
+          <p style="font-size:12px">ご提供いただける写真があれば使用します。ない場合はフリー素材で対応可能です。</p>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:12px">
+          <div style="font-size:12px;font-weight:500;margin-bottom:3px">作成後の更新・修正は？</div>
+          <p style="font-size:12px">納品後の修正対応についてはご相談ください。</p>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">兵庫 Dance Party</div>
+    <div class="footer-links">
+      <a href="about.html">このサイトについて</a>
+      <a href="submit.html">掲載申請</a>
+      <a href="request.html">HP作成・リンク依頼</a>
+      <a href="about.html#contact">お問い合わせ</a>
+    </div>
+    <div>© 2026 兵庫ダンスパーティー情報</div>
+  </div>
+</footer>
+
+<script>
+// ── 種別切替 ──────────────────────────────────────
+function selectType(type) {
+  const isCreate = type === 'create';
+  document.getElementById('tab-create').classList.toggle('selected', isCreate);
+  document.getElementById('tab-link').classList.toggle('selected', !isCreate);
+
+  document.getElementById('note-create').classList.toggle('conditional', !isCreate);
+  document.getElementById('note-link').classList.toggle('conditional', isCreate);
+  document.getElementById('note-link').classList.toggle('show', !isCreate);
+
+  document.getElementById('fields-create').classList.toggle('conditional', !isCreate);
+  document.getElementById('fields-link').classList.toggle('conditional', isCreate);
+  document.getElementById('fields-link').classList.toggle('show', !isCreate);
+
+  document.getElementById('section2-title').textContent =
+    isCreate ? 'ホームページ作成の詳細' : 'リンク掲載の詳細';
+}
+
+// ── 送信処理 ──────────────────────────────────────
+function submitForm() {
+  // 必須チェック
+  const name = document.getElementById('name').value.trim();
+  const org  = document.getElementById('org').value.trim();
+  const email= document.getElementById('email').value.trim();
+  const loc  = document.getElementById('location').value.trim();
+  const cat  = document.getElementById('category').value;
+  const privacy = document.getElementById('privacy').checked;
+
+  if (!name || !org || !email || !loc || !cat) {
+    alert('必須項目（*）をすべてご入力ください。');
+    return;
+  }
+  if (!privacy) {
+    alert('個人情報の取り扱いへの同意が必要です。');
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert('正しいメールアドレスを入力してください。');
+    return;
+  }
+
+  // 完了表示
+  document.getElementById('form-area').style.display = 'none';
+  document.getElementById('done-msg').classList.add('show');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
