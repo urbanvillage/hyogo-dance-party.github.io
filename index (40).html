@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FHNTE52RVX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FHNTE52RVX');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="6nn10C1ovJO1LSulHma8tndZHCooS9ntqrSCkQx2IdU" />
+<title>兵庫ダンスパーティー情報 | 社交ダンス愛好家のための情報サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── リセット & 変数 ───────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:        #FAF8F3;
+  --bg2:       #F2EFE7;
+  --ink:       #1C1A14;
+  --ink2:      #5C5847;
+  --ink3:      #9C9580;
+  --gold:      #B8933A;
+  --gold-l:    #F0E4C0;
+  --teal:      #1D7A6B;
+  --teal-l:    #DCF0EC;
+  --red:       #C0392B;
+  --border:    #DDD9CE;
+  --card-bg:   #FFFFFF;
+  --radius:    10px;
+  --ff-serif:  'Cormorant Garamond','Noto Serif JP',serif;
+  --ff-sans:   'Noto Sans JP',sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--ff-sans);
+  font-weight:400;
+  line-height:1.7;
+  font-size:15px;
+}
+
+/* ── ヘッダー ─────────────────────────────────── */
+.site-header{
+  background:var(--ink);
+  color:#fff;
+  padding:0 clamp(16px,5vw,48px);
+  position:sticky;top:0;z-index:100;
+}
+.header-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;gap:16px;
+  height:56px;
+}
+.site-logo{
+  font-family:var(--ff-serif);
+  font-size:clamp(14px,2.5vw,20px);
+  font-weight:600;letter-spacing:.04em;
+  color:#fff;text-decoration:none;
+  white-space:nowrap;
+}
+.site-logo span{color:var(--gold);font-style:italic}
+.header-nav{
+  display:flex;gap:2px;margin-left:auto;align-items:center;
+}
+.header-nav a{
+  color:rgba(255,255,255,.75);
+  text-decoration:none;
+  font-size:13px;padding:6px 12px;
+  border-radius:6px;
+  transition:background .15s,color .15s;
+  white-space:nowrap;
+}
+.header-nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.btn-post{
+  background:var(--gold);color:var(--ink)!important;
+  font-weight:500;font-size:13px!important;
+  padding:7px 16px!important;border-radius:99px!important;
+  transition:opacity .15s!important;
+}
+.btn-post:hover{opacity:.85;background:var(--gold)!important}
+
+/* ── ヒーロー ─────────────────────────────────── */
+.hero{
+  background:var(--ink);
+  color:#fff;
+  padding:clamp(40px,8vw,80px) clamp(16px,5vw,48px) clamp(32px,6vw,64px);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(184,147,58,.18) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(29,122,107,.15) 0%, transparent 60%);
+  pointer-events:none;
+}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative}
+.hero-eyebrow{
+  font-size:11px;letter-spacing:.18em;color:var(--gold);
+  text-transform:uppercase;font-weight:500;margin-bottom:14px;
+}
+.hero-title{
+  font-family:var(--ff-serif);
+  font-size:clamp(28px,5vw,52px);
+  line-height:1.25;font-weight:600;
+  margin-bottom:16px;
+}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-desc{
+  font-size:clamp(13px,1.5vw,15px);
+  color:rgba(255,255,255,.7);
+  max-width:480px;margin-bottom:28px;line-height:1.8;
+}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn-primary{
+  background:var(--gold);color:var(--ink);
+  text-decoration:none;font-weight:500;font-size:14px;
+  padding:11px 24px;border-radius:99px;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:opacity .15s;white-space:nowrap;
+}
+.btn-primary:hover{opacity:.85}
+.btn-ghost{
+  color:rgba(255,255,255,.8);text-decoration:none;
+  font-size:13px;display:inline-flex;align-items:center;gap:5px;
+  border-bottom:1px solid rgba(255,255,255,.3);
+  padding-bottom:2px;transition:color .15s;
+}
+.btn-ghost:hover{color:#fff}
+
+/* ── 今週ピックアップ ─────────────────────────── */
+.pickup{
+  background:var(--gold-l);
+  border-bottom:1px solid var(--border);
+  padding:12px clamp(16px,5vw,48px);
+}
+.pickup-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.pickup-label{
+  font-size:11px;font-weight:500;letter-spacing:.1em;
+  color:var(--gold);white-space:nowrap;
+  border:1px solid var(--gold);
+  padding:2px 8px;border-radius:99px;
+}
+.pickup-items{
+  display:flex;gap:8px;flex-wrap:wrap;
+}
+.pickup-item{
+  background:#fff;border-radius:99px;
+  padding:4px 12px;font-size:12px;
+  color:var(--ink);text-decoration:none;
+  border:1px solid var(--border);
+  transition:border-color .15s;
+  display:flex;align-items:center;gap:5px;
+}
+.pickup-item:hover{border-color:var(--gold)}
+.pickup-item .date{
+  font-size:10px;color:var(--ink3);
+  padding-left:5px;border-left:1px solid var(--border);
+}
+
+/* ── メインレイアウト ─────────────────────────── */
+.main-wrap{
+  max-width:1100px;margin:0 auto;
+  padding:clamp(24px,5vw,48px) clamp(16px,5vw,48px);
+  display:grid;
+  grid-template-columns:1fr 280px;
+  gap:32px;
+  align-items:start;
+}
+@media(max-width:800px){
+  .main-wrap{grid-template-columns:1fr}
+}
+
+/* ── フィルターバー ───────────────────────────── */
+.filter-bar{
+  display:flex;gap:8px;flex-wrap:wrap;
+  margin-bottom:24px;align-items:center;
+}
+.filter-label{font-size:12px;color:var(--ink3);margin-right:4px}
+.filter-btn{
+  border:1px solid var(--border);
+  background:var(--card-bg);
+  color:var(--ink2);
+  font-size:12px;padding:5px 14px;
+  border-radius:99px;cursor:pointer;
+  font-family:var(--ff-sans);
+  transition:all .15s;
+}
+.filter-btn:hover,.filter-btn.active{
+  background:var(--ink);color:#fff;border-color:var(--ink);
+}
+.filter-count{
+  font-size:11px;color:var(--ink3);margin-left:auto;
+}
+
+/* ── パーティーカード ─────────────────────────── */
+.card-list{display:flex;flex-direction:column;gap:14px}
+
+.party-card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px 20px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:0 18px;
+  align-items:start;
+  text-decoration:none;color:inherit;
+  transition:box-shadow .18s,transform .18s,border-color .18s;
+  position:relative;
+}
+.party-card:hover{
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+  transform:translateY(-1px);
+  border-color:var(--gold);
+}
+
+/* 日付ブロック */
+.card-date-block{
+  text-align:center;
+  min-width:52px;
+  padding:4px 0;
+}
+.card-month{font-size:11px;color:var(--ink3);letter-spacing:.05em;font-weight:500}
+.card-day{
+  font-family:var(--ff-serif);
+  font-size:32px;line-height:1;font-weight:600;
+  color:var(--ink);
+}
+.card-weekday{font-size:11px;color:var(--ink3)}
+
+/* 縦線 */
+.card-divider{
+  width:1px;background:var(--border);
+  align-self:stretch;
+  margin-left:0;margin-right:0;
+  grid-row:1 / 2;
+  display:none;
+}
+
+/* メイン情報 */
+.card-body{padding:2px 0}
+.card-tags{
+  display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px;
+}
+.tag{
+  font-size:10px;font-weight:500;padding:1px 7px;
+  border-radius:99px;
+  letter-spacing:.04em;
+}
+.tag-region{background:var(--teal-l);color:var(--teal)}
+.tag-free{background:#FEF9EC;color:#92620A;border:1px solid #EDD99A}
+.tag-big{background:#FEF0F0;color:var(--red);border:1px solid #F5C6C6}
+.tag-new{background:var(--ink);color:#fff}
+
+.card-name{
+  font-size:clamp(14px,1.8vw,16px);
+  font-weight:500;
+  margin-bottom:5px;
+  line-height:1.4;
+}
+.card-meta{
+  display:flex;gap:12px;flex-wrap:wrap;
+  font-size:12px;color:var(--ink3);
+  align-items:center;
+}
+.card-meta span{
+  display:flex;align-items:center;gap:3px;
+}
+.card-meta svg{width:12px;height:12px;opacity:.6;flex-shrink:0}
+
+/* 金額ブロック */
+.card-fee{
+  text-align:right;padding:2px 0;
+  white-space:nowrap;
+}
+.fee-num{
+  font-family:var(--ff-serif);
+  font-size:20px;font-weight:600;color:var(--ink);
+}
+.fee-unit{font-size:11px;color:var(--ink3)}
+.fee-free{
+  font-size:13px;font-weight:500;
+  color:var(--teal);
+  background:var(--teal-l);
+  padding:3px 10px;border-radius:99px;
+}
+
+/* 区切り線 */
+.card-border-left{
+  position:absolute;left:0;top:12px;bottom:12px;
+  width:3px;border-radius:99px;
+  background:var(--border);
+  transition:background .18s;
+}
+.party-card:hover .card-border-left{background:var(--gold)}
+
+/* カード状態 */
+.card-hot .card-border-left{background:var(--red)}
+.card-free .card-border-left{background:var(--teal)}
+
+/* ── もっと見る ───────────────────────────────── */
+.load-more{
+  text-align:center;margin-top:24px;
+}
+.btn-load{
+  border:1px solid var(--border);
+  background:var(--card-bg);
+  color:var(--ink2);
+  font-size:13px;padding:10px 32px;
+  border-radius:99px;cursor:pointer;
+  font-family:var(--ff-sans);
+  transition:all .15s;
+}
+.btn-load:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ── サイドバー ───────────────────────────────── */
+.sidebar{display:flex;flex-direction:column;gap:16px}
+
+.side-card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.side-title{
+  font-size:11px;font-weight:500;letter-spacing:.1em;
+  color:var(--ink3);
+  padding:12px 16px 8px;
+  border-bottom:1px solid var(--border);
+  text-transform:uppercase;
+}
+.side-body{padding:14px 16px}
+
+/* 月別カレンダー */
+.mini-cal-header{
+  display:flex;justify-content:space-between;
+  align-items:center;margin-bottom:10px;
+  font-size:13px;font-weight:500;
+}
+.mini-cal-nav{
+  background:none;border:none;cursor:pointer;
+  color:var(--ink3);font-size:16px;padding:2px 6px;
+}
+.mini-cal-grid{
+  display:grid;grid-template-columns:repeat(7,1fr);
+  gap:2px;text-align:center;
+}
+.cal-dow{font-size:10px;color:var(--ink3);padding:2px 0;font-weight:500}
+.cal-day{
+  font-size:11px;padding:4px 2px;border-radius:5px;cursor:default;
+  position:relative;
+}
+.cal-day.has-party{
+  font-weight:500;color:var(--ink);cursor:pointer;
+}
+.cal-day.has-party::after{
+  content:'';
+  position:absolute;bottom:2px;left:50%;transform:translateX(-50%);
+  width:4px;height:4px;border-radius:50%;
+  background:var(--gold);
+}
+.cal-day.today{
+  background:var(--ink);color:#fff;font-weight:500;
+}
+.cal-day.other-month{color:var(--border)}
+
+/* 地域リスト */
+.region-list{display:flex;flex-direction:column;gap:2px}
+.region-item{
+  display:flex;justify-content:space-between;
+  align-items:center;
+  padding:7px 0;border-bottom:1px solid var(--bg2);
+  font-size:13px;cursor:pointer;
+  text-decoration:none;color:inherit;
+}
+.region-item:last-child{border-bottom:none}
+.region-item:hover .region-name{color:var(--gold)}
+.region-name{transition:color .15s}
+.region-count{
+  font-size:11px;color:var(--ink3);
+  background:var(--bg2);padding:2px 8px;border-radius:99px;
+}
+
+/* 投稿バナー */
+.post-banner{
+  background:var(--ink);color:#fff;
+  padding:18px 16px;text-align:center;
+}
+.post-banner p{font-size:12px;color:rgba(255,255,255,.7);margin-bottom:10px;line-height:1.6}
+.btn-post-sm{
+  display:block;background:var(--gold);color:var(--ink);
+  text-decoration:none;font-weight:500;font-size:13px;
+  padding:9px 0;border-radius:99px;
+  transition:opacity .15s;
+}
+.btn-post-sm:hover{opacity:.85}
+
+/* ── フッター ─────────────────────────────────── */
+.site-footer{
+  background:var(--ink);color:rgba(255,255,255,.6);
+  padding:32px clamp(16px,5vw,48px);
+  margin-top:48px;font-size:12px;
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-logo{
+  font-family:var(--ff-serif);font-size:16px;
+  color:#fff;font-weight:600;
+}
+.footer-links{display:flex;gap:16px}
+.footer-links a{color:rgba(255,255,255,.5);text-decoration:none}
+.footer-links a:hover{color:#fff}
+
+/* ── アニメーション ───────────────────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.party-card{animation:fadeUp .3s ease both}
+.party-card:nth-child(1){animation-delay:.05s}
+.party-card:nth-child(2){animation-delay:.1s}
+.party-card:nth-child(3){animation-delay:.15s}
+.party-card:nth-child(4){animation-delay:.2s}
+.party-card:nth-child(5){animation-delay:.25s}
+
+/* ── レスポンシブ（タブレット：〜800px） ──────── */
+@media(max-width:800px){
+  .main-wrap{grid-template-columns:1fr}
+  .sidebar{
+    display:block!important;  /* スマホでサイドバーも表示 */
+    margin-top:0;
+  }
+  /* サイドバーを横並びに */
+  .sidebar{
+    display:grid!important;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:14px;
+  }
+}
+
+/* ── レスポンシブ（スマホ：〜600px） ─────────── */
+@media(max-width:600px){
+  /* ヘッダー */
+  .header-nav .nav-hide{display:none}
+  .btn-post{font-size:12px!important;padding:6px 12px!important}
+
+  /* ヒーロー */
+  .hero{padding:28px 16px 24px}
+  .hero-title{font-size:26px;margin-bottom:12px}
+  .hero-desc{font-size:13px;margin-bottom:20px}
+  .hero-cta .btn-ghost{display:none}
+  .btn-primary{font-size:13px;padding:10px 20px}
+
+  /* ピックアップ */
+  .pickup{padding:10px 16px}
+  .pickup-items{gap:6px}
+  .pickup-item{font-size:11px;padding:4px 10px}
+
+  /* フィルターバー */
+  .filter-bar{gap:5px;margin-bottom:16px}
+  .filter-btn{font-size:11px;padding:4px 10px}
+  .filter-label{display:none}
+
+  /* カード */
+  .party-card{
+    padding:14px 16px;
+    grid-template-columns:auto 1fr;
+    grid-template-rows:auto auto;
+    gap:0 12px;
+  }
+  .card-fee{
+    grid-column:2;grid-row:2;
+    text-align:left;padding-top:6px;
+  }
+  .card-day{font-size:26px}
+  .card-name{font-size:14px}
+  .card-meta{gap:8px;font-size:11px}
+  .card-border-left{top:8px;bottom:8px}
+  .fee-num{font-size:16px}
+  .fee-free{font-size:11px;padding:2px 8px}
+
+  /* サイドバー（スマホでは1列） */
+  .sidebar{
+    display:flex!important;
+    flex-direction:column;
+    gap:12px;
+  }
+  .side-card{margin-bottom:0}
+
+  /* フッター */
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:8px}
+  .footer-links{flex-wrap:wrap;gap:12px}
+
+  /* もっと見るボタン */
+  .btn-load{font-size:13px;padding:10px 24px}
+}
+
+/* ── 広告カード（ソシエテエレガン） ── */
+.ad-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:16px}
+.ad-card-head{background:var(--ink);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ad-logo{font-family:var(--ff-serif);font-size:17px;font-style:italic;font-weight:400;color:#C9A84C;line-height:1.2}
+.ad-logo small{display:block;font-size:9px;font-style:normal;font-family:var(--ff-sans);font-weight:300;letter-spacing:.18em;color:rgba(255,255,255,.38);margin-top:2px}
+.ad-pr-badge{font-size:9px;letter-spacing:.12em;color:rgba(255,255,255,.3);border:0.5px solid rgba(255,255,255,.18);padding:2px 7px;border-radius:2px;flex-shrink:0}
+.ad-card-body{display:grid;grid-template-columns:1fr auto;gap:14px;padding:16px 18px;align-items:center}
+.ad-catch{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:5px}
+.ad-desc{font-size:12px;color:var(--ink2);line-height:1.8}
+.ad-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0}
+.ad-chips{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.ad-chip{font-size:10px;padding:2px 9px;border-radius:99px;background:var(--gold-l);color:#7A5C1E;white-space:nowrap}
+.ad-btn{display:inline-flex;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:11px;padding:7px 14px;border-radius:4px;text-decoration:none;white-space:nowrap;transition:opacity .15s}
+.ad-btn:hover{opacity:.78}
+.ad-btn svg{width:11px;height:11px}
+.ad-card-foot{border-top:1px solid var(--border);padding:9px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ad-loc{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--ink3);text-decoration:none}
+.ad-loc svg{width:12px;height:12px;color:var(--gold)}
+.ad-loc:hover{color:var(--gold)}
+.ad-tel{font-size:11px;color:var(--ink3);text-decoration:none}
+.ad-tel:hover{color:var(--ink)}
+@media(max-width:600px){.ad-card-body{grid-template-columns:1fr}.ad-right{flex-direction:row;align-items:center;flex-wrap:wrap}}
+</style>
+</head>
+<body>
+
+<!-- ── ヘッダー ─────────────────────────────── -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">兵庫<em>Dance</em>Party</a>
+    <nav class="header-nav">
+      <a href="calendar.html" class="nav-hide">カレンダー</a>
+      <a href="index.html" class="nav-hide">パーティー一覧</a>
+      <a href="venues.html" class="nav-hide">会場別一覧</a>
+      <a href="request.html" class="nav-hide">HP作成・リンク依頼</a>
+      <a href="about.html" class="nav-hide">このサイトについて</a>
+      <a href="submit.html" class="btn-post">＋ パーティーを掲載する</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── ヒーロー ─────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Hyogo Social Dance Party Information</p>
+    <h1 class="hero-title">兵庫県内の<em>社交ダンス</em><br>パーティー情報</h1>
+    <p class="hero-desc">神戸・阪神・三田・播磨・丹波など兵庫県内で開催される社交ダンスパーティーの情報を集めています。主催者の方はぜひ掲載をご申請ください。</p>
+    <div class="hero-cta">
+      <a href="#party-list" class="btn-primary">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        パーティーを探す
+      </a>
+      <a href="submit.html" class="btn-ghost">
+        掲載申請はこちら →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 今週のピックアップ ────────────────────── -->
+  <div class="pickup">
+  <div class="pickup-inner">
+    <span class="pickup-label">直近開催</span>
+    <div class="pickup-items">
+      <a href="party-p-002.html" class="pickup-item" style="border-color:var(--gold)">
+        第79回 ダンスカーニバル
+        <span class="date">7/12（日）</span>
+      </a>
+      <a href="party-p-006.html" class="pickup-item">
+        三田広野 毎週日曜パーティー
+        <span class="date">毎週日曜</span>
+      </a>
+      <a href="#" class="pickup-item">
+        神戸中央区文化センター 定期パーティー
+        <span class="date">毎週複数</span>
+      </a>
+      <a href="venues.html" class="pickup-item" style="border-color:var(--gold);background:var(--gold-l)">
+        📋 会場別・全194件
+        <span class="date">一覧へ</span>
+      </a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+
+<!-- ── メインコンテンツ ──────────────────────── -->
+<div class="main-wrap">
+  <main>
+
+    <!-- フィルターバー -->
+    <div class="filter-bar">
+      <span class="filter-label">地域</span>
+      <button class="filter-btn active" onclick="filterRegion(this,'all')">すべて</button>
+      <button class="filter-btn" onclick="filterRegion(this,'kobe')">神戸市内</button>
+      <button class="filter-btn" onclick="filterRegion(this,'hanshin')">阪神</button>
+      <button class="filter-btn" onclick="filterRegion(this,'sanda')">三田・北摂</button>
+      <button class="filter-btn" onclick="filterRegion(this,'harima')">播磨</button>
+      <button class="filter-btn" onclick="filterRegion(this,'other')">その他</button>
+      <span class="filter-count" id="filter-count">10件</span>
+    </div>
+
+    <!-- パーティーカード一覧 -->
+    <div class="card-list" id="party-list">
+      <!-- カード2: 第79回ダンスカーニバル -->
+      <a class="party-card card-hot" href="party-p-002.html" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">7月</div>
+          <div class="card-day">12</div>
+          <div class="card-weekday">日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-big">大型</span>
+          </div>
+          <div class="card-name">第79回 ダンスカーニバル</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              11:30〜17:00
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              神戸ポートピアホテル 南館
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              兵庫県社交ダンス教師協会
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">6,000</div>
+          <div class="fee-unit">円〜</div>
+        </div>
+      </a>
+
+      <!-- カード3: JDSF兵庫パーティー第2回 -->
+      <a class="party-card card-free" href="party-p-003.html" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">8月</div>
+          <div class="card-day">9</div>
+          <div class="card-weekday">日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-free">JDSF会員無料</span>
+          </div>
+          <div class="card-name">JDSF兵庫 会員交流無料パーティー（第2回）</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:00
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              神戸市中央区文化センター
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <span class="fee-free">JDSF会員無料</span>
+        </div>
+      </a>
+
+      <!-- カード4: D.C.サザンクロス -->
+      <a class="party-card card-hot" href="party-p-004.html" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">9月</div>
+          <div class="card-day">13</div>
+          <div class="card-weekday">日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-big">大型</span>
+          </div>
+          <div class="card-name">D.C.サザンクロス・ダンスパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              11:30〜17:00
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              神戸市内（詳細要問合せ）
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">17,000</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード5: 音楽とダンスの祭典 -->
+      <a class="party-card card-hot" href="party-p-005.html" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">11月</div>
+          <div class="card-day">3</div>
+          <div class="card-weekday">火・祝</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-big">大型</span>
+          </div>
+          <div class="card-name">音楽とダンスの祭典2026 in Hyogo</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              兵庫県立文化体育館
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              兵庫県ダンススポーツ連盟
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">未定</div>
+        </div>
+      </a>
+
+      <!-- カード6: 三田広野定期 -->
+      <a class="party-card" href="party-p-006.html" data-region="sanda">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">毎週</div>
+          <div class="card-day" style="font-size:22px">日曜</div>
+          <div class="card-weekday">定期</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">三田・北摂</span>
+            <span style="font-size:10px;font-weight:500;padding:2px 8px;border-radius:99px;background:#F1EFE8;color:#444441">定期開催</span>
+          </div>
+          <div class="card-name">三田広野 毎週日曜ダンスパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:00
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              三田市広野市民センター
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">1,000</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード7: ネスタリゾート -->
+      <a class="party-card card-hot" href="party-p-007.html" data-region="sanda">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">6月</div>
+          <div class="card-day">28</div>
+          <div class="card-weekday">日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">三田・北摂</span>
+            <span class="tag tag-big">大型</span>
+          </div>
+          <div class="card-name">ダンススクールパッション 夏のダンスパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              11:30〜17:00
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              ネスタリゾート神戸（三田）
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">14,000</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+      <!-- カード新A: 神戸中央区文化センター 定期パーティー -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">7〜8月</div>
+          <div class="card-day" style="font-size:22px">定期</div>
+          <div class="card-weekday">月〜日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span style="font-size:10px;font-weight:500;padding:2px 8px;border-radius:99px;background:#F1EFE8;color:#444441">定期開催</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">神戸中央区文化センター 定期ダンスパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:30　7月：1日・5日・6日・7日・9日・10日・12日・13日・14日・16日・17日・18日・23日・24日・26日・28日・30日 ほか　8月：9日（JDSF）・16日（YMCA）・30日（迎賓館）ほか
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              神戸市中央区文化センター 1F多目的ルーム
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              ひとみ・YMCA・青い鳥・ソワレの会・ハーモニー・サークル六甲 他
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">900</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード新B: 三宮クレアホール 定期パーティー -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">7〜8月</div>
+          <div class="card-day" style="font-size:22px">定期</div>
+          <div class="card-weekday">月・火・水・土</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span style="font-size:10px;font-weight:500;padding:2px 8px;border-radius:99px;background:#F1EFE8;color:#444441">定期開催</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">三宮クレアホール 定期ダンスパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:30　7月：5日（花＆はな）・6・13・20・27日（パッション）ほか　8月：16日（プリンセス ¥10,000）ほか
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              三宮クレアホール（TEL:078-265-6566）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              花＆はな・パッション・かりん・ラビットダンサーズ・フレッシュ 他
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">1,000</div>
+          <div class="fee-unit">円〜</div>
+        </div>
+      </a>
+
+      <!-- カード新C: スリーセブン 定期パーティー -->
+      <a class="party-card" href="https://threeseven0777.com/schedule/" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">7〜8月</div>
+          <div class="card-day" style="font-size:22px">定期</div>
+          <div class="card-weekday">日・木</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span style="font-size:10px;font-weight:500;padding:2px 8px;border-radius:99px;background:#F1EFE8;color:#444441">定期開催</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">ダンスホール スリーセブン 定期パーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              毎日曜・木曜　花＆はな一般パーティー（日曜¥1,000）・プロパーティー・学生パーティーなど
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              ダンスホール スリーセブン（神戸市長田区北町1-54 高速長田駅直結 5F）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              スリーセブン主催・花＆はなサークル 他（TEL:078-578-0777）
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">1,000</div>
+          <div class="fee-unit">円〜</div>
+        </div>
+      </a>
+
+      <!-- カード新D: サンシビック尼崎 定期パーティー -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="hanshin">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">7〜9月</div>
+          <div class="card-day" style="font-size:22px">定期</div>
+          <div class="card-weekday">日・水・土</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">阪神</span>
+            <span style="font-size:10px;font-weight:500;padding:2px 8px;border-radius:99px;background:#F1EFE8;color:#444441">定期開催</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">サンシビック尼崎 社交ダンスパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:30　7月：8日（水）・18日（土）　8月：2日・16日・23日　9月：6日・20日 ほか
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              サンシビック尼崎 3F大ホール（TEL:06-6413-8171）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              スマイルサークル・フレンズサークル
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">800</div>
+          <div class="fee-unit">円〜</div>
+        </div>
+      </a>
+
+</div><!-- /card-list -->
+
+    <div class="load-more">
+      <button class="btn-load">すべて表示中（10件）</button>
+    </div>
+
+  </main>
+
+  <!-- ── サイドバー ──────────────────────────── -->
+  <aside class="sidebar">
+
+    <!-- ミニカレンダー -->
+    <div class="side-card">
+      <div class="side-title">カレンダー</div>
+      <div class="side-body">
+        <div class="mini-cal-header">
+          <button class="mini-cal-nav">‹</button>
+          <span>2026年6月</span>
+          <button class="mini-cal-nav">›</button>
+        </div>
+        <div class="mini-cal-grid">
+          <div class="cal-dow">日</div><div class="cal-dow">月</div>
+          <div class="cal-dow">火</div><div class="cal-dow">水</div>
+          <div class="cal-dow">木</div><div class="cal-dow">金</div>
+          <div class="cal-dow">土</div>
+          <!-- 1週目 -->
+          <div class="cal-day other-month">25</div>
+          <div class="cal-day other-month">26</div>
+          <div class="cal-day other-month">27</div>
+          <div class="cal-day other-month">28</div>
+          <div class="cal-day other-month">29</div>
+          <div class="cal-day other-month">30</div>
+          <div class="cal-day other-month">31</div>
+          <!-- 2週目 -->
+          <div class="cal-day has-party">1</div>
+          <div class="cal-day">2</div>
+          <div class="cal-day">3</div>
+          <div class="cal-day">4</div>
+          <div class="cal-day">5</div>
+          <div class="cal-day">6</div>
+          <div class="cal-day has-party">7</div>
+          <!-- 3週目 -->
+          <div class="cal-day has-party">8</div>
+          <div class="cal-day">9</div>
+          <div class="cal-day">10</div>
+          <div class="cal-day">11</div>
+          <div class="cal-day">12</div>
+          <div class="cal-day">13</div>
+          <div class="cal-day has-party">14</div>
+          <!-- 4週目 -->
+          <div class="cal-day has-party">15</div>
+          <div class="cal-day">16</div>
+          <div class="cal-day">17</div>
+          <div class="cal-day">18</div>
+          <div class="cal-day">19</div>
+          <div class="cal-day today">23</div>
+          <div class="cal-day">21</div>
+          <!-- 5週目 -->
+          <div class="cal-day has-party">22</div>
+          <div class="cal-day">23</div>
+          <div class="cal-day">24</div>
+          <div class="cal-day">25</div>
+          <div class="cal-day">26</div>
+          <div class="cal-day">27</div>
+          <div class="cal-day has-party">28</div>
+          <!-- 6週目 -->
+          <div class="cal-day">29</div>
+          <div class="cal-day">30</div>
+          <div class="cal-day other-month">1</div>
+          <div class="cal-day other-month">2</div>
+          <div class="cal-day other-month">3</div>
+          <div class="cal-day other-month">4</div>
+          <div class="cal-day other-month">5</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 地域別 -->
+    <div class="side-card">
+      <div class="side-title">地域別</div>
+      <div class="side-body">
+        <div class="region-list">
+          <a href="#" class="region-item" onclick="filterRegion(null,'kobe');return false">
+            <span class="region-name">神戸市内</span>
+            <span class="region-count">7件</span>
+          </a>
+          <a href="#" class="region-item" onclick="filterRegion(null,'hanshin');return false">
+            <span class="region-name">阪神（西宮・尼崎等）</span>
+            <span class="region-count">1件</span>
+          </a>
+          <a href="#" class="region-item" onclick="filterRegion(null,'sanda');return false">
+            <span class="region-name">三田・北摂</span>
+            <span class="region-count">2件</span>
+          </a>
+          <a href="#" class="region-item" onclick="filterRegion(null,'harima');return false">
+            <span class="region-name">播磨（姫路・明石等）</span>
+            <span class="region-count">2件</span>
+          </a>
+          <a href="#" class="region-item" onclick="filterRegion(null,'other');return false">
+            <span class="region-name">丹波・但馬・淡路</span>
+            <span class="region-count">0件</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 会場別一覧バナー -->
+    <div class="side-card">
+      <div class="side-title">定期パーティー情報</div>
+      <div class="side-body" style="padding:12px 16px">
+        <p style="font-size:12px;color:var(--ink2);line-height:1.7;margin-bottom:10px">三宮クレアホール・スリーセブン・広野市民センターなど、兵庫県内16会場・194件の定期パーティー情報を掲載しています。</p>
+        <a href="venues.html" style="display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;text-decoration:none;color:var(--ink);font-size:13px;font-weight:500;transition:border-color .15s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span>会場別パーティー一覧</span>
+          <span style="font-size:11px;color:var(--ink3)">16会場 194件 →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 広告カード: ソシエテエレガン -->
+    <div class="ad-card">
+      <div class="ad-card-head">
+        <div class="ad-logo">
+          société élégante
+          <small>Dance Studio · Sannomiya</small>
+        </div>
+        <div class="ad-pr-badge">PR</div>
+      </div>
+      <div class="ad-card-body">
+        <div>
+          <div class="ad-catch">神戸三宮の社交ダンス教室</div>
+          <div class="ad-desc">初心者から経験者まで、音楽に合わせて楽しく踊れる環境を提供。<br>ワルツ・タンゴ・ルンバ・チャチャチャなど多彩な種目に対応。</div>
+        </div>
+        <div class="ad-right">
+          <div class="ad-chips">
+            <span class="ad-chip">無料体験</span>
+            <span class="ad-chip">チケット制</span>
+          </div>
+          <a href="https://societeelegante.wixsite.com/mysite" target="_blank" rel="noopener" class="ad-btn">
+            教室サイトへ
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="ad-card-foot">
+        <a href="https://maps.app.goo.gl/5LNnWi9U1c1sXz6G7" target="_blank" rel="noopener" class="ad-loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          三宮センタープラザ西館 5階
+        </a>
+        <a href="tel:0783912565" class="ad-tel">TEL: 078-391-2565</a>
+      </div>
+    </div>
+
+    <!-- HP作成・リンク依頼カード -->
+    <div class="side-card" style="overflow:hidden">
+      <div style="background:var(--ink);padding:14px 16px">
+        <div style="font-size:10px;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;text-transform:uppercase">Website Request</div>
+        <div style="font-family:var(--ff-serif);font-size:16px;font-style:italic;color:#fff;line-height:1.3">ホームページ作成<br>・リンク掲載依頼</div>
+      </div>
+      <div style="padding:12px 16px;display:flex;flex-direction:column;gap:8px">
+        <p style="font-size:12px;color:var(--ink2);line-height:1.7">ダンス教室・スタジオ・ショップ向けに、ホームページ作成とリンク掲載を受け付けています。</p>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <a href="request.html" style="display:flex;align-items:center;justify-content:space-between;background:var(--gold);color:var(--ink);padding:9px 12px;border-radius:6px;text-decoration:none;font-size:12px;font-weight:500;transition:opacity .15s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+            <span>▶ HP作成を依頼する</span>
+          </a>
+          <a href="request.html" style="display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border:1px solid var(--border);color:var(--ink2);padding:8px 12px;border-radius:6px;text-decoration:none;font-size:12px;transition:border-color .15s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+            <span>🔗 リンク掲載を依頼する</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 掲載バナー -->
+    <div class="side-card">
+      <div class="post-banner">
+        <p>パーティーを開催しますか？<br>無料で掲載申請できます</p>
+        <a href="submit.html" class="btn-post-sm">＋ 掲載を申請する</a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ── フッター ─────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">兵庫 Dance Party</div>
+    <div class="footer-links">
+      <a href="about.html">このサイトについて</a>
+      <a href="submit.html">掲載申請</a>
+      <a href="request.html">HP作成・リンク依頼</a>
+      <a href="about.html#contact">お問い合わせ</a>
+    </div>
+    <div>© 2026 兵庫ダンスパーティー情報</div>
+  </div>
+</footer>
+
+<script>
+// ── 地域フィルター ─────────────────────────────
+function filterRegion(btn, region) {
+  // ボタンのactive切り替え
+  if (btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  const cards = document.querySelectorAll('.party-card');
+  let count = 0;
+
+  cards.forEach(card => {
+    const cardRegion = card.dataset.region;
+    const show = region === 'all' || cardRegion === region;
+    card.style.display = show ? '' : 'none';
+    if (show) count++;
+  });
+
+  document.getElementById('filter-count').textContent = count + '件';
+}
+</script>
+</body>
+</html>
