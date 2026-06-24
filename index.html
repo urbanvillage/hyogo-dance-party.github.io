@@ -532,6 +532,174 @@ body{
 .ad-tel{font-size:11px;color:var(--ink3);text-decoration:none}
 .ad-tel:hover{color:var(--ink)}
 @media(max-width:600px){.ad-card-body{grid-template-columns:1fr}.ad-right{flex-direction:row;align-items:center;flex-wrap:wrap}}
+
+/* ── サイト誘導カード（相続ナビ・売却ナビ） ──── */
+.navi-crosslink{
+  padding: 56px 24px 48px;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.navi-crosslink-inner{
+  max-width: 860px;
+  margin: 0 auto;
+}
+.navi-crosslink-label{
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  text-align: center;
+  margin-bottom: 8px;
+}
+.navi-crosslink-title{
+  font-family: var(--ff-serif);
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.45;
+}
+.navi-crosslink-sub{
+  font-size: 13px;
+  color: var(--ink3);
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+.navi-crosslink-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.navi-card{
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  background: var(--card-bg);
+  box-shadow: 0 2px 14px rgba(0,0,0,.08);
+  transition: transform .18s, box-shadow .18s;
+}
+.navi-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,.14);
+}
+/* 売却ナビ ヘッダー */
+.navi-card-uriage .navi-card-head{
+  background: linear-gradient(135deg,#0F2340 0%,#1A3658 100%);
+  padding: 24px 22px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.navi-card-uriage .navi-card-head::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#C49A3C,#E8C87A,#C49A3C,transparent);
+}
+.navi-card-uriage .navi-card-name{
+  font-family: var(--ff-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .04em;
+  margin-bottom: 3px;
+}
+.navi-card-uriage .navi-card-name span{ color:#E8C87A; }
+.navi-card-uriage .navi-card-catch{
+  font-size: 11px;
+  color: rgba(255,255,255,.55);
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+/* 相続ナビ ヘッダー */
+.navi-card-sozoku .navi-card-head{
+  background: linear-gradient(135deg,#0A5940 0%,#0F7A5A 100%);
+  padding: 24px 22px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.navi-card-sozoku .navi-card-head::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#5DCAA5,#A8E8D0,#5DCAA5,transparent);
+}
+.navi-card-sozoku .navi-card-name{
+  font-family: var(--ff-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .04em;
+  margin-bottom: 3px;
+}
+.navi-card-sozoku .navi-card-name span{ color:#A8E8D0; }
+.navi-card-sozoku .navi-card-catch{
+  font-size: 11px;
+  color: rgba(255,255,255,.55);
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+/* カードアイコン */
+.navi-card-icon{
+  font-size: 28px;
+  margin-bottom: 8px;
+  display: block;
+}
+/* カード本文 */
+.navi-card-body{
+  padding: 18px 22px 20px;
+}
+.navi-card-trust{
+  font-size: 11px;
+  color: var(--ink3);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.navi-card-trust strong{ color:var(--ink2); font-weight:700; }
+.navi-card-desc{
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+.navi-card-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+.navi-card-tag{
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+.tag-uriage{ background:rgba(196,154,60,.12); color:#7A5010; }
+.tag-sozoku{ background:rgba(15,122,90,.12); color:#0A5940; }
+.navi-card-btn{
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: opacity .15s;
+  text-decoration: none;
+}
+.navi-card-btn:hover{ opacity:.85; }
+.btn-uriage{ background:#C49A3C; color:#0F2340; }
+.btn-sozoku{ background:#0F7A5A; color:#fff; }
+@media(max-width:640px){
+  .navi-crosslink-grid{ grid-template-columns:1fr; }
+  .navi-crosslink-title{ font-size:18px; }
+  .navi-crosslink{ padding:40px 18px 36px; }
+}
 </style>
 </head>
 <body>
@@ -1126,6 +1294,68 @@ body{
 
   </aside>
 </div>
+
+<!-- ── 関連サイト誘導（相続ナビ・売却ナビ） ─── -->
+<section class="navi-crosslink">
+  <div class="navi-crosslink-inner">
+    <p class="navi-crosslink-label">関連サイトのご案内</p>
+    <h2 class="navi-crosslink-title">不動産・相続のお悩みは<br>専門サイトへ</h2>
+    <p class="navi-crosslink-sub">平野秀昭（不動産売却アドバイザー・業界歴30年）監修の中立情報サイトです。<br>特定業者との利害関係なし。売主の立場に立った情報のみを提供しています。</p>
+    <div class="navi-crosslink-grid">
+
+      <!-- 売却ナビ -->
+      <a class="navi-card navi-card-uriage" href="index__40_.html">
+        <div class="navi-card-head">
+          <span class="navi-card-icon">🏡</span>
+          <div class="navi-card-name">売却<span>ナビ</span></div>
+          <div class="navi-card-catch">独立コンサルタント 平野秀昭 監修・中立情報サイト</div>
+        </div>
+        <div class="navi-card-body">
+          <div class="navi-card-trust">
+            <strong>🏅 業界歴30年</strong>
+            <span>累計2,400件の売却相談</span>
+          </div>
+          <p class="navi-card-desc">
+            不動産売却を<strong>中立な立場</strong>で解説。囲い込み・高値査定の罠・仲介手数料の実態など、業者が教えたがらない情報を執筆。無料一括査定も依頼できます。
+          </p>
+          <div class="navi-card-tags">
+            <span class="navi-card-tag tag-uriage">🔍 査定比較</span>
+            <span class="navi-card-tag tag-uriage">💴 仲介手数料</span>
+            <span class="navi-card-tag tag-uriage">🔒 囲い込み対策</span>
+            <span class="navi-card-tag tag-uriage">📋 媒介契約</span>
+          </div>
+          <span class="navi-card-btn btn-uriage">売却ナビを見る →</span>
+        </div>
+      </a>
+
+      <!-- 相続ナビ -->
+      <a class="navi-card navi-card-sozoku" href="souzokunavi-index.html">
+        <div class="navi-card-head">
+          <span class="navi-card-icon">📜</span>
+          <div class="navi-card-name">相続<span>ナビ</span></div>
+          <div class="navi-card-catch">相続・遺産・税金・トラブル対策の情報サイト</div>
+        </div>
+        <div class="navi-card-body">
+          <div class="navi-card-trust">
+            <strong>📖 86ページ</strong>
+            <span>徹底解説・専門家監修</span>
+          </div>
+          <p class="navi-card-desc">
+            相続税の計算・手続き期限・遺言書・遺産分割トラブルまで<strong>86ページ</strong>で徹底解説。かんたん相続税試算ツールや法定相続分シミュレーターなど無料ツールも充実。
+          </p>
+          <div class="navi-card-tags">
+            <span class="navi-card-tag tag-sozoku">🧮 相続税計算</span>
+            <span class="navi-card-tag tag-sozoku">📅 手続き期限</span>
+            <span class="navi-card-tag tag-sozoku">⚖️ 遺産分割</span>
+            <span class="navi-card-tag tag-sozoku">📝 遺言書</span>
+          </div>
+          <span class="navi-card-btn btn-sozoku">相続ナビを見る →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
 
 <!-- ── フッター ─────────────────────────────── -->
 <footer class="site-footer">
