@@ -49,7 +49,9 @@ CONFIG = {
     "GS_SHEET_ID":    os.getenv("GS_SHEET_ID",  None),
     "GS_CREDS":       os.getenv("GS_CREDS",     None),
     "GS_SHEET_NAME":  os.getenv("GS_SHEET_NAME","📋 回答データ"),
-    "X_BEARER_TOKEN": os.getenv("X_BEARER_TOKEN", None),
+    "X_BEARER_TOKEN":   os.getenv("X_BEARER_TOKEN",   None),
+    "GAS_WEBHOOK_URL":  os.getenv("GAS_WEBHOOK_URL",  None),
+    "GAS_SECRET":       os.getenv("GAS_SECRET", "hyogo-dance-2026"),
     "X_QUERIES": [
         "兵庫 社交ダンス パーティー",
         "神戸 社交ダンス パーティー",

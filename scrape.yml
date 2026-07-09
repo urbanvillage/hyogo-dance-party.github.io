@@ -1,0 +1,90 @@
+# =====================================================================
+#  GitHub Actions ワークフロー
+#  兵庫県社交ダンス情報 自動収集
+#
+#  実行タイミング：毎朝9:00 JST（UTC 0:00）
+#
+#  設置場所：
+#    .github/workflows/scrape.yml
+#
+#  ★ GitHub Secrets に登録が必要なもの ★
+#  ┌─────────────────┬───────────────────────────────────────────┐
+#  │ Secret名         │ 値                                        │
+#  ├─────────────────┼───────────────────────────────────────────┤
+#  │ GMAIL_USER       │ 管理者のGmailアドレス                     │
+#  │ GMAIL_PASS       │ Gmailアプリパスワード（16桁）              │
+#  │ GS_SHEET_ID      │ スプレッドシートのID（URLから取得）        │
+#  │ GS_CREDS         │ サービスアカウントJSONのBase64文字列       │
+#  │ X_BEARER_TOKEN   │ X（旧Twitter）の Bearer Token（任意）     │
+#  │ GAS_WEBHOOK_URL  │ GAS WebAppのURL（スプレッドシート連携用） │
+#  │ GAS_SECRET       │ GASスクリプトと同じ合言葉（任意）         │
+#  │ GS_SHEET_NAME    │ シートのタブ名（省略時:「📋 回答データ」） │
+#  └─────────────────┴───────────────────────────────────────────┘
+#
+#  【GS_CREDSの作り方】
+#   1. Google Cloud Console でサービスアカウントを作成
+#   2. スプレッドシートをサービスアカウントのメールと共有（編集者）
+#   3. JSONキーをダウンロード
+#   4. ターミナルで: cat service_account.json | base64 | tr -d '\n'
+#   5. 出力された文字列を GS_CREDS に登録
+#
+#  【X_BEARER_TOKENの取得方法】
+#   1. https://developer.x.com/ でアカウント作成
+#   2. アプリ登録 → 「Keys and Tokens」→ Bearer Token をコピー
+#   3. GitHub Secret「X_BEARER_TOKEN」に登録
+# =====================================================================
+
+name: 兵庫ダンス情報 自動収集
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # 毎朝 9:00 JST（= UTC 0:00）
+
+  workflow_dispatch:       # GitHub画面から手動実行ボタン
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write      # 結果JSONをリポジトリにコミットするため
+
+    steps:
+      # 1. リポジトリを取得
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      # 2. Python をセットアップ
+      - name: Python 3.11 をセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # 3. 必要なライブラリをインストール
+      - name: 依存ライブラリをインストール
+        run: |
+          pip install requests beautifulsoup4
+          # gspread google-auth は GAS WebApp方式では不要
+
+      # 4. スクリプトを実行（Secretsを環境変数として注入）
+      - name: 自動収集スクリプトを実行
+        env:
+          GMAIL_USER:       ${{ secrets.GMAIL_USER }}
+          GMAIL_PASS:       ${{ secrets.GMAIL_PASS }}
+          GS_SHEET_ID:      ${{ secrets.GS_SHEET_ID }}
+          GS_CREDS:         ${{ secrets.GS_CREDS }}
+          GS_SHEET_NAME:    ${{ secrets.GS_SHEET_NAME }}
+          X_BEARER_TOKEN:   ${{ secrets.X_BEARER_TOKEN }}
+          GAS_WEBHOOK_URL:  ${{ secrets.GAS_WEBHOOK_URL }}
+          GAS_SECRET:       ${{ secrets.GAS_SECRET }}
+        run: python3 hyogo_dance_scraper.py
+
+      # 5. 収集結果と既知データをリポジトリにコミット
+      - name: 収集結果をコミット
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name  "GitHub Actions Bot"
+          git add scraped_result.json known_parties.json || true
+          git diff --staged --quiet || \
+            git commit -m "🤖 自動収集 $(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M JST')"
+          git push || true
