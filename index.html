@@ -1060,63 +1060,15 @@ body{
       <div class="side-title">カレンダー</div>
       <div class="side-body">
         <div class="mini-cal-header">
-          <button class="mini-cal-nav">‹</button>
-          <span>2026年6月</span>
-          <button class="mini-cal-nav">›</button>
+          <button class="mini-cal-nav" id="cal-prev">‹</button>
+          <span id="cal-title"></span>
+          <button class="mini-cal-nav" id="cal-next">›</button>
         </div>
-        <div class="mini-cal-grid">
+        <div class="mini-cal-grid" id="cal-grid">
           <div class="cal-dow">日</div><div class="cal-dow">月</div>
           <div class="cal-dow">火</div><div class="cal-dow">水</div>
           <div class="cal-dow">木</div><div class="cal-dow">金</div>
           <div class="cal-dow">土</div>
-          <!-- 1週目 -->
-          <div class="cal-day other-month">25</div>
-          <div class="cal-day other-month">26</div>
-          <div class="cal-day other-month">27</div>
-          <div class="cal-day other-month">28</div>
-          <div class="cal-day other-month">29</div>
-          <div class="cal-day other-month">30</div>
-          <div class="cal-day other-month">31</div>
-          <!-- 2週目 -->
-          <div class="cal-day has-party">1</div>
-          <div class="cal-day">2</div>
-          <div class="cal-day">3</div>
-          <div class="cal-day">4</div>
-          <div class="cal-day">5</div>
-          <div class="cal-day">6</div>
-          <div class="cal-day has-party">7</div>
-          <!-- 3週目 -->
-          <div class="cal-day has-party">8</div>
-          <div class="cal-day">9</div>
-          <div class="cal-day">10</div>
-          <div class="cal-day">11</div>
-          <div class="cal-day">12</div>
-          <div class="cal-day">13</div>
-          <div class="cal-day has-party">14</div>
-          <!-- 4週目 -->
-          <div class="cal-day has-party">15</div>
-          <div class="cal-day">16</div>
-          <div class="cal-day">17</div>
-          <div class="cal-day">18</div>
-          <div class="cal-day">19</div>
-          <div class="cal-day today">23</div>
-          <div class="cal-day">21</div>
-          <!-- 5週目 -->
-          <div class="cal-day has-party">22</div>
-          <div class="cal-day">23</div>
-          <div class="cal-day">24</div>
-          <div class="cal-day">25</div>
-          <div class="cal-day">26</div>
-          <div class="cal-day">27</div>
-          <div class="cal-day has-party">28</div>
-          <!-- 6週目 -->
-          <div class="cal-day">29</div>
-          <div class="cal-day">30</div>
-          <div class="cal-day other-month">1</div>
-          <div class="cal-day other-month">2</div>
-          <div class="cal-day other-month">3</div>
-          <div class="cal-day other-month">4</div>
-          <div class="cal-day other-month">5</div>
         </div>
       </div>
     </div>
@@ -1301,6 +1253,91 @@ body{
     <div>© 2026 兵庫ダンスパーティー情報</div>
   </div>
 </footer>
+
+<script>
+// ── ミニカレンダー ────────────────────────────
+(function() {
+  // パーティー開催日テーブル（月: [日付, ...]）
+  const partyDates = {
+    '2026-7':  [23,24,26,28,30],   // 中央区文化センター等 7月
+    '2026-8':  [2,3,4,5,6,9,10,11,12,13,16,17,18,19,20,22,23,24,25,27,29,30], // 8月
+    '2026-9':  [6,13,20],
+    '2026-11': [3],
+  };
+
+  const today = new Date();
+  let year  = today.getFullYear();
+  let month = today.getMonth() + 1; // 1-indexed
+
+  function render() {
+    const key = year + '-' + month;
+    const hasDates = partyDates[key] || [];
+
+    // タイトル更新
+    document.getElementById('cal-title').textContent = year + '年' + month + '月';
+
+    // グリッドを再生成（曜日ヘッダーは残す）
+    const grid = document.getElementById('cal-grid');
+    // 曜日ヘッダー7個は保持、それ以降を削除
+    const dows = grid.querySelectorAll('.cal-dow');
+    while (grid.children.length > 7) grid.removeChild(grid.lastChild);
+
+    // 1日の曜日（0=日〜6=土）
+    const firstDay = new Date(year, month - 1, 1).getDay();
+    // 月の日数
+    const daysInMonth = new Date(year, month, 0).getDate();
+    // 前月の日数
+    const daysInPrev  = new Date(year, month - 1, 0).getDate();
+
+    const todayY = today.getFullYear();
+    const todayM = today.getMonth() + 1;
+    const todayD = today.getDate();
+
+    // 前月の余白
+    for (let i = 0; i < firstDay; i++) {
+      const d = document.createElement('div');
+      d.className = 'cal-day other-month';
+      d.textContent = daysInPrev - firstDay + 1 + i;
+      grid.appendChild(d);
+    }
+
+    // 当月
+    for (let day = 1; day <= daysInMonth; day++) {
+      const d = document.createElement('div');
+      let cls = 'cal-day';
+      if (hasDates.includes(day)) cls += ' has-party';
+      if (year === todayY && month === todayM && day === todayD) cls += ' today';
+      d.className = cls;
+      d.textContent = day;
+      grid.appendChild(d);
+    }
+
+    // 翌月の余白（6行に満たない場合のみ）
+    const total = firstDay + daysInMonth;
+    const remainder = total % 7 === 0 ? 0 : 7 - (total % 7);
+    for (let i = 1; i <= remainder; i++) {
+      const d = document.createElement('div');
+      d.className = 'cal-day other-month';
+      d.textContent = i;
+      grid.appendChild(d);
+    }
+  }
+
+  document.getElementById('cal-prev').addEventListener('click', function() {
+    month--;
+    if (month < 1) { month = 12; year--; }
+    render();
+  });
+
+  document.getElementById('cal-next').addEventListener('click', function() {
+    month++;
+    if (month > 12) { month = 1; year++; }
+    render();
+  });
+
+  render();
+})();
+</script>
 
 <script>
 // ── 地域フィルター ─────────────────────────────
