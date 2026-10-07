@@ -1,5 +1,19 @@
 {
-  "scraped_at": "2026-10-06T03:32:13.387115",
-  "count": 0,
-  "parties": []
+  "scraped_at": "2026-10-07T02:56:59.427887",
+  "count": 1,
+  "parties": [
+    {
+      "source": "神戸YMCA社交ダンスクラブ",
+      "source_url": "https://so7348.wixsite.com/kobeymcadance",
+      "name": "神戸YMCA社交ダンスクラブ ダンスパーティー",
+      "date": "2026-10-07",
+      "time": "13:00〜16:30",
+      "venue": "神戸市中央区文化センター（神戸市中央区東町115番地）",
+      "fee": 900,
+      "region": "神戸市内",
+      "contact": "090-1139-4871（徐）/ 090-3996-1328（北）",
+      "pr": "kobeymca@okura.jp",
+      "_id": "9c67e1f3902ce216"
+    }
+  ]
 }
