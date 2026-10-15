@@ -742,15 +742,19 @@ body{
   <div class="pickup-inner">
     <span class="pickup-label">直近開催</span>
     <div class="pickup-items">
+      <a href="party-p-005.html" class="pickup-item" style="border-color:var(--red);background:#FEF0F0">
+        🎵 音楽とダンスの祭典 11/3
+        <span class="date">11月3日(祝)</span>
+      </a>
+      <a href="party-p-009.html" class="pickup-item" style="border-color:var(--gold);background:var(--gold-l)">
+        🎄 ソシエテエレガン 12/19
+        <span class="date">12月19日(土)</span>
+      </a>
       <a href="party-p-006.html" class="pickup-item">
         三田広野 毎週日曜パーティー
         <span class="date">毎週日曜</span>
       </a>
-      <a href="#" class="pickup-item">
-        神戸中央区文化センター 定期パーティー
-        <span class="date">毎週複数</span>
-      </a>
-      <a href="venues.html" class="pickup-item" style="border-color:var(--gold);background:var(--gold-l)">
+      <a href="venues.html" class="pickup-item">
         📋 会場別・全194件
         <span class="date">一覧へ</span>
       </a>
@@ -773,71 +777,11 @@ body{
       <button class="filter-btn" onclick="filterRegion(this,'sanda')">三田・北摂</button>
       <button class="filter-btn" onclick="filterRegion(this,'harima')">播磨</button>
       <button class="filter-btn" onclick="filterRegion(this,'other')">その他</button>
-      <span class="filter-count" id="filter-count">9件</span>
+      <span class="filter-count" id="filter-count">7件</span>
     </div>
 
     <!-- パーティーカード一覧 -->
     <div class="card-list" id="party-list">
-      <!-- カード3: JDSF兵庫パーティー第2回 -->
-      <a class="party-card card-free" href="party-p-003.html" data-region="kobe">
-        <div class="card-border-left"></div>
-        <div class="card-date-block">
-          <div class="card-month">8月</div>
-          <div class="card-day">9</div>
-          <div class="card-weekday">日</div>
-        </div>
-        <div class="card-body">
-          <div class="card-tags">
-            <span class="tag tag-region">神戸市内</span>
-            <span class="tag tag-free">JDSF会員無料</span>
-          </div>
-          <div class="card-name">JDSF兵庫 会員交流無料パーティー（第2回）</div>
-          <div class="card-meta">
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              13:00〜16:00
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              神戸市中央区文化センター
-            </span>
-          </div>
-        </div>
-        <div class="card-fee">
-          <span class="fee-free">JDSF会員無料</span>
-        </div>
-      </a>
-
-      <!-- カード4: D.C.サザンクロス -->
-      <a class="party-card card-hot" href="party-p-004.html" data-region="kobe">
-        <div class="card-border-left"></div>
-        <div class="card-date-block">
-          <div class="card-month">9月</div>
-          <div class="card-day">13</div>
-          <div class="card-weekday">日</div>
-        </div>
-        <div class="card-body">
-          <div class="card-tags">
-            <span class="tag tag-region">神戸市内</span>
-            <span class="tag tag-big">大型</span>
-          </div>
-          <div class="card-name">D.C.サザンクロス・ダンスパーティー</div>
-          <div class="card-meta">
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              11:30〜17:00
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              神戸市内（詳細要問合せ）
-            </span>
-          </div>
-        </div>
-        <div class="card-fee">
-          <div class="fee-num">17,000</div>
-          <div class="fee-unit">円</div>
-        </div>
-      </a>
 
       <!-- カード5: 音楽とダンスの祭典 -->
       <a class="party-card card-hot" href="party-p-005.html" data-region="kobe">
@@ -904,7 +848,7 @@ body{
       <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
         <div class="card-border-left"></div>
         <div class="card-date-block">
-          <div class="card-month">8〜9月</div>
+          <div class="card-month">10〜12月</div>
           <div class="card-day" style="font-size:22px">定期</div>
           <div class="card-weekday">月〜日</div>
         </div>
@@ -918,7 +862,7 @@ body{
           <div class="card-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              13:00〜16:30　8月：3日〜30日（毎日複数開催）　9月：4日・6日・22日 ほか
+              13:00〜16:30　10月・11月・12月も毎週複数日開催（詳細は乾さんのHPへ）
             </span>
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -940,7 +884,7 @@ body{
       <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
         <div class="card-border-left"></div>
         <div class="card-date-block">
-          <div class="card-month">8〜9月</div>
+          <div class="card-month">10〜12月</div>
           <div class="card-day" style="font-size:22px">定期</div>
           <div class="card-weekday">月・火・水・土</div>
         </div>
@@ -954,7 +898,7 @@ body{
           <div class="card-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              13:00〜16:30　8月：16日（プリンセス ¥10,000）
+              13:00〜16:30　秋冬も毎週月・火・水・土開催（詳細は乾さんのHPへ）
             </span>
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -976,7 +920,7 @@ body{
       <a class="party-card" href="https://threeseven0777.com/schedule/" target="_blank" rel="noopener" data-region="kobe">
         <div class="card-border-left"></div>
         <div class="card-date-block">
-          <div class="card-month">8〜9月</div>
+          <div class="card-month">10〜12月</div>
           <div class="card-day" style="font-size:22px">定期</div>
           <div class="card-weekday">日・木</div>
         </div>
@@ -990,7 +934,7 @@ body{
           <div class="card-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              毎週日曜・月曜　花＆はな・パッション（¥1,000）　8/15学生P（¥7,000）・8/30学生OBP（¥8,000）
+              毎週日曜・月曜　花＆はな・パッション（¥1,000）　特別パーティーは公式サイトでご確認ください
             </span>
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1012,7 +956,7 @@ body{
       <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="hanshin">
         <div class="card-border-left"></div>
         <div class="card-date-block">
-          <div class="card-month">8〜9月</div>
+          <div class="card-month">10〜12月</div>
           <div class="card-day" style="font-size:22px">定期</div>
           <div class="card-weekday">日・水・土</div>
         </div>
@@ -1026,7 +970,7 @@ body{
           <div class="card-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              13:00〜16:30　7月：8日（水）・18日（土）　8月：2日・16日・23日　9月：6日・20日 ほか
+              13:00〜16:30　10月・11月も定期開催（詳細は乾さんのHPへ）
             </span>
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1082,7 +1026,7 @@ body{
 </div><!-- /card-list -->
 
     <div class="load-more">
-      <button class="btn-load">すべて表示中（8件）</button>
+      <button class="btn-load">すべて表示中（7件）</button>
     </div>
 
     <!-- 会場別パーティー一覧バナー -->
@@ -1159,29 +1103,6 @@ body{
           </div>
         </div>
       </a>
-
-      <!-- 商品3: クリエイトサン ダンススカート（楽天） -->
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/58840452.64044313.58840453.eb43a05c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmimi777%2Fds022710d%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener"
-         style="display:flex;gap:10px;padding:12px 14px;text-decoration:none;color:var(--ink);border-top:1px solid var(--border);transition:background .15s"
-         onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
-        <div style="width:68px;height:68px;flex-shrink:0;border-radius:6px;overflow:hidden;background:#f9f7f3;border:1px solid var(--border);display:flex;align-items:center;justify-content:center">
-          <img src="https://hbb.afl.rakuten.co.jp/hgb/58840452.64044313.58840453.eb43a05c/?me_id=1246810&item_id=10000410&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmimi777%2Fcabinet%2F122712createsun%2Fds022710d-7.jpg%3F_ex%3D240x240&s=240x240&t=picttext"
-               alt="クリエイトサン 社交ダンス スカート"
-               title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"
-               style="width:64px;height:64px;object-fit:contain"
-               onerror="this.parentElement.innerHTML='<span style=&quot;font-size:28px&quot;>💃</span>'">
-        </div>
-        <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between">
-          <div style="font-size:11px;font-weight:500;line-height:1.55;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">
-            [クリエイトサン] 社交ダンス スカート ダンス衣装 レッスンウェア
-          </div>
-          <div style="font-size:10px;color:var(--ink2);margin-top:3px">15,800円（税込・送料別）<span style="color:var(--ink3)"> 2026/10/15時点</span></div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:6px">
-            <span style="font-size:10px;color:var(--ink3)">ダンススカート</span>
-            <span style="font-size:10px;color:#bf0000;font-weight:600;background:#fff5f5;padding:2px 7px;border-radius:3px;border:1px solid #f0c0c0">楽天 →</span>
-          </div>
-        </div>
-      </a>
     </div>
 
     <!-- ミニカレンダー -->
@@ -1190,7 +1111,7 @@ body{
       <div class="side-body">
         <div class="mini-cal-header">
           <button class="mini-cal-nav">‹</button>
-          <span>2026年6月</span>
+          <span>2026年10月</span>
           <button class="mini-cal-nav">›</button>
         </div>
         <div class="mini-cal-grid">
@@ -1198,54 +1119,46 @@ body{
           <div class="cal-dow">火</div><div class="cal-dow">水</div>
           <div class="cal-dow">木</div><div class="cal-dow">金</div>
           <div class="cal-dow">土</div>
-          <!-- 1週目 -->
-          <div class="cal-day other-month">25</div>
-          <div class="cal-day other-month">26</div>
+          <!-- 1週目 (1日=木) -->
           <div class="cal-day other-month">27</div>
           <div class="cal-day other-month">28</div>
           <div class="cal-day other-month">29</div>
           <div class="cal-day other-month">30</div>
-          <div class="cal-day other-month">31</div>
-          <!-- 2週目 -->
-          <div class="cal-day has-party">1</div>
+          <div class="cal-day">1</div>
           <div class="cal-day">2</div>
           <div class="cal-day">3</div>
-          <div class="cal-day">4</div>
+          <!-- 2週目 -->
+          <div class="cal-day has-party">4</div>
           <div class="cal-day">5</div>
           <div class="cal-day">6</div>
-          <div class="cal-day has-party">7</div>
-          <!-- 3週目 -->
-          <div class="cal-day has-party">8</div>
+          <div class="cal-day">7</div>
+          <div class="cal-day">8</div>
           <div class="cal-day">9</div>
           <div class="cal-day">10</div>
-          <div class="cal-day">11</div>
+          <!-- 3週目 -->
+          <div class="cal-day has-party">11</div>
           <div class="cal-day">12</div>
           <div class="cal-day">13</div>
-          <div class="cal-day has-party">14</div>
-          <!-- 4週目 -->
-          <div class="cal-day has-party">15</div>
+          <div class="cal-day">14</div>
+          <div class="cal-day today">15</div>
           <div class="cal-day">16</div>
           <div class="cal-day">17</div>
-          <div class="cal-day">18</div>
+          <!-- 4週目 -->
+          <div class="cal-day has-party">18</div>
           <div class="cal-day">19</div>
-          <div class="cal-day today">23</div>
+          <div class="cal-day">20</div>
           <div class="cal-day">21</div>
-          <!-- 5週目 -->
-          <div class="cal-day has-party">22</div>
+          <div class="cal-day">22</div>
           <div class="cal-day">23</div>
           <div class="cal-day">24</div>
-          <div class="cal-day">25</div>
+          <!-- 5週目 -->
+          <div class="cal-day has-party">25</div>
           <div class="cal-day">26</div>
           <div class="cal-day">27</div>
-          <div class="cal-day has-party">28</div>
-          <!-- 6週目 -->
+          <div class="cal-day">28</div>
           <div class="cal-day">29</div>
           <div class="cal-day">30</div>
-          <div class="cal-day other-month">1</div>
-          <div class="cal-day other-month">2</div>
-          <div class="cal-day other-month">3</div>
-          <div class="cal-day other-month">4</div>
-          <div class="cal-day other-month">5</div>
+          <div class="cal-day">31</div>
         </div>
       </div>
     </div>
@@ -1257,7 +1170,7 @@ body{
         <div class="region-list">
           <a href="#" class="region-item" onclick="filterRegion(null,'kobe');return false">
             <span class="region-name">神戸市内</span>
-            <span class="region-count">7件</span>
+            <span class="region-count">5件</span>
           </a>
           <a href="#" class="region-item" onclick="filterRegion(null,'hanshin');return false">
             <span class="region-name">阪神（西宮・尼崎等）</span>
@@ -1265,11 +1178,11 @@ body{
           </a>
           <a href="#" class="region-item" onclick="filterRegion(null,'sanda');return false">
             <span class="region-name">三田・北摂</span>
-            <span class="region-count">2件</span>
+            <span class="region-count">1件</span>
           </a>
           <a href="#" class="region-item" onclick="filterRegion(null,'harima');return false">
             <span class="region-name">播磨（姫路・明石等）</span>
-            <span class="region-count">2件</span>
+            <span class="region-count">1件</span>
           </a>
           <a href="#" class="region-item" onclick="filterRegion(null,'other');return false">
             <span class="region-name">丹波・但馬・淡路</span>
@@ -1280,6 +1193,21 @@ body{
     </div>
 
 
+
+
+    <!-- 楽天アフィリエイト: ダンススカート クリエイトサン -->
+    <div class="side-card" style="overflow:hidden">
+      <div style="font-size:10px;font-weight:500;letter-spacing:.12em;color:var(--ink3);padding:7px 14px 6px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between">
+        <span style="display:flex;align-items:center;gap:5px">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          ダンス衣装
+        </span>
+        <span style="background:var(--gold-l);color:var(--gold);font-size:9px;font-weight:600;padding:2px 6px;border-radius:3px;letter-spacing:.08em">PR</span>
+      </div>
+      <div style="padding:12px 14px">
+        <table border="0" cellpadding="0" cellspacing="0" style="width:100%"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:100%;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table style="width:100%"><tr><td style="width:120px"><a href="https://hb.afl.rakuten.co.jp/ichiba/58840452.64044313.58840453.eb43a05c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmimi777%2Fds022710d%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hgb/58840452.64044313.58840453.eb43a05c/?me_id=1246810&item_id=10000410&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmimi777%2Fcabinet%2F122712createsun%2Fds022710d-7.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px;width:110px;height:110px;object-fit:contain" alt="社交ダンス衣装 ダンススカート" title="社交ダンス衣装 ダンススカート"></a></td><td style="vertical-align:top;padding:4px 6px;display:block;"><p style="font-size:11px;line-height:1.5em;text-align:left;margin:0px 0px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/ichiba/58840452.64044313.58840453.eb43a05c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmimi777%2Fds022710d%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;color:var(--ink);text-decoration:none;font-weight:500">ダンススカート・クリエイトサン</a></p><p style="font-size:11px;color:#c45500;font-weight:600;margin:0 0 8px">¥15,800（税込、送料別）</p><div><a href="https://hb.afl.rakuten.co.jp/ichiba/58840452.64044313.58840453.eb43a05c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmimi777%2Fds022710d%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><div style="display:inline-block;background-color:#bf0000;color:#fff;font-size:12px;font-weight:500;line-height:27px;padding:0 14px;border-radius:16px;cursor:pointer;text-align:center;"> 楽天で購入 </div></a></div></td></tr></table></div></td></tr></table>
+      </div>
+    </div>
 
     <!-- 広告カード: ソシエテエレガン -->
     <div class="ad-card">
