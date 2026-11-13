@@ -723,6 +723,10 @@ body{
 <section class="hero">
   <div class="hero-inner">
     <p class="hero-eyebrow">Hyogo Social Dance Party Information</p>
+    <p style="font-size:11px;color:rgba(255,255,255,.45);margin-bottom:6px;letter-spacing:.06em">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-1px;margin-right:3px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      最終更新：2026年11月13日
+    </p>
     <h1 class="hero-title">兵庫県内の<em>社交ダンス</em><br>パーティー情報</h1>
     <p class="hero-desc">神戸・阪神・三田・播磨・丹波など兵庫県内で開催される社交ダンスパーティーの情報を集めています。主催者の方はぜひ掲載をご申請ください。</p>
     <div class="hero-cta">
@@ -742,20 +746,16 @@ body{
   <div class="pickup-inner">
     <span class="pickup-label">直近開催</span>
     <div class="pickup-items">
-      <a href="party-p-005.html" class="pickup-item" style="border-color:var(--red);background:#FEF0F0">
-        🎵 音楽とダンスの祭典 11/3
-        <span class="date">11月3日(祝)</span>
-      </a>
-      <a href="party-p-009.html" class="pickup-item" style="border-color:var(--gold);background:var(--gold-l)">
-        🎄 ソシエテエレガン 12/19
-        <span class="date">12月19日(土)</span>
-      </a>
       <a href="party-p-006.html" class="pickup-item">
         三田広野 毎週日曜パーティー
         <span class="date">毎週日曜</span>
       </a>
-      <a href="venues.html" class="pickup-item">
-        📋 会場別・全194件
+      <a href="#" class="pickup-item">
+        神戸中央区文化センター 定期パーティー
+        <span class="date">毎週複数</span>
+      </a>
+      <a href="venues.html" class="pickup-item" style="border-color:var(--gold);background:var(--gold-l)">
+        📋 会場別・全108件
         <span class="date">一覧へ</span>
       </a>
     </div>
@@ -777,39 +777,612 @@ body{
       <button class="filter-btn" onclick="filterRegion(this,'sanda')">三田・北摂</button>
       <button class="filter-btn" onclick="filterRegion(this,'harima')">播磨</button>
       <button class="filter-btn" onclick="filterRegion(this,'other')">その他</button>
-      <span class="filter-count" id="filter-count">7件</span>
+      <span class="filter-count" id="filter-count">21件</span>
     </div>
 
     <!-- パーティーカード一覧 -->
     <div class="card-list" id="party-list">
-
-      <!-- カード5: 音楽とダンスの祭典 -->
-      <a class="party-card card-hot" href="party-p-005.html" data-region="kobe">
+      <!-- カード新: ラビットダンサーズ 5周年記念パーティー 11/17 -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
         <div class="card-border-left"></div>
         <div class="card-date-block">
           <div class="card-month">11月</div>
+          <div class="card-day">17</div>
+          <div class="card-weekday">火</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">ラビットダンサーズ 5周年記念パーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              11:40〜16:20（前売のみ・要予約）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              三宮クレアホール（神戸市中央区）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              ラビットダンサーズ
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              TEL：078-265-6566
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">3,500</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+            <!-- カード新: JDSF兵庫 第3回 会員交流無料パーティー 11/25 -->
+      <a class="party-card" href="https://www.jdsf-hyogo.com/archives/2596" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">11月</div>
+          <div class="card-day">25</div>
+          <div class="card-weekday">水</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-new">NEW</span>
+            <span style="font-size:10px;font-weight:500;padding:2px 8px;border-radius:99px;background:#DCF0EC;color:#1D7A6B">JDSF会員無料</span>
+          </div>
+          <div class="card-name">JDSF兵庫 2026年度第3回 会員交流無料ダンスパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:00（予約不要）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              神戸中央区文化センター（神戸市中央区東町115）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              兵庫県ダンススポーツ連盟（JDSF兵庫）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              TEL：078-381-7899
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num" style="font-size:13px">会員</div>
+          <div class="fee-unit">無料</div>
+        </div>
+      </a>
+
+      <!-- カード新: 日生社交ダンス愛好会 11/28 -->
+      <a class="party-card" href="https://www.eonet.ne.jp/~dance-party/party.html" target="_blank" rel="noopener" data-region="hanshin">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">11月</div>
+          <div class="card-day">28</div>
+          <div class="card-weekday">土</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags"><span class="tag tag-region">阪神</span><span class="tag tag-new">NEW</span></div>
+          <div class="card-name">日生社交ダンス愛好会 ダンスパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:10〜15:45
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              日生公民館 2F（猪名川町）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              日生社交ダンス愛好会
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              長井 090-5168-9567
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">500</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード新: かりん X'masパーティー 12/2 -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">12月</div>
+          <div class="card-day">2</div>
+          <div class="card-weekday">水</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">かりん X'masパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              12:30〜16:10
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              三宮クレアホール（神戸市中央区）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              かりん
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              TEL：078-265-6566
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">4,000</div>
+          <div class="fee-unit">円〜（女性5,000円）</div>
+        </div>
+      </a>
+
+      <!-- カード新: ダンシング・スタジオT2 X'masパーティー 12/13 -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">12月</div>
+          <div class="card-day">13</div>
+          <div class="card-weekday">日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">ダンシング・スタジオT2 X'masパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:30
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              三宮クレアホール（神戸市中央区）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              ダンシング・スタジオT2
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              TEL：078-265-6566
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">6,000</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード新: キワリ冬パーティー 12/19 -->
+      <a class="party-card" href="https://www.eonet.ne.jp/~dance-party/party.html" target="_blank" rel="noopener" data-region="sanda">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">12月</div>
+          <div class="card-day">19</div>
+          <div class="card-weekday">土</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags"><span class="tag tag-region">三田・北摂</span><span class="tag tag-new">NEW</span></div>
+          <div class="card-name">カルチャースタジオ キワリ・冬の合同パーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              時間未定（TBA）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              神戸三田ホテル３階 桜の間（三田市）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              カルチャースタジオ キワリ
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              キワリ 080-3793-5634
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">TBA</div>
+          <div class="fee-unit"></div>
+        </div>
+      </a>
+
+      <!-- カード新: 迎賓館グループ X'masパーティー 12/20 -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">12月</div>
+          <div class="card-day">20</div>
+          <div class="card-weekday">日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">迎賓館グループ X'masパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:30
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              神戸中央区文化センター 1F多目的ルーム
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              迎賓館グループ
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">1,000</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード新: 愛メロディー X'masパーティー 12/20 -->
+      <a class="party-card" href="https://www.eonet.ne.jp/~dance-party/party.html" target="_blank" rel="noopener" data-region="sanda">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">12月</div>
+          <div class="card-day">20</div>
+          <div class="card-weekday">日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">三田・北摂</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">愛メロディー X'masパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:00
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              三田市広野市民センター
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              愛メロディー
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              TEL：079-567-0490
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">1,000</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード新: 青い鳥 X'masパーティー（抽選会あり） 12/21 -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">12月</div>
+          <div class="card-day">21</div>
+          <div class="card-weekday">月</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">青い鳥 X'masパーティー（抽選会あり）</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:30
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              神戸中央区文化センター 1F多目的ルーム
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              青い鳥
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">1,200</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード新: ボールルーム神戸 X'masパーティー 12/24 -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">12月</div>
+          <div class="card-day">24</div>
+          <div class="card-weekday">木</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">ボールルーム神戸 X'masパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              12:45〜16:15（前売のみ）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              三宮クレアホール（神戸市中央区）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              ボールルーム神戸
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              TEL：078-265-6566
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">3,500</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード新: 迎賓館グループ 年忘れパーティー 12/27 -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">12月</div>
+          <div class="card-day">27</div>
+          <div class="card-weekday">日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">迎賓館グループ 年忘れパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              11:00〜16:00（抽選会・軽食・ドリンク付）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              神戸中央区文化センター 1F多目的ルーム
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              迎賓館グループ
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">2,000</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード新: 三田社交ダンス同好会 年忘れパーティー 12/27 -->
+      <a class="party-card" href="https://www.eonet.ne.jp/~dance-party/party.html" target="_blank" rel="noopener" data-region="sanda">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">12月</div>
+          <div class="card-day">27</div>
+          <div class="card-weekday">日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">三田・北摂</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">三田社交ダンス同好会 年忘れパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:00
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              三田市広野市民センター
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              三田社交ダンス同好会
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              TEL：079-567-0490
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">1,000</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード新: サークル六甲 年忘れパーティー（軽食付） 12/28 -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">12月</div>
+          <div class="card-day">28</div>
+          <div class="card-weekday">月</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">サークル六甲 年忘れパーティー（軽食付）</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              12:00〜16:30（前売）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              神戸中央区文化センター 1F多目的ルーム
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              サークル六甲
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">1,500</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード新: 新春パーティ（ゲスト：浅村慎太郎＆遠山恵美組） 1/3 -->
+      <a class="party-card" href="https://www.eonet.ne.jp/~dance-party/party.html" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">1月</div>
           <div class="card-day">3</div>
-          <div class="card-weekday">火・祝</div>
+          <div class="card-weekday">日</div>
         </div>
         <div class="card-body">
           <div class="card-tags">
             <span class="tag tag-region">神戸市内</span>
             <span class="tag tag-big">大型</span>
+            <span class="tag tag-new">NEW</span>
           </div>
-          <div class="card-name">音楽とダンスの祭典2026 in Hyogo</div>
+          <div class="card-name">新春パーティ（ゲスト：浅村慎太郎＆遠山恵美組）</div>
           <div class="card-meta">
             <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              11:00〜16:00（全席指定）
+            </span>
+            <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              兵庫県立文化体育館
+              しあわせの村 研修館（神戸市北区）
             </span>
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              兵庫県ダンススポーツ連盟
+              関西ダンス交流会実行委員会
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              TEL：078-743-8000
             </span>
           </div>
         </div>
         <div class="card-fee">
-          <div class="fee-num">未定</div>
+          <div class="fee-num">15,000</div>
+          <div class="fee-unit">円〜（〜11月末早割）</div>
+        </div>
+      </a>
+
+      <!-- カード新: ダンシング・スタジオT2 新春ダンスパーティー 1/17 -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">1月</div>
+          <div class="card-day">17</div>
+          <div class="card-weekday">日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">ダンシング・スタジオT2 新春ダンスパーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:30
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              三宮クレアホール（神戸市中央区）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              ダンシング・スタジオT2
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              TEL：078-265-6566
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">7,000</div>
+          <div class="fee-unit">円</div>
+        </div>
+      </a>
+
+      <!-- カード新: フレッシュ 3周年記念パーティー 1/30 -->
+      <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
+        <div class="card-border-left"></div>
+        <div class="card-date-block">
+          <div class="card-month">1月</div>
+          <div class="card-day">30</div>
+          <div class="card-weekday">土</div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-region">神戸市内</span>
+            <span class="tag tag-new">NEW</span>
+          </div>
+          <div class="card-name">フレッシュ 3周年記念パーティー</div>
+          <div class="card-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              13:00〜16:30
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              三宮クレアホール（神戸市中央区）
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              フレッシュ
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              TEL：078-265-6566
+            </span>
+          </div>
+        </div>
+        <div class="card-fee">
+          <div class="fee-num">2,000</div>
+          <div class="fee-unit">円</div>
         </div>
       </a>
 
@@ -848,7 +1421,7 @@ body{
       <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
         <div class="card-border-left"></div>
         <div class="card-date-block">
-          <div class="card-month">10〜12月</div>
+          <div class="card-month">11〜1月</div>
           <div class="card-day" style="font-size:22px">定期</div>
           <div class="card-weekday">月〜日</div>
         </div>
@@ -862,7 +1435,7 @@ body{
           <div class="card-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              13:00〜16:30　10月・11月・12月も毎週複数日開催（詳細は乾さんのHPへ）
+              13:00〜16:30　11月〜1月も随時開催（乾さんのHP参照）
             </span>
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -884,7 +1457,7 @@ body{
       <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="kobe">
         <div class="card-border-left"></div>
         <div class="card-date-block">
-          <div class="card-month">10〜12月</div>
+          <div class="card-month">11〜1月</div>
           <div class="card-day" style="font-size:22px">定期</div>
           <div class="card-weekday">月・火・水・土</div>
         </div>
@@ -898,7 +1471,7 @@ body{
           <div class="card-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              13:00〜16:30　秋冬も毎週月・火・水・土開催（詳細は乾さんのHPへ）
+              13:00〜16:30　10〜11月〜1月も随時開催（クレアホール月次予定表参照）
             </span>
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -920,9 +1493,9 @@ body{
       <a class="party-card" href="https://threeseven0777.com/schedule/" target="_blank" rel="noopener" data-region="kobe">
         <div class="card-border-left"></div>
         <div class="card-date-block">
-          <div class="card-month">10〜12月</div>
+          <div class="card-month">11〜1月</div>
           <div class="card-day" style="font-size:22px">定期</div>
-          <div class="card-weekday">日・木</div>
+          <div class="card-weekday">日・月</div>
         </div>
         <div class="card-body">
           <div class="card-tags">
@@ -934,7 +1507,7 @@ body{
           <div class="card-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              毎週日曜・月曜　花＆はな・パッション（¥1,000）　特別パーティーは公式サイトでご確認ください
+              11月：15日・19日・22日・29日　花＆はな・学生パーティー ほか（朝活 10:00〜12:30 ¥1,000）
             </span>
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -956,7 +1529,7 @@ body{
       <a class="party-card" href="http://tatsumi-n.private.coocan.jp/PartySch1.htm" target="_blank" rel="noopener" data-region="hanshin">
         <div class="card-border-left"></div>
         <div class="card-date-block">
-          <div class="card-month">10〜12月</div>
+          <div class="card-month">11〜1月</div>
           <div class="card-day" style="font-size:22px">定期</div>
           <div class="card-weekday">日・水・土</div>
         </div>
@@ -970,7 +1543,7 @@ body{
           <div class="card-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              13:00〜16:30　10月・11月も定期開催（詳細は乾さんのHPへ）
+              13:00〜16:30　11月：29日　12月：9日・20日・23日　1月：5日・20日
             </span>
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -988,45 +1561,10 @@ body{
         </div>
       </a>
 
-      <!-- カード: ソシエテエレガン クリスマスパーティー2026 -->
-      <a class="party-card card-hot" href="party-p-009.html" data-region="kobe">
-        <div class="card-border-left"></div>
-        <div class="card-date-block">
-          <div class="card-month">12月</div>
-          <div class="card-day">19</div>
-          <div class="card-weekday">土</div>
-        </div>
-        <div class="card-body">
-          <div class="card-tags">
-            <span class="tag tag-region">神戸市内</span>
-            <span class="tag tag-big">大型</span>
-          </div>
-          <div class="card-name">ダンス教室ソシエテエレガン クリスマスパーティー2026</div>
-          <div class="card-meta">
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              14:00〜19:30
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              神戸ポートピアホテル 大輪田の間
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              ダンス教室ソシエテエレガン
-            </span>
-          </div>
-        </div>
-        <div class="card-fee">
-          <div class="fee-num">32,000</div>
-          <div class="fee-unit">円</div>
-        </div>
-      </a>
-
 </div><!-- /card-list -->
 
     <div class="load-more">
-      <button class="btn-load">すべて表示中（7件）</button>
+      <button class="btn-load">すべて表示中（21件）</button>
     </div>
 
     <!-- 会場別パーティー一覧バナー -->
@@ -1110,56 +1648,11 @@ body{
       <div class="side-title">カレンダー</div>
       <div class="side-body">
         <div class="mini-cal-header">
-          <button class="mini-cal-nav">‹</button>
-          <span>2026年10月</span>
-          <button class="mini-cal-nav">›</button>
+          <button class="mini-cal-nav" id="cal-prev" aria-label="前月">‹</button>
+          <span id="cal-title"></span>
+          <button class="mini-cal-nav" id="cal-next" aria-label="翌月">›</button>
         </div>
-        <div class="mini-cal-grid">
-          <div class="cal-dow">日</div><div class="cal-dow">月</div>
-          <div class="cal-dow">火</div><div class="cal-dow">水</div>
-          <div class="cal-dow">木</div><div class="cal-dow">金</div>
-          <div class="cal-dow">土</div>
-          <!-- 1週目 (1日=木) -->
-          <div class="cal-day other-month">27</div>
-          <div class="cal-day other-month">28</div>
-          <div class="cal-day other-month">29</div>
-          <div class="cal-day other-month">30</div>
-          <div class="cal-day">1</div>
-          <div class="cal-day">2</div>
-          <div class="cal-day">3</div>
-          <!-- 2週目 -->
-          <div class="cal-day has-party">4</div>
-          <div class="cal-day">5</div>
-          <div class="cal-day">6</div>
-          <div class="cal-day">7</div>
-          <div class="cal-day">8</div>
-          <div class="cal-day">9</div>
-          <div class="cal-day">10</div>
-          <!-- 3週目 -->
-          <div class="cal-day has-party">11</div>
-          <div class="cal-day">12</div>
-          <div class="cal-day">13</div>
-          <div class="cal-day">14</div>
-          <div class="cal-day today">15</div>
-          <div class="cal-day">16</div>
-          <div class="cal-day">17</div>
-          <!-- 4週目 -->
-          <div class="cal-day has-party">18</div>
-          <div class="cal-day">19</div>
-          <div class="cal-day">20</div>
-          <div class="cal-day">21</div>
-          <div class="cal-day">22</div>
-          <div class="cal-day">23</div>
-          <div class="cal-day">24</div>
-          <!-- 5週目 -->
-          <div class="cal-day has-party">25</div>
-          <div class="cal-day">26</div>
-          <div class="cal-day">27</div>
-          <div class="cal-day">28</div>
-          <div class="cal-day">29</div>
-          <div class="cal-day">30</div>
-          <div class="cal-day">31</div>
-        </div>
+        <div class="mini-cal-grid" id="cal-grid"></div>
       </div>
     </div>
 
@@ -1170,19 +1663,19 @@ body{
         <div class="region-list">
           <a href="#" class="region-item" onclick="filterRegion(null,'kobe');return false">
             <span class="region-name">神戸市内</span>
-            <span class="region-count">5件</span>
+            <span class="region-count">15件</span>
           </a>
           <a href="#" class="region-item" onclick="filterRegion(null,'hanshin');return false">
             <span class="region-name">阪神（西宮・尼崎等）</span>
-            <span class="region-count">1件</span>
+            <span class="region-count">2件</span>
           </a>
           <a href="#" class="region-item" onclick="filterRegion(null,'sanda');return false">
             <span class="region-name">三田・北摂</span>
-            <span class="region-count">1件</span>
+            <span class="region-count">4件</span>
           </a>
           <a href="#" class="region-item" onclick="filterRegion(null,'harima');return false">
             <span class="region-name">播磨（姫路・明石等）</span>
-            <span class="region-count">1件</span>
+            <span class="region-count">0件</span>
           </a>
           <a href="#" class="region-item" onclick="filterRegion(null,'other');return false">
             <span class="region-name">丹波・但馬・淡路</span>
@@ -1193,21 +1686,6 @@ body{
     </div>
 
 
-
-
-    <!-- 楽天アフィリエイト: ダンススカート クリエイトサン -->
-    <div class="side-card" style="overflow:hidden">
-      <div style="font-size:10px;font-weight:500;letter-spacing:.12em;color:var(--ink3);padding:7px 14px 6px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between">
-        <span style="display:flex;align-items:center;gap:5px">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          ダンス衣装
-        </span>
-        <span style="background:var(--gold-l);color:var(--gold);font-size:9px;font-weight:600;padding:2px 6px;border-radius:3px;letter-spacing:.08em">PR</span>
-      </div>
-      <div style="padding:12px 14px">
-        <table border="0" cellpadding="0" cellspacing="0" style="width:100%"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:100%;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table style="width:100%"><tr><td style="width:120px"><a href="https://hb.afl.rakuten.co.jp/ichiba/58840452.64044313.58840453.eb43a05c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmimi777%2Fds022710d%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hgb/58840452.64044313.58840453.eb43a05c/?me_id=1246810&item_id=10000410&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmimi777%2Fcabinet%2F122712createsun%2Fds022710d-7.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px;width:110px;height:110px;object-fit:contain" alt="社交ダンス衣装 ダンススカート" title="社交ダンス衣装 ダンススカート"></a></td><td style="vertical-align:top;padding:4px 6px;display:block;"><p style="font-size:11px;line-height:1.5em;text-align:left;margin:0px 0px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/ichiba/58840452.64044313.58840453.eb43a05c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmimi777%2Fds022710d%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;color:var(--ink);text-decoration:none;font-weight:500">ダンススカート・クリエイトサン</a></p><p style="font-size:11px;color:#c45500;font-weight:600;margin:0 0 8px">¥15,800（税込、送料別）</p><div><a href="https://hb.afl.rakuten.co.jp/ichiba/58840452.64044313.58840453.eb43a05c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmimi777%2Fds022710d%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><div style="display:inline-block;background-color:#bf0000;color:#fff;font-size:12px;font-weight:500;line-height:27px;padding:0 14px;border-radius:16px;cursor:pointer;text-align:center;"> 楽天で購入 </div></a></div></td></tr></table></div></td></tr></table>
-      </div>
-    </div>
 
     <!-- 広告カード: ソシエテエレガン -->
     <div class="ad-card">
@@ -1335,52 +1813,6 @@ body{
   </div>
 </section>
 
-
-<!-- ── メルマガ登録 ─────────────────────────── -->
-<section style="background:var(--ink);padding:clamp(32px,6vw,56px) clamp(16px,5vw,48px);position:relative;overflow:hidden">
-  <!-- 背景装飾 -->
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 80% 50%,rgba(184,147,58,.15) 0%,transparent 65%),radial-gradient(ellipse 35% 60% at 15% 80%,rgba(29,122,107,.1) 0%,transparent 55%);pointer-events:none"></div>
-
-  <div style="max-width:900px;margin:0 auto;position:relative;z-index:1">
-
-    <!-- ヘッダー -->
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
-      <div style="width:40px;height:40px;border-radius:50%;background:rgba(184,147,58,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8933A" stroke-width="1.8">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-          <polyline points="22,6 12,13 2,6"/>
-        </svg>
-      </div>
-      <div>
-        <div style="font-size:10px;letter-spacing:.18em;color:var(--gold);font-weight:500;margin-bottom:3px">NEWSLETTER</div>
-        <h2 style="font-family:var(--ff-serif);font-size:clamp(18px,3vw,26px);font-weight:600;color:#fff;line-height:1.2">メルマガ登録</h2>
-      </div>
-    </div>
-    <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:24px;line-height:1.8;max-width:500px">
-      兵庫県内の新着ダンスパーティー情報をメールでお届けします。<br>登録は無料です。いつでも解除できます。
-    </p>
-
-    <!-- フォーム埋め込み -->
-    <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden">
-      <iframe
-        src="https://forms.gle/nnnYc6ANm9c18Grh9?embedded=true"
-        width="100%"
-        height="520"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        style="display:block;background:transparent">
-        読み込み中…
-      </iframe>
-    </div>
-
-    <!-- 補足 -->
-    <p style="font-size:11px;color:rgba(255,255,255,.35);margin-top:12px;line-height:1.7;text-align:center">
-      ご登録いただいた情報は、メルマガ配信にのみ使用します。第三者への提供は行いません。
-    </p>
-  </div>
-</section>
-
 <!-- ── フッター ─────────────────────────────── -->
 <footer class="site-footer">
   <div class="footer-inner">
@@ -1416,6 +1848,37 @@ function filterRegion(btn, region) {
 
   document.getElementById('filter-count').textContent = count + '件';
 }
+
+// ── カレンダー ─────────────────────────────
+(function(){
+  const partyDates = {"2026-11": [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30], "2026-12": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30], "2027-1": [3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 26, 27, 28, 29, 30]};
+  const now = new Date();
+  let y = now.getFullYear(), m = now.getMonth()+1;
+  const grid = document.getElementById('cal-grid');
+  const title = document.getElementById('cal-title');
+  function render(){
+    title.textContent = y + '年' + m + '月';
+    const dows = ['日','月','火','水','木','金','土'];
+    let h = dows.map(d=>'<div class="cal-dow">'+d+'</div>').join('');
+    const first = new Date(y, m-1, 1).getDay();
+    const last = new Date(y, m, 0).getDate();
+    const prevLast = new Date(y, m-1, 0).getDate();
+    const list = partyDates[y+'-'+m] || [];
+    for(let i=first-1;i>=0;i--) h += '<div class="cal-day other-month">'+(prevLast-i)+'</div>';
+    for(let d=1; d<=last; d++){
+      let c = 'cal-day';
+      if(list.indexOf(d)>=0) c += ' has-party';
+      if(y===now.getFullYear() && m===now.getMonth()+1 && d===now.getDate()) c += ' today';
+      h += '<div class="'+c+'">'+d+'</div>';
+    }
+    const rest = (7 - ((first+last)%7))%7;
+    for(let d=1; d<=rest; d++) h += '<div class="cal-day other-month">'+d+'</div>';
+    grid.innerHTML = h;
+  }
+  document.getElementById('cal-prev').addEventListener('click', function(){ m--; if(m<1){m=12;y--;} render(); });
+  document.getElementById('cal-next').addEventListener('click', function(){ m++; if(m>12){m=1;y++;} render(); });
+  render();
+})();
 </script>
 </body>
 </html>
